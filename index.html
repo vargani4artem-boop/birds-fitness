@@ -3,11 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Євгенія Бурдовіцина — birds.cz | Fitness • Movement • Nutrition</title>
-  <meta name="description" content="Персональні тренування та харчування з індивідуальним підходом. Євгенія Бурдовіцина — Hradec Králové, Pardubice, Chrudim та Онлайн.">
-  <link rel="icon" type="image/x-icon" href="assets/images/coach_pilates_pink.jpg">
+  <title>Євгенія Бурдовіцина — birds.cz | Персональний тренер &amp; Нутриціолог</title>
+  <meta name="description" content="Персональні тренування, здоровий рух, гнучкість та індивідуальний раціон харчування в Градець-Кралове, Пардубіце, приватному залі в Хрудимі та Онлайн. Тренер Євгенія Бурдовіцина.">
+  <link rel="icon" type="image/jpeg" href="assets/images/coach_pilates_pink.jpg">
+  
+  <!-- SEO Canonical & Language Alternates -->
+  <link rel="canonical" href="https://vargani4artem-boop.github.io/birds-fitness/">
+  <link rel="alternate" hreflang="uk" href="https://vargani4artem-boop.github.io/birds-fitness/?lang=ua">
+  <link rel="alternate" hreflang="cs" href="https://vargani4artem-boop.github.io/birds-fitness/cz/">
+  <link rel="alternate" hreflang="x-default" href="https://vargani4artem-boop.github.io/birds-fitness/">
 
-  <!-- Google Fonts: Manrope, Cormorant Garamond, Caveat -->
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="birds.cz">
+  <meta property="og:title" content="Євгенія Бурдовіцина — birds.cz | Фітнес, Рух &amp; Харчування">
+  <meta property="og:description" content="Тренування, які адаптуються під вас: Градець-Кралове, Пардубіце, приватний зал у Хрудимі та онлайн.">
+  <meta property="og:image" content="https://vargani4artem-boop.github.io/birds-fitness/assets/images/coach_speaker_stage.jpg">
+  <meta property="og:url" content="https://vargani4artem-boop.github.io/birds-fitness/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Євгенія Бурдовіцина — birds.cz">
+  <meta name="twitter:description" content="Персональні тренування, гнучкість, харчування. Градець-Кралове, Пардубіце, Хрудим, Онлайн.">
+  <meta name="twitter:image" content="https://vargani4artem-boop.github.io/birds-fitness/assets/images/coach_speaker_stage.jpg">
+
+  <!-- Schema.org JSON-LD Structured Data for Local Business / Coach -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "name": "birds.cz — Jevgenija Burdovicyna",
+    "alternateName": "Євгенія Бурдовіцина Фітнес",
+    "description": "Персональні фітнес-тренування, здоровий рух, гнучкість та індивідуальне харчування в Градець-Кралове, Пардубіце, Хрудимі та онлайн.",
+    "image": "https://vargani4artem-boop.github.io/birds-fitness/assets/images/coach_speaker_stage.jpg",
+    "url": "https://vargani4artem-boop.github.io/birds-fitness/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hradec Králové, Pardubice, Chrudim",
+      "addressCountry": "CZ"
+    },
+    "sameAs": [
+      "https://www.instagram.com/birds.cz/"
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts: Manrope, Cormorant Garamond, Caveat with display=swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600;1,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -47,7 +88,7 @@
           <button type="button" class="lang-btn active" data-lang="ua">UA</button>
           <button type="button" class="lang-btn" data-lang="cz">CZ</button>
         </div>
-        <button class="btn btn-primary open-modal-btn" data-target="bookingModal" data-i18n="btn_book">Записатися &rarr;</button>
+        <button class="btn btn-primary open-modal-btn header-cta-desktop" data-target="bookingModal" data-i18n="btn_book">Записатися &rarr;</button>
         
         <!-- Mobile Menu Toggle Button -->
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню">
@@ -177,7 +218,7 @@
           <!-- Left: Big Portrait -->
           <div class="about-main-photo-col">
             <div class="about-photo-wrapper">
-              <img src="assets/images/coach_gym_gloves.jpg" alt="Євгенія Бурдовіцина" class="about-main-img">
+              <img src="assets/images/coach_gym_gloves.jpg" alt="Євгенія Бурдовіцина" class="about-main-img" loading='lazy' decoding='async'>
               <div class="about-badge-floating">
                 <span class="badge-accent">birds.cz</span>
                 <span>Євгенія Бурдовіцина</span>
@@ -230,16 +271,16 @@
           <div class="about-collage-col">
             <div class="about-collage-grid">
               <div class="collage-item zoomable" data-img="assets/images/coach_split_pink.jpg" data-caption="Євгенія Бурдовіцина — Стретчинг і гнучкість">
-                <img src="assets/images/coach_split_pink.jpg" alt="Розтяжка та гнучкість" class="collage-img">
+                <img src="assets/images/coach_split_pink.jpg" alt="Розтяжка та гнучкість" class="collage-img" loading='lazy' decoding='async'>
               </div>
               <div class="collage-item zoomable" data-img="assets/images/coach_pilates_pink.jpg" data-caption="Євгенія Бурдовіцина — Pilates та мобільність">
-                <img src="assets/images/coach_pilates_pink.jpg" alt="Pilates" class="collage-img">
+                <img src="assets/images/coach_pilates_pink.jpg" alt="Pilates" class="collage-img" loading='lazy' decoding='async'>
               </div>
               <div class="collage-item zoomable" data-img="assets/images/coach_lifestyle_car.jpg" data-caption="Стиль життя та енергія">
-                <img src="assets/images/coach_lifestyle_car.jpg" alt="Стиль життя" class="collage-img">
+                <img src="assets/images/coach_lifestyle_car.jpg" alt="Стиль життя" class="collage-img" loading='lazy' decoding='async'>
               </div>
               <div class="collage-item zoomable" data-img="assets/images/coach_prague.jpg" data-caption="Прага, Чехія">
-                <img src="assets/images/coach_prague.jpg" alt="Прага" class="collage-img">
+                <img src="assets/images/coach_prague.jpg" alt="Прага" class="collage-img" loading='lazy' decoding='async'>
               </div>
             </div>
           </div>
@@ -271,7 +312,7 @@
             <!-- Direction 1 -->
             <div class="service-card">
               <div class="service-card-media">
-                <img src="assets/images/coach_hero_extrifit.jpg" alt="Силові тренування" class="service-img">
+                <img src="assets/images/coach_hero_extrifit.jpg" alt="Силові тренування" class="service-img" loading='lazy' decoding='async'>
               </div>
               <div class="service-card-body">
                 <h3 class="service-name" data-i18n="dir_1_name">Силові тренування та фігура</h3>
@@ -291,7 +332,7 @@
             <!-- Direction 2 -->
             <div class="service-card">
               <div class="service-card-media">
-                <img src="assets/images/coach_pilates_pink.jpg" alt="Здоровий рух" class="service-img">
+                <img src="assets/images/coach_pilates_pink.jpg" alt="Здоровий рух" class="service-img" loading='lazy' decoding='async'>
               </div>
               <div class="service-card-body">
                 <h3 class="service-name" data-i18n="dir_2_name">Здоровий рух і постава</h3>
@@ -311,7 +352,7 @@
             <!-- Direction 3 -->
             <div class="service-card">
               <div class="service-card-media">
-                <img src="assets/images/coach_split_pink.jpg" alt="Розтяжка та гнучкість" class="service-img">
+                <img src="assets/images/coach_split_pink.jpg" alt="Розтяжка та гнучкість" class="service-img" loading='lazy' decoding='async'>
               </div>
               <div class="service-card-body">
                 <h3 class="service-name" data-i18n="dir_3_name">Розтяжка та гнучкість</h3>
@@ -331,7 +372,7 @@
             <!-- Direction 4 -->
             <div class="service-card">
               <div class="service-card-media">
-                <img src="assets/images/result_teen_front.jpg" alt="Для початківців" class="service-img">
+                <img src="assets/images/result_teen_front.jpg" alt="Для початківців" class="service-img" loading='lazy' decoding='async'>
               </div>
               <div class="service-card-body">
                 <h3 class="service-name" data-i18n="dir_4_name">Для початківців та підлітків</h3>
@@ -521,11 +562,11 @@
             <!-- Real Menu Previews Grid -->
             <div class="menu-preview-stack">
               <div class="menu-sample-card zoomable" data-img="assets/images/menu_plan_day1.jpg" data-caption="Приклад персонального меню: 1200 ккал / 90 г білка (котлети, яблучний пиріг, тости з лососем)">
-                <img src="assets/images/menu_plan_day1.jpg" alt="Зразок меню 1" class="menu-preview-img">
+                <img src="assets/images/menu_plan_day1.jpg" alt="Зразок меню 1" class="menu-preview-img" loading='lazy' decoding='async'>
                 <div class="menu-preview-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> День 1 • 1200 ккал</div>
               </div>
               <div class="menu-sample-card zoomable" data-img="assets/images/menu_plan_day2.jpg" data-caption="Приклад персонального меню: Індичка, гречка, творог з ягодами, протеїновий коктейль">
-                <img src="assets/images/menu_plan_day2.jpg" alt="Зразок меню 2" class="menu-preview-img">
+                <img src="assets/images/menu_plan_day2.jpg" alt="Зразок меню 2" class="menu-preview-img" loading='lazy' decoding='async'>
                 <div class="menu-preview-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> День 3 • 1190 ккал</div>
               </div>
             </div>
@@ -579,7 +620,7 @@
             <!-- Slide 1: Side view -10kg -->
             <div class="carousel-card zoomable" data-category="weight" data-img="assets/images/result_10kg_side.jpg" data-caption="Зниження ваги на 10 кг за 4 місяці (вид збоку) — корекція харчування без суворих дієт, індивідуальні вправи">
               <div class="carousel-card-img-wrap">
-                <img src="assets/images/result_10kg_side.jpg" alt="-10 кг трансформація (вид збоку)" class="carousel-card-img">
+                <img src="assets/images/result_10kg_side.jpg" alt="-10 кг трансформація (вид збоку)" class="carousel-card-img" loading='lazy' decoding='async'>
                 <div class="carousel-badge-loss">
                   <i class="fa-solid fa-fire"></i> -10 КГ
                 </div>
@@ -610,7 +651,7 @@
             <!-- Slide 2: Front view -10kg -->
             <div class="carousel-card zoomable" data-category="weight" data-img="assets/images/result_10kg_front.jpg" data-caption="Зниження ваги на 10 кг за 4 місяці (вид спереду) — тонус преса, стегон та впевненість у собі">
               <div class="carousel-card-img-wrap">
-                <img src="assets/images/result_10kg_front.jpg" alt="-10 кг трансформація (вид спереду)" class="carousel-card-img">
+                <img src="assets/images/result_10kg_front.jpg" alt="-10 кг трансформація (вид спереду)" class="carousel-card-img" loading='lazy' decoding='async'>
                 <div class="carousel-badge-loss">
                   <i class="fa-solid fa-fire"></i> -10 КГ
                 </div>
@@ -641,7 +682,7 @@
             <!-- Slide 3: Teenager Profile -->
             <div class="carousel-card zoomable" data-category="teens" data-img="assets/images/result_teen_transform.jpg" data-caption="Підліткова трансформація: постава та підтягнута фігура (вид збоку) — усунення сутулості, зміцнення спини">
               <div class="carousel-card-img-wrap">
-                <img src="assets/images/result_teen_transform.jpg" alt="Підліткова трансформація (профіль)" class="carousel-card-img">
+                <img src="assets/images/result_teen_transform.jpg" alt="Підліткова трансформація (профіль)" class="carousel-card-img" loading='lazy' decoding='async'>
                 <div class="carousel-badge-loss" style="background: linear-gradient(135deg, #7A5AF8, #9B8AFB);">
                   <i class="fa-solid fa-sparkles"></i> -5 КГ
                 </div>
@@ -672,7 +713,7 @@
             <!-- Slide 4: Teenager Front -->
             <div class="carousel-card zoomable" data-category="teens" data-img="assets/images/result_teen_front.jpg" data-caption="Підліткова трансформація: правильна техніка вправ з гантелями та тонус (вид спереду)">
               <div class="carousel-card-img-wrap">
-                <img src="assets/images/result_teen_front.jpg" alt="Підліткова трансформація (анфас)" class="carousel-card-img">
+                <img src="assets/images/result_teen_front.jpg" alt="Підліткова трансформація (анфас)" class="carousel-card-img" loading='lazy' decoding='async'>
                 <div class="carousel-badge-loss" style="background: linear-gradient(135deg, #7A5AF8, #9B8AFB);">
                   <i class="fa-solid fa-sparkles"></i> -5 КГ
                 </div>
@@ -703,7 +744,7 @@
             <!-- Slide 5: Split with Blocks -->
             <div class="carousel-card zoomable" data-category="split" data-img="assets/images/result_split_blocks.jpg" data-caption="Поздовжній шпагат без болю: м'яка адаптація зв'язок на йога-блоках без травм і сліз">
               <div class="carousel-card-img-wrap">
-                <img src="assets/images/result_split_blocks.jpg" alt="Поздовжній шпагат на блоках" class="carousel-card-img">
+                <img src="assets/images/result_split_blocks.jpg" alt="Поздовжній шпагат на блоках" class="carousel-card-img" loading='lazy' decoding='async'>
                 <div class="carousel-badge-loss" style="background: linear-gradient(135deg, #10B981, #059669);">
                   <i class="fa-solid fa-spa"></i> Шпагат
                 </div>
@@ -734,7 +775,7 @@
             <!-- Slide 6: Split Knees Evolution -->
             <div class="carousel-card zoomable" data-category="split" data-img="assets/images/result_split_knees.jpg" data-caption="Розвиток гнучкості: від початкової розминки до повного глибокого шпагату">
               <div class="carousel-card-img-wrap">
-                <img src="assets/images/result_split_knees.jpg" alt="Розвиток гнучкості від розминки до шпагату" class="carousel-card-img">
+                <img src="assets/images/result_split_knees.jpg" alt="Розвиток гнучкості від розминки до шпагату" class="carousel-card-img" loading='lazy' decoding='async'>
                 <div class="carousel-badge-loss" style="background: linear-gradient(135deg, #10B981, #059669);">
                   <i class="fa-solid fa-spa"></i> Гнучкість
                 </div>
@@ -798,9 +839,9 @@
             </div>
 
             <div class="compare-wrapper" id="compareSlider">
-              <img id="compareImgAfter" src="assets/images/compare_10kg_after.jpg" alt="Після" class="compare-img full-img">
+              <img id="compareImgAfter" src="assets/images/compare_10kg_after.jpg" alt="Після" class="compare-img full-img" loading='lazy' decoding='async'>
               <div class="compare-overlay" id="compareOverlay">
-                <img id="compareImgBefore" src="assets/images/compare_10kg_before.jpg" alt="До" class="compare-img overlay-img">
+                <img id="compareImgBefore" src="assets/images/compare_10kg_before.jpg" alt="До" class="compare-img overlay-img" loading='lazy' decoding='async'>
               </div>
               <div class="compare-badge-flag before-flag" data-i18n="compare_before_badge">ДО</div>
               <div class="compare-badge-flag after-flag" data-i18n="compare_after_badge">ПІСЛЯ (-10 КГ)</div>
@@ -820,7 +861,7 @@
             </blockquote>
             <div class="quote-line"></div>
             <div class="quote-author-row">
-              <img src="assets/images/coach_portrait_speaker.jpg" alt="Євгенія" class="quote-avatar">
+              <img src="assets/images/coach_portrait_speaker.jpg" alt="Євгенія" class="quote-avatar" loading='lazy' decoding='async'>
               <div>
                 <strong class="quote-name">Євгенія Бурдовіцина</strong>
                 <span class="quote-role" data-i18n="coach_role_quote">Персональний тренер & нутриціолог</span>
@@ -860,7 +901,7 @@
 
             <div class="experience-media-col">
               <div class="collage-item zoomable" data-img="assets/images/coach_speaker_stage.jpg" data-caption="Євгенія Бурдовіцина — виступ у Градець-Кралове: «Чому дієти не працюють, а звички — так?»" style="height: 320px; border-radius: 16px; overflow: hidden; cursor: pointer;">
-                <img src="assets/images/coach_speaker_stage.jpg" alt="Виступ у Градець-Кралове" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="assets/images/coach_speaker_stage.jpg" alt="Виступ у Градець-Кралове" style="width: 100%; height: 100%; object-fit: cover;" loading='lazy' decoding='async'>
               </div>
             </div>
           </div>
@@ -872,16 +913,16 @@
             </div>
             <div class="group-gallery-grid">
               <div class="group-thumb zoomable" data-img="assets/images/group_training_1.jpg" data-caption="Групове тренування з медболами">
-                <img src="assets/images/group_training_1.jpg" alt="Групове заняття 1">
+                <img src="assets/images/group_training_1.jpg" alt="Групове заняття 1" loading='lazy' decoding='async'>
               </div>
               <div class="group-thumb zoomable" data-img="assets/images/group_training_2.jpg" data-caption="Групове функціональне тренування з дисками">
-                <img src="assets/images/group_training_2.jpg" alt="Групове заняття 2">
+                <img src="assets/images/group_training_2.jpg" alt="Групове заняття 2" loading='lazy' decoding='async'>
               </div>
               <div class="group-thumb zoomable" data-img="assets/images/group_training_3.jpg" data-caption="Планка та зміцнення кора">
-                <img src="assets/images/group_training_3.jpg" alt="Групове заняття 3">
+                <img src="assets/images/group_training_3.jpg" alt="Групове заняття 3" loading='lazy' decoding='async'>
               </div>
               <div class="group-thumb zoomable" data-img="assets/images/certificate_flyer.jpg" data-caption="Офіційний подарунковий сертифікат birds.cz">
-                <img src="assets/images/certificate_flyer.jpg" alt="Подарунковий сертифікат">
+                <img src="assets/images/certificate_flyer.jpg" alt="Подарунковий сертифікат" loading='lazy' decoding='async'>
               </div>
             </div>
           </div>
@@ -1126,7 +1167,7 @@
   <div class="lightbox-backdrop" id="imageLightbox">
     <div class="lightbox-container">
       <button class="lightbox-close" id="lightboxClose">&times;</button>
-      <img src="" alt="Результат" id="lightboxImg" class="lightbox-image">
+      <img src="" alt="Результат" id="lightboxImg" class="lightbox-image" loading='lazy' decoding='async'>
       <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
   </div>

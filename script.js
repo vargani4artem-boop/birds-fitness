@@ -357,8 +357,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentLang = 'ua';
 
-  function applyLanguage(lang) {
+  function applyLanguage(lang, updateUrl = true) {
+    if (lang === 'cs') lang = 'cz';
+    if (lang === 'uk') lang = 'ua';
+    if (!translations[lang]) lang = 'ua';
+
     currentLang = lang;
+    document.documentElement.lang = (lang === 'cz') ? 'cs' : 'uk';
+
+    // Update document title and meta description dynamically
+    if (lang === 'cz') {
+      document.title = "Jevgenija Burdovicyna — birds.cz | Osobní trenérka & Nutriční poradkyně";
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.content = "Osobní fitness tréninky, zdravý pohyb, flexibilita a vyvážený jídelníček na míru v Hradci Králové, Pardubicích, Chrudimi a online.";
+    } else {
+      document.title = "Євгенія Бурдовіцина — birds.cz | Персональний тренер & Нутриціолог";
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.content = "Персональні тренування, здоровий рух, гнучкість та персональний раціон харчування в Градець-Кралове, Пардубіце, приватному залі в Хрудимі та Онлайн.";
+    }
+
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (translations[lang] && translations[lang][key]) {
@@ -388,7 +405,49 @@ document.addEventListener('DOMContentLoaded', () => {
         afterFlag.textContent = (lang === 'cz') ? preset.badgeCZ : preset.badgeUA;
       }
     }
+
+    try {
+      localStorage.setItem('birds_fitness_lang', lang);
+    } catch(e) {}
+
+    // Update URL without page reload if requested
+    if (updateUrl && window.history && window.history.pushState) {
+      if (window.location.pathname.includes('/cz') && lang === 'ua') {
+        window.location.href = '../?lang=ua';
+        return;
+      }
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', lang);
+      window.history.pushState({ lang: lang }, '', url.toString());
+    }
   }
+
+  // Detect language from URL on load
+  function detectInitialLanguage() {
+    const url = new URL(window.location.href);
+    const qLang = url.searchParams.get('lang');
+    if (qLang && (qLang === 'cz' || qLang === 'cs')) return 'cz';
+    if (qLang && (qLang === 'ua' || qLang === 'uk')) return 'ua';
+
+    if (window.location.pathname.includes('/cz')) return 'cz';
+    if (window.location.hash.toLowerCase().includes('cz')) return 'cz';
+
+    try {
+      const saved = localStorage.getItem('birds_fitness_lang');
+      if (saved && (saved === 'cz' || saved === 'ua')) return saved;
+    } catch(e) {}
+
+    return 'ua';
+  }
+
+  // Handle browser back/forward buttons
+  window.addEventListener('popstate', (e) => {
+    if (e.state && e.state.lang) {
+      applyLanguage(e.state.lang, false);
+    } else {
+      applyLanguage(detectInitialLanguage(), false);
+    }
+  });
 
   // Language switch
   const langSwitch = document.getElementById('langSwitch');
@@ -398,10 +457,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!btn) return;
       const lang = btn.getAttribute('data-lang');
       if (lang !== currentLang) {
-        applyLanguage(lang);
+        applyLanguage(lang, true);
       }
     });
   }
+
+  // Apply detected language immediately
+  applyLanguage(detectInitialLanguage(), false);
 
   // ==================== RESULTS CAROUSEL LOGIC ====================
   const carouselViewport = document.getElementById('carouselViewport');
@@ -629,22 +691,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const compareAutoIcon = document.getElementById('compareAutoIcon');
   const afterFlag = document.querySelector('.compare-badge-flag.after-flag');
 
+  const imgPrefix = window.location.pathname.includes('/cz') ? '../' : '';
+
   const comparePresets = {
     front: {
-      before: 'assets/images/compare_10kg_before.jpg',
-      after: 'assets/images/compare_10kg_after.jpg',
+      before: imgPrefix + 'assets/images/compare_10kg_before.jpg',
+      after: imgPrefix + 'assets/images/compare_10kg_after.jpg',
       badgeUA: 'ПІСЛЯ (-10 КГ)',
       badgeCZ: 'PO (-10 KG)'
     },
     side: {
-      before: 'assets/images/compare_side_before.jpg',
-      after: 'assets/images/compare_side_after.jpg',
+      before: imgPrefix + 'assets/images/compare_side_before.jpg',
+      after: imgPrefix + 'assets/images/compare_side_after.jpg',
       badgeUA: 'ПІСЛЯ (-10 КГ)',
       badgeCZ: 'PO (-10 KG)'
     },
     teen: {
-      before: 'assets/images/compare_teen_before.jpg',
-      after: 'assets/images/compare_teen_after.jpg',
+      before: imgPrefix + 'assets/images/compare_teen_before.jpg',
+      after: imgPrefix + 'assets/images/compare_teen_after.jpg',
       badgeUA: 'ПІСЛЯ (-5 КГ)',
       badgeCZ: 'PO (-5 KG)'
     }
@@ -886,14 +950,25 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   if (mobileBtn && mobileDrawer) {
-    mobileBtn.addEventListener('click', () => {
-      mobileDrawer.classList.toggle('open');
+    mobileBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = mobileDrawer.classList.toggle('open');
+      mobileBtn.classList.toggle('open', isOpen);
     });
 
     document.querySelectorAll('.mobile-nav-link').forEach(link => {
       link.addEventListener('click', () => {
         mobileDrawer.classList.remove('open');
+        mobileBtn.classList.remove('open');
       });
+    });
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      if (mobileDrawer.classList.contains('open') && !mobileDrawer.contains(e.target) && !mobileBtn.contains(e.target)) {
+        mobileDrawer.classList.remove('open');
+        mobileBtn.classList.remove('open');
+      }
     });
   }
 
