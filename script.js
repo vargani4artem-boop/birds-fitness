@@ -1,5 +1,6 @@
 /* ==========================================================================
-   birds.cz — Fitness • Pilates • Nutrition
+   birds.cz — Fitness • Movement • Nutrition
+   Coach: Євгенія Бурдовіцина
    Interactive JavaScript & I18n Engine
    ========================================================================== */
 
@@ -9,199 +10,286 @@ document.addEventListener('DOMContentLoaded', () => {
   const translations = {
     ua: {
       nav_home: "Головна",
-      nav_services: "Послуги",
-      nav_results: "Результати",
       nav_about: "Про мене",
-      nav_prices: "Ціни",
-      nav_reviews: "Відгуки",
+      nav_services: "Напрямки",
+      nav_locations: "Формати й ціни",
+      nav_nutrition: "Харчування",
+      nav_results: "Результати",
+      nav_experience: "Досвід",
       nav_contacts: "Контакти",
       btn_book: "Записатися &rarr;",
-      hero_title_1: "Похудіння",
-      hero_title_2: "і форма тіла",
-      hero_title_3: "без виснажливих дієт",
-      hero_desc: "Тренування, Pilates, індивідуальне харчування та підтримка для твого здоров'я, енергії і впевненості в собі.",
-      hero_btn_trial: "Пробне тренування &rarr;",
-      hero_btn_consult: "Безкоштовна консультація з харчуванням &rarr;",
-      hero_clients_count: "задоволених клієнток",
+      
+      hero_coach_name: "Євгенія Бурдовіцина • Персональний тренер",
+      hero_title_1: "Тренування, які",
+      hero_title_2: "підходять саме тобі",
+      hero_title_3: "без виснажливих дієт та шаблонів",
+      hero_desc: "Індивідуальний підхід до сили, здорового руху, гнучкості та харчування. Ми не працюємо за шаблонами — кожне тренування адаптується під ваші цілі, можливості та самопочуття.",
+      hero_tagline: "Ваше тіло. Ваші цілі. Ваш темп.",
+      hero_btn_book: "Записатися на тренування &rarr;",
+      hero_btn_nutrition: "Персональне меню (30 днів) &rarr;",
+      hero_trust_label: "активної тренерської практики й результатів",
       hero_handwritten: "Краща версія тебе ♡",
-      hero_feat_body: "Струнке тіло",
-      hero_feat_energy: "Більше енергії",
-      hero_feat_health: "Сильніше здоров'я",
-      hero_feat_custom: "Індивідуальний підхід",
-      hero_trainer_tag: "Індивідуальний супровід",
-      services_eyebrow: "ПОСЛУГИ",
-      services_title: "Тренування та підтримка, які працюють",
-      services_desc: "Індивідуальний підхід, сучасні методики та атмосфера, в якій хочеться розвиватися. Обирай свій формат і почни вже сьогодні.",
-      srv_1_name: "Персональні тренування",
-      srv_1_desc: "Індивідуальна програма під твої цілі та рівень підготовки.",
-      srv_2_name: "Fullbody Pilates",
-      srv_2_desc: "Сильне тіло, гнучкість і гарне самопочуття.",
-      srv_3_name: "Онлайн-ведення",
-      srv_3_desc: "Тренування, харчування та підтримка онлайн.",
-      srv_4_name: "Індивідуальні плани харчування",
-      srv_4_desc: "Збалансований раціон без жорстких обмежень.",
-      srv_5_name: "Стретчинг",
-      srv_5_desc: "Більша рухливість, красива постава та розслаблене тіло.",
-      tag_offline: "Офлайн",
-      tag_group_ind: "Групові / Індивідуальні",
-      tag_online: "Онлайн",
-      tag_custom_plan: "Індивідуальний план",
-      tag_custom: "Індивідуально",
-      tag_goals: "Під твої цілі",
-      btn_details: "Детальніше",
+      hero_feat_power: "Сила та форма фігури",
+      hero_feat_health: "Здоровий рух і спина",
+      hero_feat_stretch: "Розтяжка та шпагат",
+      hero_feat_nutr: "Харчування без голоду",
+
       about_eyebrow: "ПРО МЕНЕ",
-      about_title: "Твій тренер і партнер у досягненні цілей",
-      about_desc: "Я допомагаю жінкам ставати сильнішими, здоровішими та впевненішими в собі через тренування, Pilates та збалансоване харчування. Мій підхід — індивідуальність, підтримка і реальні результати без крайнощів.",
-      about_coach_label: "Сертифікований тренер",
-      about_pil_cert: "Сертифікований тренер",
-      about_pil_exp: "Досвід роботи",
-      about_pil_methods: "Сучасні методики",
-      about_pil_growth: "Постійний розвиток",
-      about_btn_more: "Дізнатися більше &rarr;",
-      results_eyebrow: "РЕЗУЛЬТАТИ",
-      results_title: "Реальні історії — реальні зміни",
-      results_quote: "Я не просто допомагаю схуднути — я допомагаю змінити стиль життя і відчути себе краще в кожному дні.",
+      about_title: "Я за індивідуальний підхід, а не тренування за шаблоном",
+      about_bio_1: "Мене звати <strong>Євгенія Бурдовіцина</strong>. Я персональний тренер, і вже багато років спорт є важливою частиною мого життя. Останні чотири роки я особливо активно тренуюся, поглиблюю свої знання про м’язи, рух і харчування та застосовую отриманий досвід у роботі з клієнтами.",
+      about_bio_2: "Найбільше мені подобається знаходити підхід до кожної людини. Адже за однаковим бажанням «бути у формі» стоять зовсім різні потреби: комусь хочеться схуднути, комусь — стати сильнішою та підтягнути тіло, а хтось прагне розвинути гнучкість або позбутися втоми в спині.",
+      about_bio_3: "Я враховую ваш рівень підготовки, самопочуття, втому й можливості в конкретний день. Якщо сьогодні вам потрібне інше навантаження — ми адаптуємо заняття. Мені важливо, щоб ви краще розуміли своє тіло і почувалися впевнено.",
+      about_pil_1: "Без перевантажень і травм",
+      about_pil_2: "Адаптація під кожен день",
+      about_pil_3: "Харчування під ваші звички",
+      about_pil_4: "Підтримка та розуміння тіла",
+
+      dir_eyebrow: "ПЕРСОНАЛЬНІ ТРЕНУВАННЯ",
+      dir_title: "Одна людина — свої цілі — індивідуальний план",
+      dir_desc: "Моя мета — не змусити вас працювати через силу, а допомогти знайти ефективний, безпечний і комфортний формат занять.",
+      dir_1_name: "Силові тренування та фігура",
+      dir_1_desc: "Для тих, хто хоче зміцнити м’язи, стати сильнішою, покращити пропорції тіла, зробити фігуру підтягнутою або знизити вагу.",
+      dir_2_name: "Здоровий рух і постава",
+      dir_2_desc: "Для тих, хто хоче зміцнити м'язи, покращити рухливість і приділити більше уваги спині, шиї та загальному самопочуттю.",
+      dir_3_name: "Розтяжка та гнучкість",
+      dir_3_desc: "Покращуємо амплітуду рухів або поступово вчимося сідати на шпагат — крок за кроком, без болю та примусу.",
+      dir_4_name: "Для початківців та підлітків",
+      dir_4_desc: "Освоюємо правильну техніку вправ, знайомимося з тренажерами та розвиваємо фізичні можливості з урахуванням віку.",
+      tag_relief: "Рельєф і тонус",
+      tag_slimming: "Схуднення",
+      tag_back: "Здорова спина",
+      tag_mobility: "Мобільність",
+      tag_split: "Шпагат без болю",
+      tag_starter: "Плавний старт",
+      tag_safety: "Безпека",
+      btn_details: "Записатися",
+
+      loc_eyebrow: "ДЕ МИ МОЖЕМО ТРЕНУВАТИСЯ",
+      loc_title: "Формати та вартість тренувань",
+      loc_sub: "Обирайте комфортний формат: класичний тренажерний зал, повністю приватний зал без сторонніх очей або зручний онлайн-формат удома.",
+      loc_gym_title: "Тренажерний зал",
+      loc_gym_desc: "Співпраця з провідними тренажерними залами міст. Час і конкретний зал узгоджуємо індивідуально.",
+      loc_gym_f1: "Постановка точної техніки вправ",
+      loc_gym_f2: "Індивідуальний підбір навантаження",
+      loc_gym_f3: "Організація всього тренувального процесу",
+      loc_gym_f4: "Вхід до залу оплачується клієнтом окремо",
+      btn_book_loc: "Записатися &rarr;",
+
+      loc_chrudim_badge: "Ексклюзивний приватний формат",
+      loc_chrudim_title: "Приватний зал у Хрудимі",
+      loc_chrudim_desc: "<strong>90 хвилин без сторонніх людей!</strong> Доступ за персональним кодом. Тільки ви, тренер, музика, душ і вода/напої без доплати.",
+      split_title: "💡 Спільне тренування з подругами (до 4 людей):",
+      btn_book_private: "Забронювати приватний зал &rarr;",
+
+      loc_online_title: "Онлайн-тренування",
+      loc_online_desc: "Тренуйтеся вдома або в будь-якому місці у реальному часі через відеозв’язок у Telegram. Потрібен лише килимок та телефон.",
+      loc_onl_f1: "Пояснення та відео-контроль техніки",
+      loc_onl_f2: "Вправи з власною вагою та підручними речами",
+      loc_onl_f3: "Економія часу на дорогу до залу",
+      loc_onl_f4: "Максимально комфортна домашня атмосфера",
+      btn_book_onl: "Записатися на онлайн &rarr;",
+
+      nutr_eyebrow: "ПЕРСОНАЛЬНЕ ХАРЧУВАННЯ",
+      nutr_title: "Меню, створене саме під ваші потреби",
+      nutr_intro: "Харчування має відповідати вашому життю, а не перетворювати його на суцільні обмеження. Я допомагаю організувати раціон відповідно до ваших цілей, звичних продуктів і смакових уподобань.",
+      nstep_1_title: "Тиждень спостереження",
+      nstep_1_desc: "7 днів ви фіксуєте все, що їсте й п'єте: порції, перекуси, напої. Це дозволяє побачити реальні щоденні звички.",
+      nstep_2_title: "Глибокий аналіз та КБЖВ",
+      nstep_2_desc: "Аналізую інформацію, точно розраховую калорійність, білки, жири та вуглеводи для безпечного досягнення мети.",
+      nstep_3_title: "Індивідуальне меню",
+      nstep_3_desc: "Створюю раціон на основі ваших улюблених страв і продуктів, які можна легко купити в звичайному магазині.",
+      nstep_4_title: "Готовий план на 30 днів",
+      nstep_4_desc: "Оформлене меню з фотографіями страв. Ви можете вільно обирати зручний день меню під свій графік.",
+      nutr_val_desc: "персональний план на 30 днів",
+      btn_order_menu: "Замовити персональне меню &rarr;",
+      nutr_quote: "Без жорстких обмежень і голодувань. Тільки смачна, проста і збалансована їжа.",
+
+      results_eyebrow: "РЕЗУЛЬТАТИ КЛІЄНТІВ",
+      results_title: "Маленькі кроки, які складаються у великі зміни",
+      results_subtitle: "Для мене важливо бачити, як люди поступово наближаються до своїх цілей: зниження ваги (наприклад, -10 кг за 4 місяці), рельєф, підтягнуте тіло та плавний шпагат без травм.",
+      results_quote_box: "Кожна людина має свій початковий рівень, темп і особливості. Я не змушую працювати через силу — ми разом знаходимо формат, у якому вам комфортно перемагати щодня.",
       compare_tag: "Інтерактивне порівняння",
-      compare_title: "Потягни повзунок, щоб побачити прогрес клієнтки",
-      pricing_eyebrow: "ЦІНИ",
-      pricing_title: "Обери свій формат",
-      tab_personal: "Персональні тренування",
-      tab_pilates: "Pilates",
-      tab_online: "Онлайн-ведення",
-      tab_nutrition: "Харчування",
-      tab_stretching: "Стретчинг",
-      pricing_note: "Тренування проходять у професійних залах міст Hradec Králové, Pardubice та Praha. Також доступний повністю дистанційний онлайн-формат.",
-      reviews_eyebrow: "ВІДГУКИ",
-      reviews_title: "Що кажуть мої клієнтки",
-      rev_1_text: "Дуже подобається підхід! Тренування ефективні, атмосфера неймовірна. З'явилось більше енергії і впевненість у собі. Рекомендую від щирого серця! ❤️",
-      rev_1_name: "Олена",
-      rev_1_city: "Градець-Кралове",
-      rev_2_text: "За 4 місяці скинула 10 кг без голодування і зривів! Тренер навчила розуміти своє тіло і харчуватися збалансовано. Спина перестала боліти вже на другий тиждень.",
-      rev_2_name: "Катерина",
-      rev_2_city: "Пардубице",
-      rev_3_text: "Пілатес і стретчинг просто змінили моє самопочуття! Кожне тренування проходить на одному диханні, увага до кожної вправи максимальна.",
-      rev_3_name: "Анна",
-      rev_3_city: "Прага",
+      compare_title: "Потягніть повзунок, щоб побачити прогрес клієнтки",
+
+      exp_eyebrow: "ДОСВІД ТА ЕКСПЕРТНІСТЬ",
+      exp_title: "Спорт, спілкування та мотивація",
+      exp_text1: "<strong>Робота з групами:</strong> У минулому я успішно проводила групові тренування. Це був безцінний досвід руху, командної енергії та взаємної підтримки. Сьогодні я фокусуюся на персональних заняттях, де можу приділити клієнту 100% уваги.",
+      exp_text2: "<strong>Публічні виступи:</strong> Виступала як спікер у <strong>Градець-Кралове</strong> на масштабному заході для жінок, які розвивають власні проєкти та бізнеси. Ділилася знаннями про спорт, баланс харчування та психологію мотивації для активного життя.",
+      exp_b1: "Спікер конференцій",
+      exp_b2: "Досвід групових програм",
+      exp_b3: "4+ роки активної практики",
+      exp_gallery_title: "📸 Фотографії з групових тренувань та залів:",
+
+      ready_title: "Готові почати?",
+      ready_desc: "Не потрібно чекати ідеального моменту, найкращої фізичної форми або понеділка. Почнімо з того, що важливо саме для вас: сили, гнучкості, зміни форми тіла чи організованого харчування.",
+      ready_quote: "Ваш шлях — ваш темп. Я допоможу вам рухатися вперед.",
+      btn_start_journey: "Почати свій шлях &rarr;",
+
       contacts_eyebrow: "КОНТАКТИ",
-      contacts_title: "Три міста — більше можливостей для тебе",
-      city_prague: "Прага",
+      contacts_title: "Локації для тренувань та зв'язок",
+      contacts_lead: "Напишіть мені у зручний месенджер або залиште заявку — ми обговоримо ваші цілі та підберемо ідеальний формат занять.",
       map_label: "Локації в Чехії",
-      footer_tagline: "Краса, здоров'я та впевненість у твоєму тілі.",
       footer_rights: "Всі права захищено.",
-      modal_eyebrow: "birds.cz Fitness",
+
       modal_title_book: "Запис на тренування",
-      modal_desc_book: "Заповніть коротку форму, і тренер зв'яжеться з вами протягом кількох годин.",
+      modal_desc_book: "Заповніть форму, і я зв'яжуся з вами для узгодження залу та зручного часу.",
       form_name: "Ваше ім'я *",
       form_contact: "Телефон або Telegram / WhatsApp *",
-      form_service: "Послуга",
-      form_city: "Місто / Формат",
-      form_note: "Ваші побажання / цілі (необов'язково)",
+      form_service: "Формат тренування",
+      form_city: "Локація",
+      form_note: "Ваші цілі (необов'язково)",
       btn_submit_book: "Підтвердити запис &rarr;",
-      form_success_title: "Дякуємо за запис!",
-      form_success_desc: "Тренер зв'яжеться з вами найближчим часом для узгодження зручного часу.",
+      form_success_title: "Дякую за запис!",
+      form_success_desc: "Я зв'яжуся з вами найближчим часом для узгодження зручного часу.",
       btn_close: "Закрити",
-      modal_title_consult: "Безкоштовна консультація з харчування",
-      modal_desc_consult: "Розберемо ваш поточний раціон, помилки та побудуємо план досягнення результату без стресу.",
-      btn_submit_consult: "Отримати консультацію &rarr;",
-      form_success_consult_desc: "Тренер напише вам у месенджер для проведення консультації."
+
+      nutr_modal_title: "Замовити персональне меню на 30 днів",
+      nutr_modal_desc: "7 днів щоденника харчування + точний розрахунок КБЖВ + меню з фото улюблених страв. Вартість: 3 800 Kč.",
+      nutr_modal_goal: "Головна мета",
+      btn_order_menu_sub: "Замовити план (3 800 Kč) &rarr;",
+      nutr_success_sub: "Я напишу вам у месенджер з інструкцією до 1-го етапу (щоденник спостереження)."
     },
+
     cz: {
       nav_home: "Domů",
-      nav_services: "Služby",
-      nav_results: "Výsledky",
       nav_about: "O mně",
-      nav_prices: "Ceník",
-      nav_reviews: "Recenze",
+      nav_services: "Zaměření",
+      nav_locations: "Formáty a ceník",
+      nav_nutrition: "Stravování",
+      nav_results: "Výsledky",
+      nav_experience: "Zkušenosti",
       nav_contacts: "Kontakty",
       btn_book: "Objednat se &rarr;",
-      hero_title_1: "Hubnutí",
-      hero_title_2: "a tvarování těla",
-      hero_title_3: "bez vyčerpávajících diet",
-      hero_desc: "Tréninky, Pilates, individuální jídelníček a podpora pro vaše zdraví, energii a sebevědomí.",
-      hero_btn_trial: "Zkušební trénink &rarr;",
-      hero_btn_consult: "Konzultace jídelníčku zdarma &rarr;",
-      hero_clients_count: "spokojených klientek",
+      
+      hero_coach_name: "Jevgenija Burdovicyna • Osobní trenérka",
+      hero_title_1: "Tréninky, které",
+      hero_title_2: "se přizpůsobí právě tobě",
+      hero_title_3: "bez drastických diet a šablon",
+      hero_desc: "Individuální přístup k síle, zdravému pohybu, flexibilitě a stravování. Nepracujeme podle šablon — každý trénink přizpůsobuji vašim cílům a aktuální kondici.",
+      hero_tagline: "Vaše tělo. Vaše cíle. Vaše tempo.",
+      hero_btn_book: "Objednat se na trénink &rarr;",
+      hero_btn_nutrition: "Osobní jídelníček (30 dní) &rarr;",
+      hero_trust_label: "aktivní trenérské praxe a výsledků",
       hero_handwritten: "Lepší verze tebe ♡",
-      hero_feat_body: "Štíhlé tělo",
-      hero_feat_energy: "Více energie",
-      hero_feat_health: "Pevnější zdraví",
-      hero_feat_custom: "Individuální přístup",
-      hero_trainer_tag: "Osobní doprovod",
-      services_eyebrow: "SLUŽBY",
-      services_title: "Tréninky a podpora, které fungují",
-      services_desc: "Individuální přístup, moderní metodiky a atmosféra, ve které se budete rádi posouvat dál. Vyberte si svůj formát ještě dnes.",
-      srv_1_name: "Osobní tréninky",
-      srv_1_desc: "Individuální plán na míru vašim cílům a kondici.",
-      srv_2_name: "Fullbody Pilates",
-      srv_2_desc: "Silné tělo, flexibilita a skvělý pocit zdraví.",
-      srv_3_name: "Online vedení",
-      srv_3_desc: "Tréninky, strava a podpora plně online.",
-      srv_4_name: "Individuální jídelníčky",
-      srv_4_desc: "Vyvážený jídelníček bez drastických omezení.",
-      srv_5_name: "Stretching",
-      srv_5_desc: "Větší pohyblivost, krásné držení těla a uvolnění svalů.",
-      tag_offline: "Offline",
-      tag_group_ind: "Skupinové / Individuální",
-      tag_online: "Online",
-      tag_custom_plan: "Individuální plán",
-      tag_custom: "Na míru",
-      tag_goals: "Dle vašich cílů",
-      btn_details: "Podrobnosti",
+      hero_feat_power: "Síla a tvarování postavy",
+      hero_feat_health: "Zdravý pohyb a záda",
+      hero_feat_stretch: "Stretching a provaz",
+      hero_feat_nutr: "Strava bez hladovění",
+
       about_eyebrow: "O MNĚ",
-      about_title: "Váš trenér a partner na cestě k cílům",
-      about_desc: "Pomáhám ženám získat sílu, zdraví a sebevědomí prostřednictvím fitness, Pilates a vyvážené stravy. Můj přístup je postaven na individuální péči, podpoře a reálných výsledcích.",
-      about_coach_label: "Certifikovaná trenérka",
-      about_pil_cert: "Certifikovaná trenérka",
-      about_pil_exp: "Dlouholetá praxe",
-      about_pil_methods: "Moderní metodiky",
-      about_pil_growth: "Neustálý rozvoj",
-      about_btn_more: "Zjistit více &rarr;",
-      results_eyebrow: "VÝSLEDKY",
-      results_title: "Skutečné příběhy — skutečné změny",
-      results_quote: "Nepomáhám jen zhubnout — pomáhám změnit životní styl a cítit se lépe každý den.",
+      about_title: "Jsem pro individuální přístup, ne cvičení podle šablony",
+      about_bio_1: "Jmenuji se <strong>Jevgenija Burdovicyna</strong>. Jsem osobní trenérka a sport je již mnoho let zásadní součástí mého života. Poslední čtyři roky intenzivně trénuji, prohlubuji své znalosti o svalech, biomechanice pohybu a výživě a aplikuji je v praxi s klienty.",
+      about_bio_2: "Nejvíce mě baví hledat přístup ke každému člověku. Za stejným přáním «být fit» stojí různé potřeby: někdo chce zhubnout, někdo zpevnit postavu a někdo touží po flexibilitě nebo úlevě od bolesti zad.",
+      about_bio_3: "Vždy beru v úvahu vaši kondici, únavu i to, jak se cítíte daný den. Zátěž přizpůsobujeme na míru, abyste lépe porozuměli svému tělu a cítili se sebevědomě.",
+      about_pil_1: "Bez přetížení a zranění",
+      about_pil_2: "Adaptace pro každý den",
+      about_pil_3: "Jídelníček dle vašich zvyků",
+      about_pil_4: "Podpora a porozumění tělu",
+
+      dir_eyebrow: "OSOBNÍ TRÉNINKY",
+      dir_title: "Jeden člověk — své cíle — individuální plán",
+      dir_desc: "Mým cílem není nutit vás jít přes bolest, ale najít efektivní, bezpečný a příjemný způsob cvičení.",
+      dir_1_name: "Silový trénink a formování postavy",
+      dir_1_desc: "Pro ty, kteří chtějí zpevnit svaly, získat sílu, zlepšit tělesné proporce nebo bezpečně redukovat váhu.",
+      dir_2_name: "Zdravý pohyb a držení těla",
+      dir_2_desc: "Pro posílení středu těla, zlepšení mobility a péči o záda a šíji v každodenním životě.",
+      dir_3_name: "Stretching a flexibilita",
+      dir_3_desc: "Zlepšujeme rozsah pohybů a postupně směřujeme k provazu — krok za krokem, bezpečně a bez bolesti.",
+      dir_4_name: "Pro začátečníky a dospívající",
+      dir_4_desc: "Správná technika cviků, seznámení se stroji ve fitness a rozvoj kondice odpovídající věku.",
+      tag_relief: "Zpevnění a tonus",
+      tag_slimming: "Hubnutí",
+      tag_back: "Zdravá záda",
+      tag_mobility: "Mobilita",
+      tag_split: "Provaz bez bolesti",
+      tag_starter: "Pozvolný start",
+      tag_safety: "Bezpečnost",
+      btn_details: "Objednat se",
+
+      loc_eyebrow: "KDE MŮŽEME CVIČIT",
+      loc_title: "Formáty a ceník tréninků",
+      loc_sub: "Vyberte si to, co vám vyhovuje: klasické fitness centrum, zcela privátní tělocvična bez cizích lidí nebo online z domova.",
+      loc_gym_title: "Fitness centrum",
+      loc_gym_desc: "Spolupráce s prověřenými posilovnami. Konkrétní místo a čas domlouváme individuálně.",
+      loc_gym_f1: "Vedení a kontrola správné techniky",
+      loc_gym_f2: "Přesné dávkování zátěže",
+      loc_gym_f3: "Organizace celého tréninkového plánu",
+      loc_gym_f4: "Vstup do fitness hradí klient samostatně",
+      btn_book_loc: "Objednat se &rarr;",
+
+      loc_chrudim_badge: "Exkluzivní privátní formát",
+      loc_chrudim_title: "Privátní tělocvična v Chrudimi",
+      loc_chrudim_desc: "<strong>90 minut bez cizích lidí!</strong> Přístup na kód. Pouze vy, trenérka, hudba, sprcha a voda/nápoje bez doplatku.",
+      split_title: "💡 Společný trénink s kamarádkami (až 4 osoby):",
+      btn_book_private: "Rezervovat privátní sál &rarr;",
+
+      loc_online_title: "Online tréninky",
+      loc_online_desc: "Cvičte z domova v reálném čase přes videohovor v Telegramu. Stačí vám podložka a telefon.",
+      loc_onl_f1: "Vysvětlení a video-kontrola techniky",
+      loc_onl_f2: "Cviky s vlastní vahou a pomůckami",
+      loc_onl_f3: "Úspora času při dojíždění",
+      loc_onl_f4: "Maximální komfort domácího prostředí",
+      btn_book_onl: "Objednat se online &rarr;",
+
+      nutr_eyebrow: "OSOBNÍ JÍDELNÍČEK",
+      nutr_title: "Menu sestavené přesně dle vašich potřeb",
+      nutr_intro: "Jídlo má odpovídat vašemu životu, nikoli z něj dělat neustálý stres a odříkání. Sestavuji plán z vašich oblíbených a dostupných surovin.",
+      nstep_1_title: "Týden pozorování",
+      nstep_1_desc: "7 dní posíláte vše, co jíte a pijete. Získáme přesný obraz o vašich reálných návycích.",
+      nstep_2_title: "Hloubková analýza a makroživiny",
+      nstep_2_desc: "Výpočet optimálního příjmu kalorií, bílkovin, tuků a sacharidů pro dosažení vašeho cíle.",
+      nstep_3_title: "Individuální recepty",
+      nstep_3_desc: "Jídla z běžných ingrediencí přizpůsobená vašim chutím bez nutnosti vyvařovat zvlášť.",
+      nstep_4_title: "Hotový plán na 30 dní",
+      nstep_4_desc: "Přehledné menu s fotografiemi porcí. Dny můžete volně přizpůsobovat svému diáři.",
+      nutr_val_desc: "osobní plán na 30 dní",
+      btn_order_menu: "Objednat jídelníček &rarr;",
+      nutr_quote: "Bez drastických diet a hladovění. Pouze chutné, jednoduché a vyvážené jídlo.",
+
+      results_eyebrow: "VÝSLEDKY KLIENTEK",
+      results_title: "Malé krůčky, které tvoří velké změny",
+      results_subtitle: "Důležité je pro mě sledovat postupný rozvoj: úbytek váhy (-10 kg za 4 měsíce), formování postavy i zdravý provaz bez bolesti.",
+      results_quote_box: "Každý člověk má jiné výchozí možnosti a tempo. Cílem je najít formát, ve kterém se budete cítit dobře a dosáhnete výsledků s radostí.",
       compare_tag: "Interaktivní porovnání",
-      compare_title: "Posuňte jezdec a prohlédněte si proměnu klientky",
-      pricing_eyebrow: "CENÍK",
-      pricing_title: "Vyberte si svůj formát",
-      tab_personal: "Osobní tréninky",
-      tab_pilates: "Pilates",
-      tab_online: "Online vedení",
-      tab_nutrition: "Výživa",
-      tab_stretching: "Stretching",
-      pricing_note: "Tréninky probíhají v moderních fitness centrech v Hradci Králové, Pardubicích a Praze. K dispozici je také plně distanční online forma.",
-      reviews_eyebrow: "RECENZE",
-      reviews_title: "Co říkají mé klientky",
-      rev_1_text: "Moc se mi líbí přístup! Tréninky jsou efektivní a atmosféra úžasná. Mám více energie a sebevědomí. Doporučuji z celého srdce! ❤️",
-      rev_1_name: "Alena",
-      rev_1_city: "Hradec Králové",
-      rev_2_text: "Za 4 měsíce jsem shodila 10 kg bez hladovění a stresu! Trenérka mě naučila rozumět svému tělu a jíst vyváženě. Záda mě přestala bolet hned po dvou týdnech.",
-      rev_2_name: "Kateřina",
-      rev_2_city: "Pardubice",
-      rev_3_text: "Pilates a stretching kompletně proměnily můj pocit ze sebe samé. Na každý trénink se těším, maximální pozornost každému cviku.",
-      rev_3_name: "Anna",
-      rev_3_city: "Praha",
+      compare_title: "Posuňte jezdec pro zobrazení proměny",
+
+      exp_eyebrow: "ZKUŠENOSTI A EXPERTÍZA",
+      exp_title: "Sport, komunikace a motivace",
+      exp_text1: "<strong>Skupinové lekce:</strong> V minulosti jsem vedla skupinové tréninky. Byla to skvělá zkušenost plná energie a týmové souhry. Nyní se soustředím na individuální přístup pro maximální efekt.",
+      exp_text2: "<strong>Přednášky a vystoupení:</strong> Vystupovala jsem jako řečnice v <strong>Hradci Králové</strong> na akci pro podnikatelky a aktivní ženy s přednáškou o návycích, sportu a udržitelné motivaci.",
+      exp_b1: "Přednášející na konferencích",
+      exp_b2: "Zkušenosti se skupinami",
+      exp_b3: "4+ roky praxe",
+      exp_gallery_title: "📸 Fotografie ze skupinových lekcí a posiloven:",
+
+      ready_title: "Jste připraveni začít?",
+      ready_desc: "Není třeba čekat na pondělí ani na ideální formu. Začněte tím, co je pro vás důležité: síla, flexibilita, proměna postavy či vyvážená strava.",
+      ready_quote: "Vaše tělo. Vaše cíle. Vaše tempo. Pomohu vám jít kupředu.",
+      btn_start_journey: "Začít svou cestu &rarr;",
+
       contacts_eyebrow: "KONTAKTY",
-      contacts_title: "Tři města — více možností pro vás",
-      city_prague: "Praha",
+      contacts_title: "Místa tréninků a spojení",
+      contacts_lead: "Napište mi do libovolného chatu nebo odešlete formulář — společně probereme vaše cíle a zvolíme nejvhodnější formát.",
       map_label: "Lokality v ČR",
-      footer_tagline: "Krása, zdraví a sebevědomí ve vašem těle.",
       footer_rights: "Všechna práva vyhrazena.",
-      modal_eyebrow: "birds.cz Fitness",
+
       modal_title_book: "Rezervace tréninku",
-      modal_desc_book: "Vyplňte krátký formulář a trenérka vás bude kontaktovat během několika hodin.",
+      modal_desc_book: "Vyplňte krátký formulář a já se vám ozvu pro domluvení termínu a fitness centra.",
       form_name: "Vaše jméno *",
       form_contact: "Telefon nebo Telegram / WhatsApp *",
-      form_service: "Služba",
-      form_city: "Město / Formát",
-      form_note: "Vaše cíle / poznámka (volitelné)",
+      form_service: "Formát tréninku",
+      form_city: "Město / Místo",
+      form_note: "Vaše cíle (volitelné)",
       btn_submit_book: "Odeslat rezervaci &rarr;",
-      form_success_title: "Děkujeme za rezervaci!",
-      form_success_desc: "Trenérka se s vámi brzy spojí pro domluvení vhodného termínu.",
+      form_success_title: "Děkuji za zprávu!",
+      form_success_desc: "Ozvu se vám co nejdříve pro dohodnutí termínu.",
       btn_close: "Zavřít",
-      modal_title_consult: "Konzultace jídelníčku zdarma",
-      modal_desc_consult: "Probereme váš aktuální jídelníček, chyby a sestavíme plán k dosažení výsledků bez zbytečného stresu.",
-      btn_submit_consult: "Získat konzultaci &rarr;",
-      form_success_consult_desc: "Trenérka se vám ozve pro dohodnutí online konzultace."
+
+      nutr_modal_title: "Objednat osobní menu na 30 dní",
+      nutr_modal_desc: "7denní stravovací deník + detailní výpočet makroživin + fotomenu na 30 dní. Cena: 3 800 Kč.",
+      nutr_modal_goal: "Hlavní cíl",
+      btn_order_menu_sub: "Objednat plán (3 800 Kč) &rarr;",
+      nutr_success_sub: "Ozvu se vám do chatu s instrukcemi k 1. kroku (záznam jídelníčku)."
     }
   };
 
@@ -219,377 +307,20 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
-
-    renderPricingCards();
   }
 
-  // Language switch event
-  document.getElementById('langSwitch').addEventListener('click', (e) => {
-    const btn = e.target.closest('.lang-btn');
-    if (!btn) return;
-    const lang = btn.getAttribute('data-lang');
-    if (lang !== currentLang) {
-      applyLanguage(lang);
-    }
-  });
-
-  // ==================== PRICING PACKAGES DATA ====================
-  const pricingData = {
-    personal: [
-      {
-        title_ua: "Разове тренування",
-        title_cz: "Jednorázový trénink",
-        sub_ua: "60 хв",
-        sub_cz: "60 min",
-        price: "800 Kč",
-        featured: false,
-        features_ua: [
-          "Індивідуальний розбір техніки",
-          "Персональна програма на заняття",
-          "Корисні рекомендації тренера"
-        ],
-        features_cz: [
-          "Individuální náprava techniky",
-          "Plán tréninku na míru",
-          "Užitečná doporučení trenérky"
-        ]
-      },
-      {
-        title_ua: "Абонемент 4 тренування",
-        title_cz: "Permanentka 4 tréninky",
-        sub_ua: "(1 місяць)",
-        sub_cz: "(1 měsíc)",
-        price: "2 800 Kč",
-        featured: false,
-        features_ua: [
-          "4 персональних заняття (700 Kč/зан.)",
-          "Коригування техніки виконання",
-          "Базовий аналіз раціону",
-          "Гнучкий графік тренувань"
-        ],
-        features_cz: [
-          "4 individuální lekce (700 Kč/lekce)",
-          "Kontrola správné techniky",
-          "Základní analýza stravy",
-          "Flexibilní plánování termínů"
-        ]
-      },
-      {
-        title_ua: "Абонемент 8 тренувань",
-        title_cz: "Permanentka 8 tréninků",
-        sub_ua: "(2 місяці)",
-        sub_cz: "(2 měsíce)",
-        price: "5 200 Kč",
-        featured: true,
-        badge_ua: "Найпопулярніший",
-        badge_cz: "Nejoblíbenější",
-        features_ua: [
-          "8 персональних занять (650 Kč/зан.)",
-          "Повний план та коригування харчування",
-          "Постійний контроль замірів та ваги",
-          "Підтримка в месенджерах 24/7"
-        ],
-        features_cz: [
-          "8 osobních tréninků (650 Kč/lekce)",
-          "Kompletní jídelní plán a úpravy",
-          "Pravidelná kontrola měr a váhy",
-          "Podpora v chatu 24/7"
-        ]
+  // Language switch
+  const langSwitch = document.getElementById('langSwitch');
+  if (langSwitch) {
+    langSwitch.addEventListener('click', (e) => {
+      const btn = e.target.closest('.lang-btn');
+      if (!btn) return;
+      const lang = btn.getAttribute('data-lang');
+      if (lang !== currentLang) {
+        applyLanguage(lang);
       }
-    ],
-    pilates: [
-      {
-        title_ua: "Разове Pilates",
-        title_cz: "Jednorázové Pilates",
-        sub_ua: "60 хв",
-        sub_cz: "60 min",
-        price: "550 Kč",
-        featured: false,
-        features_ua: [
-          "Зміцнення глибоких м'язів кора",
-          "Робота над поставою та диханням",
-          "Безпечне навантаження на спину"
-        ],
-        features_cz: [
-          "Zpevnění hlubokého stabilizačního systému",
-          "Práce na držení těla a dechu",
-          "Šetrné zatížení páteře"
-        ]
-      },
-      {
-        title_ua: "Абонемент 4 Pilates",
-        title_cz: "Permanentka 4 Pilates",
-        sub_ua: "(1 місяць)",
-        sub_cz: "(1 měsíc)",
-        price: "2 000 Kč",
-        featured: false,
-        features_ua: [
-          "4 заняття (500 Kč/зан.)",
-          "Формування підтягнутого пресу",
-          "Зняття напруги в шиї та плечах"
-        ],
-        features_cz: [
-          "4 lekce (500 Kč/lekce)",
-          "Zpevnění bříška a nohou",
-          "Úleva od napětí v šíji a zádech"
-        ]
-      },
-      {
-        title_ua: "Курс 8 Pilates",
-        title_cz: "Balíček 8 Pilates",
-        sub_ua: "(2 місяці)",
-        sub_cz: "(2 měsíce)",
-        price: "3 800 Kč",
-        featured: true,
-        badge_ua: "Кращий вибір",
-        badge_cz: "Nejlepší volba",
-        features_ua: [
-          "8 занять (475 Kč/зан.)",
-          "Помітний рельєф і гнучкість",
-          "Індивідуальні домашні комплекси",
-          "Постійна підтримка тренера"
-        ],
-        features_cz: [
-          "8 lekcí (475 Kč/lekce)",
-          "Viditelné zpevnění a flexibilita",
-          "Domácí protahovací sestava",
-          "Osobní vedení trenérky"
-        ]
-      }
-    ],
-    online: [
-      {
-        title_ua: "Онлайн-старт",
-        title_cz: "Online Start",
-        sub_ua: "2 тижні",
-        sub_cz: "2 týdny",
-        price: "1 500 Kč",
-        featured: false,
-        features_ua: [
-          "Індивідуальна програма тренувань",
-          "Аналіз техніки по відео",
-          "Рекомендації по харчуванню"
-        ],
-        features_cz: [
-          "Tréninkový plán na míru",
-          "Kontrola techniky přes video",
-          "Základní nutriční doporučení"
-        ]
-      },
-      {
-        title_ua: "Повний онлайн-супровід",
-        title_cz: "Online vedení Premium",
-        sub_ua: "1 місяць",
-        sub_cz: "1 měsíc",
-        price: "2 900 Kč",
-        featured: true,
-        badge_ua: "Максимум результату",
-        badge_cz: "Maximální efekt",
-        features_ua: [
-          "Індивідуальний тренувальний план",
-          "Повний щоденний контроль раціону",
-          "Щотижневі онлайн-консультації",
-          "Зв'язок у WhatsApp/Telegram щодня"
-        ],
-        features_cz: [
-          "Individuální tréninkový rozpis",
-          "Každodenní kontrola jídelníčku",
-          "Týdenní online konzultace",
-          "Podpora v chatu 7 dní v týdnu"
-        ]
-      },
-      {
-        title_ua: "Онлайн VIP (3 місяці)",
-        title_cz: "Online VIP (3 měsíce)",
-        sub_ua: "Повна трансформація",
-        sub_cz: "Kompletní proměna",
-        price: "7 500 Kč",
-        featured: false,
-        features_ua: [
-          "Гарантована трансформація тіла",
-          "Повне ведення харчування та сну",
-          "Прямий пріоритетний зв'язок 24/7",
-          "Знижки на очні зустрічі"
-        ],
-        features_cz: [
-          "Garantovaná proměna postavy",
-          "Komplexní vedení stravy a regenerace",
-          "Prioritní podpora 24/7",
-          "Slevy na osobní tréninky"
-        ]
-      }
-    ],
-    nutrition: [
-      {
-        title_ua: "Експрес-розбір раціону",
-        title_cz: "Expresní analýza stravy",
-        sub_ua: "Консультація 60 хв",
-        sub_cz: "Konzultace 60 min",
-        price: "900 Kč",
-        featured: false,
-        features_ua: [
-          "Аналіз поточних харчових звичок",
-          "Пошук прихованих калорій",
-          "План простих перших кроків"
-        ],
-        features_cz: [
-          "Rozbor současného stravování",
-          "Odhalení skrytých kalorií",
-          "Konkrétní kroky pro rychlý start"
-        ]
-      },
-      {
-        title_ua: "Індивідуальний раціон",
-        title_cz: "Jídelníček na míru",
-        sub_ua: "На 1 місяць",
-        sub_cz: "Na 1 měsíc",
-        price: "2 200 Kč",
-        featured: true,
-        badge_ua: "Топ вибір",
-        badge_cz: "Top volba",
-        features_ua: [
-          "Розрахунок КБЖВ під ваші цілі",
-          "Прості рецепти зі звичайних продуктів",
-          "Без голодування та відмов від улюбленого",
-          "Коригування через 2 тижні"
-        ],
-        features_cz: [
-          "Přesný výpočet makroživin",
-          "Snadné recepty z dostupných surovin",
-          "Bez hladovění a zákazů",
-          "Korekce po 2 týdnech"
-        ]
-      },
-      {
-        title_ua: "Супровід харчування",
-        title_cz: "Nutriční mentoring",
-        sub_ua: "2 місяці",
-        sub_cz: "2 měsíce",
-        price: "3 900 Kč",
-        featured: false,
-        features_ua: [
-          "Щоденний розбір тарілок у чаті",
-          "Психологія харчової поведінки",
-          "Формування стійких звичок на все життя"
-        ],
-        features_cz: [
-          "Každodenní kontrola talířů v chatu",
-          "Práce s chutěmi a psychologií",
-          "Trvalá změna návyků na celý život"
-        ]
-      }
-    ],
-    stretching: [
-      {
-        title_ua: "Разовий стретчинг",
-        title_cz: "Jednorázový stretching",
-        sub_ua: "60 хв",
-        sub_cz: "60 min",
-        price: "600 Kč",
-        featured: false,
-        features_ua: [
-          "М'яка розтяжка всього тіла",
-          "Поліпшення рухливості суглобів",
-          "Зняття м'язових затисків"
-        ],
-        features_cz: [
-          "Jemné protažení celého těla",
-          "Zvýšení kloubní mobility",
-          "Uvolnění svalových blokád"
-        ]
-      },
-      {
-        title_ua: "Абонемент 4 заняття",
-        title_cz: "Permanentka 4 lekce",
-        sub_ua: "(1 місяць)",
-        sub_cz: "(1 měsíc)",
-        price: "2 200 Kč",
-        featured: false,
-        features_ua: [
-          "4 заняття (550 Kč/зан.)",
-          "Красива грація та постава",
-          "Підготовка до шпагату"
-        ],
-        features_cz: [
-          "4 lekce (550 Kč/lekce)",
-          "Ladné držení těla a chůze",
-          "Příprava na provaz a rozštěp"
-        ]
-      },
-      {
-        title_ua: "Абонемент 8 занять",
-        title_cz: "Permanentka 8 lekcí",
-        sub_ua: "(2 місяці)",
-        sub_cz: "(2 měsíce)",
-        price: "4 000 Kč",
-        featured: true,
-        badge_ua: "Гнучкість та релакс",
-        badge_cz: "Flexibilita a relax",
-        features_ua: [
-          "8 занять (500 Kč/зан.)",
-          "Максимальна гнучкість без болю",
-          "Легкість у кожному русі",
-          "Індивідуальний супровід"
-        ],
-        features_cz: [
-          "8 lekcí (500 Kč/lekce)",
-          "Maximální rozsah pohybu bez bolesti",
-          "Lehkost při každém kroku",
-          "Individuální asistence"
-        ]
-      }
-    ]
-  };
-
-  let currentCategory = 'personal';
-
-  function renderPricingCards() {
-    const container = document.getElementById('pricingCardsGrid');
-    if (!container) return;
-    const cards = pricingData[currentCategory] || pricingData.personal;
-
-    container.innerHTML = cards.map(item => {
-      const title = currentLang === 'cz' ? item.title_cz : item.title_ua;
-      const sub = currentLang === 'cz' ? item.sub_cz : item.sub_ua;
-      const features = currentLang === 'cz' ? item.features_cz : item.features_ua;
-      const badge = item.featured ? (currentLang === 'cz' ? item.badge_cz : item.badge_ua) : '';
-      const bookBtnText = currentLang === 'cz' ? 'Objednat se &rarr;' : 'Записатися &rarr;';
-
-      return `
-        <div class="price-card ${item.featured ? 'featured' : ''}">
-          ${item.featured ? `<div class="price-featured-badge">${badge}</div>` : ''}
-          <div class="price-card-title">${title}</div>
-          <div class="price-card-sub">${sub}</div>
-          <div class="price-amount-box">
-            <span class="price-amount">${item.price}</span>
-          </div>
-          <ul class="price-features-list">
-            ${features.map(f => `<li><i class="fa-solid fa-check"></i> ${f}</li>`).join('')}
-          </ul>
-          <button class="btn ${item.featured ? 'btn-primary' : 'btn-outline-rose'} btn-block open-modal-btn" 
-                  data-target="bookingModal" 
-                  data-service="${title}">
-            ${bookBtnText}
-          </button>
-        </div>
-      `;
-    }).join('');
-  }
-
-  // Pricing tabs click
-  const pricingTabs = document.getElementById('pricingTabs');
-  if (pricingTabs) {
-    pricingTabs.addEventListener('click', (e) => {
-      const tab = e.target.closest('.pricing-tab');
-      if (!tab) return;
-      document.querySelectorAll('.pricing-tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      currentCategory = tab.getAttribute('data-category');
-      renderPricingCards();
     });
   }
-
-  renderPricingCards();
 
   // ==================== INTERACTIVE COMPARE SLIDER ====================
   const compareSlider = document.getElementById('compareSlider');
@@ -639,51 +370,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ==================== SERVICES HORIZONTAL CAROUSEL ====================
-  const srvContainer = document.getElementById('servicesScrollContainer');
-  const srvPrev = document.getElementById('servicePrev');
-  const srvNext = document.getElementById('serviceNext');
-
-  if (srvContainer && srvPrev && srvNext) {
-    srvPrev.addEventListener('click', () => {
-      srvContainer.scrollBy({ left: -260, behavior: 'smooth' });
-    });
-    srvNext.addEventListener('click', () => {
-      srvContainer.scrollBy({ left: 260, behavior: 'smooth' });
-    });
-  }
-
-  // ==================== REVIEWS CAROUSEL ====================
-  const revTrack = document.getElementById('reviewsTrack');
-  const revPrev = document.getElementById('reviewPrev');
-  const revNext = document.getElementById('reviewNext');
-
-  if (revTrack && revPrev && revNext) {
-    let revIndex = 0;
-    const cards = revTrack.children;
-    const total = cards.length;
-
-    function updateReviews() {
-      if (window.innerWidth <= 1024) return;
-      const offset = -(revIndex * 33.333);
-      revTrack.style.transform = `translateX(${offset}%)`;
-    }
-
-    revPrev.addEventListener('click', () => {
-      if (revIndex > 0) {
-        revIndex--;
-        updateReviews();
-      }
-    });
-
-    revNext.addEventListener('click', () => {
-      if (revIndex < total - 3) {
-        revIndex++;
-        updateReviews();
-      }
-    });
-  }
-
   // ==================== MODALS LOGIC ====================
   function openModal(modalId) {
     const modal = document.getElementById(modalId);
@@ -699,7 +385,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.addEventListener('click', (e) => {
-    // Open modal button
     const openBtn = e.target.closest('.open-modal-btn');
     if (openBtn) {
       const targetId = openBtn.getAttribute('data-target');
@@ -707,7 +392,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (service) {
         const select = document.getElementById('bookService');
         if (select) {
-          // Attempt to match option
           for (let opt of select.options) {
             if (opt.value.includes(service) || service.includes(opt.value)) {
               opt.selected = true;
@@ -720,14 +404,12 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Close button
     if (e.target.closest('.modal-close-btn') || e.target.classList.contains('modal-backdrop')) {
       const activeModal = document.querySelector('.modal-backdrop.active');
       if (activeModal) closeModal(activeModal);
     }
   });
 
-  // ESC to close
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       const activeModal = document.querySelector('.modal-backdrop.active');
@@ -748,14 +430,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Consultation Form Submission
-  const consultForm = document.getElementById('consultationForm');
-  const consultSuccess = document.getElementById('consultationSuccess');
-  if (consultForm && consultSuccess) {
-    consultForm.addEventListener('submit', (e) => {
+  // Nutrition Form Submission
+  const nutritionForm = document.getElementById('nutritionForm');
+  const nutritionSuccess = document.getElementById('nutritionSuccess');
+  if (nutritionForm && nutritionSuccess) {
+    nutritionForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      consultForm.style.display = 'none';
-      consultSuccess.style.display = 'block';
+      nutritionForm.style.display = 'none';
+      nutritionSuccess.style.display = 'block';
     });
   }
 
@@ -765,11 +447,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxCaption = document.getElementById('lightboxCaption');
   const lightboxClose = document.getElementById('lightboxClose');
 
-  document.querySelectorAll('.result-card.zoomable').forEach(card => {
+  document.querySelectorAll('.zoomable').forEach(card => {
     card.addEventListener('click', () => {
       const imgUrl = card.getAttribute('data-img');
       const caption = card.getAttribute('data-caption');
-      if (lightbox && lightboxImg) {
+      if (lightbox && lightboxImg && imgUrl) {
         lightboxImg.src = imgUrl;
         if (lightboxCaption) lightboxCaption.textContent = caption || '';
         lightbox.classList.add('active');
@@ -794,7 +476,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ==================== MOBILE DRAWER & NAVBAR SCROLL ====================
+  // ==================== NAVBAR SCROLL & MOBILE DRAWER ====================
   const header = document.getElementById('header');
   const mobileBtn = document.getElementById('mobileMenuBtn');
   const mobileDrawer = document.getElementById('mobileDrawer');
