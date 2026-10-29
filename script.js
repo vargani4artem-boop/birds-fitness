@@ -106,10 +106,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
       results_eyebrow: "РЕЗУЛЬТАТИ КЛІЄНТІВ",
       results_title: "Маленькі кроки, які складаються у великі зміни",
-      results_subtitle: "Для мене важливо бачити, як люди поступово наближаються до своїх цілей: зниження ваги (наприклад, -10 кг за 4 місяці), рельєф, підтягнуте тіло та плавний шпагат без травм.",
+      results_subtitle: "Для мене важливо бачити, як люди поступово наближаються до своїх цілей: реальне зниження ваги (-10 кг за 4 місяці), тонус м'язів, здорова постава та шпагат без болю.",
       results_quote_box: "Кожна людина має свій початковий рівень, темп і особливості. Я не змушую працювати через силу — ми разом знаходимо формат, у якому вам комфортно перемагати щодня.",
+      filter_all: "Всі результати (6)",
+      filter_weight: "🔥 Зниження ваги (-10 кг)",
+      filter_teens: "✨ Постава та підлітки (-5 кг)",
+      filter_split: "🧘‍♀️ Гнучкість та шпагат",
+      autoplay_active: "Автоперемикання: УВІМКНЕНО (4с)",
+      autoplay_paused: "Автоперемикання: ПАУЗА",
+      res_tag_weight: "🔥 Схуднення & Рельєф",
+      res_tag_teens: "✨ Постава та підлітки",
+      res_tag_split: "🧘‍♀️ Гнучкість та розтяжка",
+      res_s1_title: "-10 кг за 4 місяці (вид збоку)",
+      res_s1_desc: "Індивідуальний підбір вправ та корекція харчування без суворих дієт. Помітне зменшення об'єму талії, плоский живіт і легкість рухів.",
+      res_s2_title: "-10 кг за 4 місяці (вид спереду)",
+      res_s2_desc: "Підтягнутий рельєф м'язів, помітне зменшення об'ємів у стегнах, гармонійні пропорції тіла та повернення впевненості у собі.",
+      res_s3_title: "Постава та фігура підлітка (профіль)",
+      res_s3_desc: "Розкриття плечового поясу, вирівнювання лінії постави, зміцнення м'язів спини та підтягнутий животик без перевантажень.",
+      res_s4_title: "Тонус та техніка вправ (анфас)",
+      res_s4_desc: "Освоєння базових вправ із гантелями, плавне зменшення об'ємів, зміцнення суглобів та здоровий розвиток молодого організму.",
+      res_s5_title: "Поздовжній шпагат з йога-блоками",
+      res_s5_desc: "Покрокове збільшення амплітуди рухів за допомогою блоків, без сліз та травм — виключно плавна та безпечна робота зі зв'язками.",
+      res_s6_title: "Еволюція гнучкості: від нуля до шпагату",
+      res_s6_desc: "Від скутості зв'язок на перших заняттях до впевненого глибокого розкриття тазостегнових суглобів у комфортному індивідуальному темпі.",
+      btn_zoom_photo: "Збільшити фото &rarr;",
       compare_tag: "Інтерактивне порівняння",
       compare_title: "Потягніть повзунок, щоб побачити прогрес клієнтки",
+      compare_auto_text: "Авто-показ",
+      compare_auto_stop: "Зупинити",
+      compare_tab_1: "🔥 -10 кг (Анфас: До / Після)",
+      compare_tab_2: "🔥 -10 кг (Профіль: До / Після)",
+      compare_tab_3: "✨ Підліток (Постава: До / Після)",
+      compare_before_badge: "ДО",
+      compare_after_badge: "ПІСЛЯ (-10 КГ)",
+      compare_hint: "👈 Рухайте повзунок вліво або вправо, або запустіть авто-показ 👉",
+      coach_role_quote: "Персональний тренер & нутриціолог",
 
       exp_eyebrow: "ДОСВІД ТА ЕКСПЕРТНІСТЬ",
       exp_title: "Спорт, спілкування та мотивація",
@@ -248,10 +279,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
       results_eyebrow: "VÝSLEDKY KLIENTEK",
       results_title: "Malé krůčky, které tvoří velké změny",
-      results_subtitle: "Důležité je pro mě sledovat postupný rozvoj: úbytek váhy (-10 kg za 4 měsíce), formování postavy i zdravý provaz bez bolesti.",
+      results_subtitle: "Důležité je pro mě sledovat postupný rozvoj: reálný úbytek váhy (-10 kg za 4 měsíce), formování postavy, zdravé držení těla a provaz bez bolesti.",
       results_quote_box: "Každý člověk má jiné výchozí možnosti a tempo. Cílem je najít formát, ve kterém se budete cítit dobře a dosáhnete výsledků s radostí.",
+      filter_all: "Všechny výsledky (6)",
+      filter_weight: "🔥 Úbytek váhy (-10 kg)",
+      filter_teens: "✨ Postura a dospívající (-5 kg)",
+      filter_split: "🧘‍♀️ Flexibilita a provaz",
+      autoplay_active: "Autopřehrávání: ZAPNUTO (4s)",
+      autoplay_paused: "Autopřehrávání: POZASTAVENO",
+      res_tag_weight: "🔥 Hubnutí & Zpevnění",
+      res_tag_teens: "✨ Postura a dospívající",
+      res_tag_split: "🧘‍♀️ Flexibilita & strečink",
+      res_s1_title: "-10 kg za 4 měsíce (profil)",
+      res_s1_desc: "Individuální trénink a úprava jídelníčku bez drastických diet. Výrazný úbytek centimetrů v pase, ploché bříško a lehkost pohybu.",
+      res_s2_title: "-10 kg za 4 měsíce (čelní pohled)",
+      res_s2_desc: "Zpevnění svalů, štíhlejší stehna, vyvážené proporce a získání sebedůvěry bez hladovění.",
+      res_s3_title: "Program pro dospívající: postura (profil)",
+      res_s3_desc: "Otevření hrudníku, narovnání zad, posílení středu těla a přirozeně ploché bříško bez přetížení.",
+      res_s4_title: "Program pro dospívající: technika (čelní)",
+      res_s4_desc: "Osvojení bezpečných cviků s činkami, celkové zpevnění svalů a harmonický fyzický rozvoj.",
+      res_s5_title: "Podélný provaz s jóga bloky",
+      res_s5_desc: "Postupné jemné protahování pomocí jóga bloků bez slz a rizika zranění — respekt k možnostem těla.",
+      res_s6_title: "Rozvoj mobility: od nuly k provazu",
+      res_s6_desc: "Od počátečního napětí k jistému a hlubokému provazu v bezpečném tempu pod dohledem trenérky.",
+      btn_zoom_photo: "Zvětšit fotografii &rarr;",
       compare_tag: "Interaktivní porovnání",
       compare_title: "Posuňte jezdec pro zobrazení proměny",
+      compare_auto_text: "Ukázka proměny",
+      compare_auto_stop: "Zastavit",
+      compare_tab_1: "🔥 -10 kg (Čelní: Před / Po)",
+      compare_tab_2: "🔥 -10 kg (Profil: Před / Po)",
+      compare_tab_3: "✨ Dospívající (Postura: Před / Po)",
+      compare_before_badge: "PŘED",
+      compare_after_badge: "PO (-10 KG)",
+      compare_hint: "👈 Posouvejte jezdec doleva či doprava, nebo spusťte automatickou ukázku 👉",
+      coach_role_quote: "Osobní trenérka & nutriční poradkyně",
 
       exp_eyebrow: "ZKUŠENOSTI A EXPERTÍZA",
       exp_title: "Sport, komunikace a motivace",
@@ -307,6 +369,25 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
+
+    // Update dynamic carousel & compare state buttons
+    const autoPlayBtnText = document.getElementById('autoPlayBtnText');
+    if (autoPlayBtnText && typeof isAutoPlay !== 'undefined') {
+      autoPlayBtnText.textContent = isAutoPlay ? (translations[lang].autoplay_active || 'Автоперемикання: УВІМКНЕНО (4с)') : (translations[lang].autoplay_paused || 'Автоперемикання: ПАУЗА');
+    }
+
+    const compareAutoText = document.getElementById('compareAutoText');
+    if (compareAutoText && typeof compareAutoAnimId !== 'undefined') {
+      compareAutoText.textContent = compareAutoAnimId ? (translations[lang].compare_auto_stop || 'Зупинити') : (translations[lang].compare_auto_text || 'Авто-показ');
+    }
+
+    const afterFlag = document.querySelector('.compare-badge-flag.after-flag');
+    if (afterFlag && typeof comparePresets !== 'undefined' && typeof activeCompareKey !== 'undefined') {
+      const preset = comparePresets[activeCompareKey];
+      if (preset) {
+        afterFlag.textContent = (lang === 'cz') ? preset.badgeCZ : preset.badgeUA;
+      }
+    }
   }
 
   // Language switch
@@ -322,25 +403,340 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ==================== RESULTS CAROUSEL LOGIC ====================
+  const carouselViewport = document.getElementById('carouselViewport');
+  const carouselTrack = document.getElementById('carouselTrack');
+  const carouselCards = carouselTrack ? Array.from(carouselTrack.children) : [];
+  const prevBtn = document.getElementById('carouselPrevBtn');
+  const nextBtn = document.getElementById('carouselNextBtn');
+  const autoPlayBtn = document.getElementById('carouselAutoPlayBtn');
+  const autoPlayIcon = document.getElementById('autoPlayIcon');
+  const autoPlayBtnText = document.getElementById('autoPlayBtnText');
+  const progressBar = document.getElementById('carouselProgressBar');
+  const dots = document.querySelectorAll('.carousel-dot');
+  const filterBtns = document.querySelectorAll('.res-filter-btn');
+
+  let currentSlide = 0;
+  let isAutoPlay = true;
+  const SLIDE_DURATION = 4000;
+  const PROGRESS_TICK = 40;
+  let progressElapsed = 0;
+  let isHovered = false;
+
+  function getVisibleCardsCount() {
+    const w = window.innerWidth;
+    if (w <= 768) return 1;
+    if (w <= 1024) return 2;
+    return 3;
+  }
+
+  function getMaxSlideIndex() {
+    const visible = getVisibleCardsCount();
+    return Math.max(0, carouselCards.length - visible);
+  }
+
+  function updateCarousel() {
+    if (!carouselTrack || carouselCards.length === 0) return;
+    
+    const maxIdx = getMaxSlideIndex();
+    if (currentSlide > maxIdx) currentSlide = 0;
+    if (currentSlide < 0) currentSlide = maxIdx;
+
+    const card = carouselCards[0];
+    const cardWidth = card.getBoundingClientRect().width;
+    const gap = 20;
+    const offset = currentSlide * (cardWidth + gap);
+
+    carouselTrack.style.transform = `translateX(-${offset}px)`;
+
+    dots.forEach((dot, idx) => {
+      if (idx === currentSlide) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+
+    progressElapsed = 0;
+    if (progressBar) progressBar.style.width = '0%';
+  }
+
+  function nextSlide() {
+    const maxIdx = getMaxSlideIndex();
+    if (currentSlide >= maxIdx) {
+      currentSlide = 0;
+    } else {
+      currentSlide++;
+    }
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    const maxIdx = getMaxSlideIndex();
+    if (currentSlide <= 0) {
+      currentSlide = maxIdx;
+    } else {
+      currentSlide--;
+    }
+    updateCarousel();
+  }
+
+  function startAutoPlay() {
+    isAutoPlay = true;
+    if (autoPlayBtn) {
+      autoPlayBtn.classList.add('is-playing');
+      if (autoPlayIcon) {
+        autoPlayIcon.className = 'fa-solid fa-pause';
+      }
+      if (autoPlayBtnText) {
+        const lang = currentLang;
+        autoPlayBtnText.textContent = translations[lang].autoplay_active || 'Автоперемикання: УВІМКНЕНО (4с)';
+      }
+    }
+  }
+
+  function stopAutoPlay() {
+    isAutoPlay = false;
+    if (autoPlayBtn) {
+      autoPlayBtn.classList.remove('is-playing');
+      if (autoPlayIcon) {
+        autoPlayIcon.className = 'fa-solid fa-play';
+      }
+      if (autoPlayBtnText) {
+        const lang = currentLang;
+        autoPlayBtnText.textContent = translations[lang].autoplay_paused || 'Автоперемикання: ПАУЗА';
+      }
+    }
+    if (progressBar) progressBar.style.width = '0%';
+    progressElapsed = 0;
+  }
+
+  function toggleAutoPlay() {
+    if (isAutoPlay) {
+      stopAutoPlay();
+    } else {
+      startAutoPlay();
+    }
+  }
+
+  // Progress and Auto-Play Loop
+  setInterval(() => {
+    if (!isAutoPlay || isHovered) return;
+    progressElapsed += PROGRESS_TICK;
+    const percent = Math.min(100, (progressElapsed / SLIDE_DURATION) * 100);
+    if (progressBar) {
+      progressBar.style.width = `${percent}%`;
+    }
+    if (progressElapsed >= SLIDE_DURATION) {
+      nextSlide();
+    }
+  }, PROGRESS_TICK);
+
+  if (autoPlayBtn) {
+    autoPlayBtn.addEventListener('click', toggleAutoPlay);
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      progressElapsed = 0;
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      progressElapsed = 0;
+    });
+  }
+
+  // Pause on hover
+  if (carouselViewport) {
+    carouselViewport.addEventListener('mouseenter', () => {
+      isHovered = true;
+    });
+    carouselViewport.addEventListener('mouseleave', () => {
+      isHovered = false;
+    });
+
+    // Touch swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    carouselViewport.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carouselViewport.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchEndX - touchStartX;
+      if (Math.abs(diff) > 40) {
+        if (diff < 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+        progressElapsed = 0;
+      }
+    }, { passive: true });
+  }
+
+  // Dots click
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      const idx = parseInt(dot.getAttribute('data-index'), 10);
+      if (!isNaN(idx)) {
+        currentSlide = idx;
+        updateCarousel();
+        progressElapsed = 0;
+      }
+    });
+  });
+
+  // Category filter tabs
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.getAttribute('data-filter');
+
+      if (filter === 'all' || filter === 'weight') {
+        currentSlide = 0;
+      } else if (filter === 'teens') {
+        currentSlide = 2;
+      } else if (filter === 'split') {
+        currentSlide = 4;
+      }
+      updateCarousel();
+      progressElapsed = 0;
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    updateCarousel();
+  });
+
+  updateCarousel();
+
   // ==================== INTERACTIVE COMPARE SLIDER ====================
   const compareSlider = document.getElementById('compareSlider');
   const compareOverlay = document.getElementById('compareOverlay');
   const compareHandle = document.getElementById('compareHandle');
+  const compareImgBefore = document.getElementById('compareImgBefore');
+  const compareImgAfter = document.getElementById('compareImgAfter');
+  const compareTabBtns = document.querySelectorAll('.compare-tab-btn');
+  const compareAutoBtn = document.getElementById('compareAutoBtn');
+  const compareAutoText = document.getElementById('compareAutoText');
+  const compareAutoIcon = document.getElementById('compareAutoIcon');
+  const afterFlag = document.querySelector('.compare-badge-flag.after-flag');
+
+  const comparePresets = {
+    front: {
+      before: 'assets/images/compare_10kg_before.jpg',
+      after: 'assets/images/compare_10kg_after.jpg',
+      badgeUA: 'ПІСЛЯ (-10 КГ)',
+      badgeCZ: 'PO (-10 KG)'
+    },
+    side: {
+      before: 'assets/images/compare_side_before.jpg',
+      after: 'assets/images/compare_side_after.jpg',
+      badgeUA: 'ПІСЛЯ (-10 КГ)',
+      badgeCZ: 'PO (-10 KG)'
+    },
+    teen: {
+      before: 'assets/images/compare_teen_before.jpg',
+      after: 'assets/images/compare_teen_after.jpg',
+      badgeUA: 'ПІСЛЯ (-5 КГ)',
+      badgeCZ: 'PO (-5 KG)'
+    }
+  };
+
+  let activeCompareKey = 'front';
+  let compareAutoAnimId = null;
+  let autoAnimAngle = 0;
+
+  function setSliderPosition(x) {
+    if (!compareSlider || !compareOverlay || !compareHandle) return;
+    const rect = compareSlider.getBoundingClientRect();
+    let pos = (x - rect.left) / rect.width;
+    if (pos < 0.05) pos = 0.05;
+    if (pos > 0.95) pos = 0.95;
+    const percent = pos * 100;
+    compareOverlay.style.width = `${percent}%`;
+    compareHandle.style.left = `${percent}%`;
+  }
+
+  function setSliderPercent(percent) {
+    if (!compareOverlay || !compareHandle) return;
+    compareOverlay.style.width = `${percent}%`;
+    compareHandle.style.left = `${percent}%`;
+  }
+
+  function stopCompareAuto() {
+    if (compareAutoAnimId) {
+      cancelAnimationFrame(compareAutoAnimId);
+      compareAutoAnimId = null;
+    }
+    if (compareAutoBtn) {
+      compareAutoBtn.classList.remove('is-active');
+      if (compareAutoIcon) compareAutoIcon.className = 'fa-solid fa-play';
+      if (compareAutoText) {
+        compareAutoText.textContent = translations[currentLang].compare_auto_text || 'Авто-показ';
+      }
+    }
+  }
+
+  function startCompareAuto() {
+    if (compareAutoBtn) {
+      compareAutoBtn.classList.add('is-active');
+      if (compareAutoIcon) compareAutoIcon.className = 'fa-solid fa-pause';
+      if (compareAutoText) {
+        compareAutoText.textContent = translations[currentLang].compare_auto_stop || 'Зупинити';
+      }
+    }
+    function animate() {
+      autoAnimAngle += 0.025;
+      const p = 50 + 32 * Math.sin(autoAnimAngle);
+      setSliderPercent(p);
+      compareAutoAnimId = requestAnimationFrame(animate);
+    }
+    compareAutoAnimId = requestAnimationFrame(animate);
+  }
+
+  if (compareAutoBtn) {
+    compareAutoBtn.addEventListener('click', () => {
+      if (compareAutoAnimId) {
+        stopCompareAuto();
+      } else {
+        startCompareAuto();
+      }
+    });
+  }
+
+  // Switch comparison tabs
+  compareTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      stopCompareAuto();
+      compareTabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const key = btn.getAttribute('data-compare');
+      activeCompareKey = key;
+      const preset = comparePresets[key];
+      if (preset && compareImgBefore && compareImgAfter) {
+        compareImgBefore.src = preset.before;
+        compareImgAfter.src = preset.after;
+        if (afterFlag) {
+          afterFlag.textContent = currentLang === 'cz' ? preset.badgeCZ : preset.badgeUA;
+        }
+      }
+      setSliderPercent(50);
+    });
+  });
 
   if (compareSlider && compareOverlay && compareHandle) {
     let isDragging = false;
 
-    function setSliderPosition(x) {
-      const rect = compareSlider.getBoundingClientRect();
-      let pos = (x - rect.left) / rect.width;
-      if (pos < 0.05) pos = 0.05;
-      if (pos > 0.95) pos = 0.95;
-      const percent = pos * 100;
-      compareOverlay.style.width = `${percent}%`;
-      compareHandle.style.left = `${percent}%`;
-    }
-
     compareSlider.addEventListener('mousedown', (e) => {
+      stopCompareAuto();
       isDragging = true;
       setSliderPosition(e.clientX);
     });
@@ -354,8 +750,8 @@ document.addEventListener('DOMContentLoaded', () => {
       isDragging = false;
     });
 
-    // Touch events for mobile
     compareSlider.addEventListener('touchstart', (e) => {
+      stopCompareAuto();
       isDragging = true;
       setSliderPosition(e.touches[0].clientX);
     }, { passive: true });

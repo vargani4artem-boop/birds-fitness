@@ -541,58 +541,275 @@
         
         <div class="section-eyebrow" data-i18n="results_eyebrow">РЕЗУЛЬТАТИ КЛІЄНТІВ</div>
         <h2 class="section-title results-heading" data-i18n="results_title">Маленькі кроки, які складаються у великі зміни</h2>
-        <p class="section-subtitle" style="margin-bottom: 30px; max-width: 700px;" data-i18n="results_subtitle">
-          Для мене важливо бачити, як люди поступово наближаються до своїх цілей: зниження ваги (наприклад, -10 кг за 4 місяці), рельєф, підтягнуте тіло та плавний шпагат без травм.
+        <p class="section-subtitle" style="margin-bottom: 24px; max-width: 760px;" data-i18n="results_subtitle">
+          Для мене важливо бачити, як люди поступово наближаються до своїх цілей: реальне зниження ваги (наприклад, -10 кг за 4 місяці), тонус м'язів, здорова постава та шпагат без болю.
         </p>
 
-        <div class="results-layout">
-          <!-- Transformations Cards -->
-          <div class="results-cards-row">
+        <!-- Carousel Toolbar: Filters, Autoplay Toggle & Arrows -->
+        <div class="carousel-toolbar">
+          <div class="results-filter-group">
+            <button class="res-filter-btn active" data-filter="all" data-i18n="filter_all">Всі результати (6)</button>
+            <button class="res-filter-btn" data-filter="weight" data-i18n="filter_weight">🔥 Зниження ваги (-10 кг)</button>
+            <button class="res-filter-btn" data-filter="teens" data-i18n="filter_teens">✨ Постава та підлітки (-5 кг)</button>
+            <button class="res-filter-btn" data-filter="split" data-i18n="filter_split">🧘‍♀️ Гнучкість та шпагат</button>
+          </div>
+
+          <div class="carousel-controls-group">
+            <button id="carouselAutoPlayBtn" class="carousel-autoplay-btn is-playing" title="Увімкнути / зупинити автоперемикання">
+              <span class="autoplay-pulse-dot"></span>
+              <i class="fa-solid fa-pause" id="autoPlayIcon"></i>
+              <span id="autoPlayBtnText" data-i18n="autoplay_active">Автоперемикання: УВІМКНЕНО (4с)</span>
+            </button>
+            <div class="carousel-arrow-pair">
+              <button id="carouselPrevBtn" class="carousel-nav-arrow" aria-label="Попередній результат"><i class="fa-solid fa-chevron-left"></i></button>
+              <button id="carouselNextBtn" class="carousel-nav-arrow" aria-label="Наступний результат"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Progress Track for Autoplay -->
+        <div class="carousel-progress-track">
+          <div class="carousel-progress-bar" id="carouselProgressBar"></div>
+        </div>
+
+        <!-- Carousel Viewport & Cards Track -->
+        <div class="carousel-viewport" id="carouselViewport">
+          <div class="carousel-track" id="carouselTrack">
             
-            <!-- Result 1: Side view -10kg -->
-            <div class="result-card zoomable" data-img="assets/images/result_10kg_side.jpg" data-caption="Зниження ваги на 10 кг за 4 місяці (вид збоку, відносно правильне харчування)">
-              <div class="result-image-box">
-                <img src="assets/images/result_10kg_side.jpg" alt="-10 кг трансформація" class="result-img">
-                <div class="result-pill-badge">
-                  <span class="badge-weight">-10 кг</span>
-                  <span class="badge-time">4 місяці</span>
+            <!-- Slide 1: Side view -10kg -->
+            <div class="carousel-card zoomable" data-category="weight" data-img="assets/images/result_10kg_side.jpg" data-caption="Зниження ваги на 10 кг за 4 місяці (вид збоку) — корекція харчування без суворих дієт, індивідуальні вправи">
+              <div class="carousel-card-img-wrap">
+                <img src="assets/images/result_10kg_side.jpg" alt="-10 кг трансформація (вид збоку)" class="carousel-card-img">
+                <div class="carousel-badge-loss">
+                  <i class="fa-solid fa-fire"></i> -10 КГ
                 </div>
+                <div class="carousel-badge-time">
+                  <i class="fa-regular fa-clock"></i> 4 місяці
+                </div>
+                <div class="carousel-zoom-hint">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                </div>
+              </div>
+              <div class="carousel-card-body">
+                <span class="category-pill" data-i18n="res_tag_weight">🔥 Схуднення & Рельєф</span>
+                <h4 class="carousel-card-title" data-i18n="res_s1_title">-10 кг за 4 місяці (вид збоку)</h4>
+                <p class="carousel-card-desc" data-i18n="res_s1_desc">
+                  Індивідуальний підбір вправ та корекція харчування без суворих дієт. Помітне зменшення об'єму талії, плоский живіт і легкість рухів.
+                </p>
+                <div class="carousel-metrics-row">
+                  <span class="metric-pill">📉 -10 кг</span>
+                  <span class="metric-pill">⏳ 4 місяці</span>
+                  <span class="metric-pill">🥗 Без голодувань</span>
+                </div>
+                <button class="carousel-card-btn" data-i18n="btn_zoom_photo">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i> Збільшити фото &rarr;
+                </button>
               </div>
             </div>
 
-            <!-- Result 2: Front view -10kg -->
-            <div class="result-card zoomable" data-img="assets/images/result_10kg_front.jpg" data-caption="Зниження ваги на 10 кг за 4 місяці (вид спереду, підтягнута талія)">
-              <div class="result-image-box">
-                <img src="assets/images/result_10kg_front.jpg" alt="-10 кг анфас" class="result-img">
-                <div class="result-pill-badge">
-                  <span class="badge-weight">-10 кг</span>
-                  <span class="badge-time">4 місяці</span>
+            <!-- Slide 2: Front view -10kg -->
+            <div class="carousel-card zoomable" data-category="weight" data-img="assets/images/result_10kg_front.jpg" data-caption="Зниження ваги на 10 кг за 4 місяці (вид спереду) — тонус преса, стегон та впевненість у собі">
+              <div class="carousel-card-img-wrap">
+                <img src="assets/images/result_10kg_front.jpg" alt="-10 кг трансформація (вид спереду)" class="carousel-card-img">
+                <div class="carousel-badge-loss">
+                  <i class="fa-solid fa-fire"></i> -10 КГ
                 </div>
+                <div class="carousel-badge-time">
+                  <i class="fa-regular fa-clock"></i> 4 місяці
+                </div>
+                <div class="carousel-zoom-hint">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                </div>
+              </div>
+              <div class="carousel-card-body">
+                <span class="category-pill" data-i18n="res_tag_weight">🔥 Схуднення & Рельєф</span>
+                <h4 class="carousel-card-title" data-i18n="res_s2_title">-10 кг за 4 місяці (вид спереду)</h4>
+                <p class="carousel-card-desc" data-i18n="res_s2_desc">
+                  Підтягнутий рельєф м'язів, помітне зменшення об'ємів у стегнах, гармонійні пропорції тіла та повернення впевненості у собі.
+                </p>
+                <div class="carousel-metrics-row">
+                  <span class="metric-pill">📉 -10 кг</span>
+                  <span class="metric-pill">⏳ 4 місяці</span>
+                  <span class="metric-pill">💪 Тонус м'язів</span>
+                </div>
+                <button class="carousel-card-btn" data-i18n="btn_zoom_photo">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i> Збільшити фото &rarr;
+                </button>
               </div>
             </div>
 
-            <!-- Result 3: Teen transformation -->
-            <div class="result-card zoomable" data-img="assets/images/result_teen_transform.jpg" data-caption="Трансформація постави та фігури підлітка (безпечні тренування)">
-              <div class="result-image-box">
-                <img src="assets/images/result_teen_transform.jpg" alt="Підліткова трансформація" class="result-img">
-                <div class="result-pill-badge">
-                  <span class="badge-weight">Постава</span>
-                  <span class="badge-time">Тонус</span>
+            <!-- Slide 3: Teenager Profile -->
+            <div class="carousel-card zoomable" data-category="teens" data-img="assets/images/result_teen_transform.jpg" data-caption="Підліткова трансформація: постава та підтягнута фігура (вид збоку) — усунення сутулості, зміцнення спини">
+              <div class="carousel-card-img-wrap">
+                <img src="assets/images/result_teen_transform.jpg" alt="Підліткова трансформація (профіль)" class="carousel-card-img">
+                <div class="carousel-badge-loss" style="background: linear-gradient(135deg, #7A5AF8, #9B8AFB);">
+                  <i class="fa-solid fa-sparkles"></i> -5 КГ
                 </div>
+                <div class="carousel-badge-time">
+                  <i class="fa-solid fa-person"></i> Постава
+                </div>
+                <div class="carousel-zoom-hint">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                </div>
+              </div>
+              <div class="carousel-card-body">
+                <span class="category-pill" data-i18n="res_tag_teens">✨ Постава та підлітки</span>
+                <h4 class="carousel-card-title" data-i18n="res_s3_title">Постава та фігура підлітка (профіль)</h4>
+                <p class="carousel-card-desc" data-i18n="res_s3_desc">
+                  Розкриття плечового поясу, вирівнювання лінії постави, зміцнення м'язів спини та підтягнутий животик без перевантажень.
+                </p>
+                <div class="carousel-metrics-row">
+                  <span class="metric-pill">🦴 Здорова спина</span>
+                  <span class="metric-pill">🧍‍♀️ Рівна постава</span>
+                  <span class="metric-pill">✨ -5 кг</span>
+                </div>
+                <button class="carousel-card-btn" data-i18n="btn_zoom_photo">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i> Збільшити фото &rarr;
+                </button>
               </div>
             </div>
 
-            <!-- Result 4: Split with blocks -->
-            <div class="result-card zoomable" data-img="assets/images/result_split_blocks.jpg" data-caption="Прогрес у шпагаті: від високого натягу до повного шпагату з блоками">
-              <div class="result-image-box">
-                <img src="assets/images/result_split_blocks.jpg" alt="Шпагат на блоках" class="result-img">
-                <div class="result-pill-badge">
-                  <span class="badge-weight">Шпагат</span>
-                  <span class="badge-time">Без болю</span>
+            <!-- Slide 4: Teenager Front -->
+            <div class="carousel-card zoomable" data-category="teens" data-img="assets/images/result_teen_front.jpg" data-caption="Підліткова трансформація: правильна техніка вправ з гантелями та тонус (вид спереду)">
+              <div class="carousel-card-img-wrap">
+                <img src="assets/images/result_teen_front.jpg" alt="Підліткова трансформація (анфас)" class="carousel-card-img">
+                <div class="carousel-badge-loss" style="background: linear-gradient(135deg, #7A5AF8, #9B8AFB);">
+                  <i class="fa-solid fa-sparkles"></i> -5 КГ
                 </div>
+                <div class="carousel-badge-time">
+                  <i class="fa-solid fa-dumbbell"></i> Тонус
+                </div>
+                <div class="carousel-zoom-hint">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                </div>
+              </div>
+              <div class="carousel-card-body">
+                <span class="category-pill" data-i18n="res_tag_teens">✨ Постава та підлітки</span>
+                <h4 class="carousel-card-title" data-i18n="res_s4_title">Тонус та техніка вправ (анфас)</h4>
+                <p class="carousel-card-desc" data-i18n="res_s4_desc">
+                  Освоєння базових вправ із гантелями, плавне зменшення об'ємів, зміцнення суглобів та здоровий розвиток молодого організму.
+                </p>
+                <div class="carousel-metrics-row">
+                  <span class="metric-pill">🏋️‍♀️ Базова техніка</span>
+                  <span class="metric-pill">✨ Тонус тіла</span>
+                  <span class="metric-pill">🎯 Безпечно</span>
+                </div>
+                <button class="carousel-card-btn" data-i18n="btn_zoom_photo">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i> Збільшити фото &rarr;
+                </button>
               </div>
             </div>
 
+            <!-- Slide 5: Split with Blocks -->
+            <div class="carousel-card zoomable" data-category="split" data-img="assets/images/result_split_blocks.jpg" data-caption="Поздовжній шпагат без болю: м'яка адаптація зв'язок на йога-блоках без травм і сліз">
+              <div class="carousel-card-img-wrap">
+                <img src="assets/images/result_split_blocks.jpg" alt="Поздовжній шпагат на блоках" class="carousel-card-img">
+                <div class="carousel-badge-loss" style="background: linear-gradient(135deg, #10B981, #059669);">
+                  <i class="fa-solid fa-spa"></i> Шпагат
+                </div>
+                <div class="carousel-badge-time">
+                  <i class="fa-solid fa-heart-pulse"></i> Без болю
+                </div>
+                <div class="carousel-zoom-hint">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                </div>
+              </div>
+              <div class="carousel-card-body">
+                <span class="category-pill" data-i18n="res_tag_split">🧘‍♀️ Гнучкість та розтяжка</span>
+                <h4 class="carousel-card-title" data-i18n="res_s5_title">Поздовжній шпагат з йога-блоками</h4>
+                <p class="carousel-card-desc" data-i18n="res_s5_desc">
+                  Покрокове збільшення амплітуди рухів за допомогою блоків, без сліз та травм — виключно плавна та безпечна робота зі зв'язками.
+                </p>
+                <div class="carousel-metrics-row">
+                  <span class="metric-pill">🧘‍♀️ Безпечний шпагат</span>
+                  <span class="metric-pill">🚫 Без болю і сліз</span>
+                  <span class="metric-pill">🧱 Йога-блоки</span>
+                </div>
+                <button class="carousel-card-btn" data-i18n="btn_zoom_photo">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i> Збільшити фото &rarr;
+                </button>
+              </div>
+            </div>
+
+            <!-- Slide 6: Split Knees Evolution -->
+            <div class="carousel-card zoomable" data-category="split" data-img="assets/images/result_split_knees.jpg" data-caption="Розвиток гнучкості: від початкової розминки до повного глибокого шпагату">
+              <div class="carousel-card-img-wrap">
+                <img src="assets/images/result_split_knees.jpg" alt="Розвиток гнучкості від розминки до шпагату" class="carousel-card-img">
+                <div class="carousel-badge-loss" style="background: linear-gradient(135deg, #10B981, #059669);">
+                  <i class="fa-solid fa-spa"></i> Гнучкість
+                </div>
+                <div class="carousel-badge-time">
+                  <i class="fa-solid fa-arrows-up-down"></i> З нуля
+                </div>
+                <div class="carousel-zoom-hint">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                </div>
+              </div>
+              <div class="carousel-card-body">
+                <span class="category-pill" data-i18n="res_tag_split">🧘‍♀️ Гнучкість та розтяжка</span>
+                <h4 class="carousel-card-title" data-i18n="res_s6_title">Еволюція гнучкості: від нуля до шпагату</h4>
+                <p class="carousel-card-desc" data-i18n="res_s6_desc">
+                  Від скутості зв'язок на перших заняттях до впевненого глибокого розкриття тазостегнових суглобів у комфортному індивідуальному темпі.
+                </p>
+                <div class="carousel-metrics-row">
+                  <span class="metric-pill">🤸‍♀️ Мобільність</span>
+                  <span class="metric-pill">📈 Прогрес крок за кроком</span>
+                  <span class="metric-pill">🤍 Дбайливо</span>
+                </div>
+                <button class="carousel-card-btn" data-i18n="btn_zoom_photo">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i> Збільшити фото &rarr;
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Carousel Dots Indicator -->
+        <div class="carousel-dots" id="carouselDots">
+          <button class="carousel-dot active" data-index="0" aria-label="Слайд 1"></button>
+          <button class="carousel-dot" data-index="1" aria-label="Слайд 2"></button>
+          <button class="carousel-dot" data-index="2" aria-label="Слайд 3"></button>
+          <button class="carousel-dot" data-index="3" aria-label="Слайд 4"></button>
+          <button class="carousel-dot" data-index="4" aria-label="Слайд 5"></button>
+          <button class="carousel-dot" data-index="5" aria-label="Слайд 6"></button>
+        </div>
+
+        <!-- Bottom Grid: Interactive Comparison Splitter & Coach Quote Card -->
+        <div class="results-bottom-grid">
+          
+          <!-- Interactive Comparison Widget -->
+          <div class="interactive-slider-box">
+            <div class="slider-box-header">
+              <div>
+                <span class="tag-pill"><i class="fa-solid fa-wand-magic-sparkles"></i> <span data-i18n="compare_tag">Інтерактивне порівняння</span></span>
+                <h4 data-i18n="compare_title" style="margin-top: 6px;">Потягніть повзунок, щоб побачити прогрес клієнтки</h4>
+              </div>
+              <button class="compare-auto-btn" id="compareAutoBtn">
+                <i class="fa-solid fa-play" id="compareAutoIcon"></i> <span id="compareAutoText" data-i18n="compare_auto_text">Авто-показ</span>
+              </button>
+            </div>
+
+            <!-- Comparison Switch Tabs -->
+            <div class="compare-switch-tabs">
+              <button class="compare-tab-btn active" data-compare="front" data-i18n="compare_tab_1">🔥 -10 кг (Анфас: До / Після)</button>
+              <button class="compare-tab-btn" data-compare="side" data-i18n="compare_tab_2">🔥 -10 кг (Профіль: До / Після)</button>
+              <button class="compare-tab-btn" data-compare="teen" data-i18n="compare_tab_3">✨ Підліток (Постава: До / Після)</button>
+            </div>
+
+            <div class="compare-wrapper" id="compareSlider">
+              <img id="compareImgAfter" src="assets/images/compare_10kg_after.jpg" alt="Після" class="compare-img full-img">
+              <div class="compare-overlay" id="compareOverlay">
+                <img id="compareImgBefore" src="assets/images/compare_10kg_before.jpg" alt="До" class="compare-img overlay-img">
+              </div>
+              <div class="compare-badge-flag before-flag" data-i18n="compare_before_badge">ДО</div>
+              <div class="compare-badge-flag after-flag" data-i18n="compare_after_badge">ПІСЛЯ (-10 КГ)</div>
+              <div class="compare-handle" id="compareHandle">
+                <div class="handle-line"></div>
+                <div class="handle-circle"><i class="fa-solid fa-arrows-left-right"></i></div>
+              </div>
+            </div>
+            <p class="compare-hint-text" data-i18n="compare_hint">👈 Рухайте повзунок вліво або вправо, або запустіть авто-показ 👉</p>
           </div>
 
           <!-- Coach Philosophy Quote Card -->
@@ -602,25 +819,15 @@
               Кожна людина має свій початковий рівень, темп і особливості. Я не змушую працювати через силу — ми разом знаходимо формат, у якому вам комфортно перемагати щодня.
             </blockquote>
             <div class="quote-line"></div>
+            <div class="quote-author-row">
+              <img src="assets/images/coach_portrait_speaker.jpg" alt="Євгенія" class="quote-avatar">
+              <div>
+                <strong class="quote-name">Євгенія Бурдовіцина</strong>
+                <span class="quote-role" data-i18n="coach_role_quote">Персональний тренер & нутриціолог</span>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <!-- Interactive Comparison Widget -->
-        <div class="interactive-slider-box">
-          <div class="slider-box-header">
-            <span class="tag-pill"><i class="fa-solid fa-wand-magic-sparkles"></i> <span data-i18n="compare_tag">Інтерактивне порівняння</span></span>
-            <h4 data-i18n="compare_title">Потягніть повзунок, щоб побачити прогрес клієнтки</h4>
-          </div>
-          <div class="compare-wrapper" id="compareSlider">
-            <img src="assets/images/result_10kg_front.jpg" alt="Після" class="compare-img full-img">
-            <div class="compare-overlay" id="compareOverlay">
-              <img src="assets/images/result_10kg_side.jpg" alt="До і після профіль" class="compare-img overlay-img">
-            </div>
-            <div class="compare-handle" id="compareHandle">
-              <div class="handle-line"></div>
-              <div class="handle-circle"><i class="fa-solid fa-arrows-left-right"></i></div>
-            </div>
-          </div>
         </div>
 
       </div>
