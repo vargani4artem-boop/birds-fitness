@@ -51,10 +51,16 @@
   <!-- Google Fonts: Manrope, Cormorant Garamond, Caveat with display=swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600;1,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Preload Critical LCP Hero Image -->
+  <link rel="preload" as="image" href="../assets/images/coach_hero_extrifit.jpg" fetchpriority="high">
+  
+  <!-- Non-render-blocking Font Awesome Icons -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
   <link rel="stylesheet" href="../styles.css">
 </head>
@@ -299,7 +305,7 @@
             <!-- Direction 1 -->
             <div class="service-card">
               <div class="service-card-media video-player-facade" data-youtube-id="UxmEhd5iXyw" title="Натисніть для перегляду відео тренування" style="position: relative; cursor: pointer; background: #000;">
-                <img src="https://img.youtube.com/vi/UxmEhd5iXyw/hqdefault.jpg" alt="Силові тренування та фігура" class="service-img" style="object-position: center;" loading="lazy">
+                <img src="https://img.youtube.com/vi/UxmEhd5iXyw/hqdefault.jpg" alt="Silové tréninky a formování postavy" class="service-img" width="480" height="360" style="object-position: center;" loading="lazy" decoding="async">
                 <div class="video-play-btn mini" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 56px; height: 56px; background: rgba(210, 90, 108, 0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; box-shadow: 0 4px 18px rgba(0,0,0,0.5); pointer-events: none;">
                   <i class="fa-solid fa-play" style="margin-left: 3px;"></i>
                 </div>
@@ -323,7 +329,7 @@
             <!-- Direction 2: Video in pink clothes (cZpfZXoD7u4) -->
             <div class="service-card">
               <div class="service-card-media video-player-facade" data-youtube-id="cZpfZXoD7u4" title="Přehrát video tréninku" style="position: relative; cursor: pointer; background: #000;">
-                <img src="https://img.youtube.com/vi/cZpfZXoD7u4/hqdefault.jpg" alt="Zdravý pohyb a držení těla" class="service-img" style="object-position: center;" loading="lazy">
+                <img src="https://img.youtube.com/vi/cZpfZXoD7u4/hqdefault.jpg" alt="Zdravý pohyb a držení těla" class="service-img" width="480" height="360" style="object-position: center;" loading="lazy" decoding="async">
                 <div class="video-play-btn mini" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 56px; height: 56px; background: rgba(210, 90, 108, 0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; box-shadow: 0 4px 18px rgba(0,0,0,0.5); pointer-events: none;">
                   <i class="fa-solid fa-play" style="margin-left: 3px;"></i>
                 </div>
@@ -347,7 +353,7 @@
             <!-- Direction 3: Stretching video in pink clothes (R7lSLrxiYGY) -->
             <div class="service-card">
               <div class="service-card-media video-player-facade" data-youtube-id="R7lSLrxiYGY" title="Přehrát video stretchingu" style="position: relative; cursor: pointer; background: #000;">
-                <img src="https://img.youtube.com/vi/R7lSLrxiYGY/hqdefault.jpg" alt="Stretching a flexibilita" class="service-img" style="object-position: center;" loading="lazy">
+                <img src="https://img.youtube.com/vi/R7lSLrxiYGY/hqdefault.jpg" alt="Stretching a flexibilita" class="service-img" width="480" height="360" style="object-position: center;" loading="lazy" decoding="async">
                 <div class="video-play-btn mini" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 56px; height: 56px; background: rgba(210, 90, 108, 0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; box-shadow: 0 4px 18px rgba(0,0,0,0.5); pointer-events: none;">
                   <i class="fa-solid fa-play" style="margin-left: 3px;"></i>
                 </div>
@@ -371,7 +377,7 @@
             <!-- Direction 4 -->
             <div class="service-card">
               <div class="service-card-media">
-                <img src="../assets/images/result_teen_front.jpg" alt="Pro začátečníky" class="service-img" style="object-position: 50% 12%;" loading='lazy' decoding='async'>
+                <img src="../assets/images/result_teen_front.jpg" alt="Pro začátečníky" class="service-img" width="480" height="360" style="object-position: 50% 12%;" loading="lazy" decoding="async">
               </div>
               <div class="service-card-body">
                 <h3 class="service-name" data-i18n="dir_4_name">Pro začátečníky a dospívající</h3>
@@ -1197,7 +1203,7 @@
               <a href="https://wa.me/420720217117?text=Ahoj%2C%20%C5%BDe%C5%88o!%20Chci%20se%20zeptat%20na%20tr%C3%A9ninky%20(birds.cz)" target="_blank" rel="noopener" class="messenger-btn whatsapp-btn" aria-label="WhatsApp">
                 <i class="fa-brands fa-whatsapp"></i>
               </a>
-              <a href="https://t.me/burdovitsyna?text=Ahoj%2C%20%C5%BDe%C5%88o!%20P%C3%AD%C5%A1u%20z%20webu%20birds.cz" target="_blank" rel="noopener" class="messenger-btn telegram-btn" aria-label="Telegram">
+              <a href="https://t.me/candy_bird?text=Ahoj%2C%20%C5%BDe%C5%88o!%20P%C3%AD%C5%A1u%20z%20webu%20birds.cz" target="_blank" rel="noopener" class="messenger-btn telegram-btn" aria-label="Telegram">
                 <i class="fa-brands fa-telegram"></i>
               </a>
               <a href="https://www.instagram.com/birds.cz/" target="_blank" rel="noopener" class="messenger-btn instagram-btn" aria-label="Instagram">
@@ -1326,7 +1332,7 @@
         <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
         <h4 data-i18n="form_success_title">Děkuji za zprávu!</h4>
         <p data-i18n="form_success_desc">Ozvu se vám co nejdříve pro dohodnutí termínu.</p>
-        <a id="telegramBookingLink" href="https://t.me/burdovitsyna" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 18px; width: 100%; display: inline-flex; justify-content: center; gap: 8px;">
+        <a id="telegramBookingLink" href="https://t.me/candy_bird" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 18px; width: 100%; display: inline-flex; justify-content: center; gap: 8px;">
           <i class="fa-brands fa-telegram"></i> <span>Napsat na Telegram &rarr;</span>
         </a>
         <button class="btn btn-outline-rose modal-action-done-btn" style="margin-top: 10px; width: 100%;" data-i18n="btn_close">Zavřít</button>
@@ -1368,7 +1374,7 @@
         <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
         <h4 data-i18n="form_success_title">Děkuji za zprávu!</h4>
         <p data-i18n="nutr_success_sub">Napíšu vám do zpráv s instrukcemi k 1. kroku (záznam jídelníčku).</p>
-        <a id="telegramNutritionLink" href="https://t.me/burdovitsyna" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 18px; width: 100%; display: inline-flex; justify-content: center; gap: 8px;">
+        <a id="telegramNutritionLink" href="https://t.me/candy_bird" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 18px; width: 100%; display: inline-flex; justify-content: center; gap: 8px;">
           <i class="fa-brands fa-telegram"></i> <span>Napsat na Telegram &rarr;</span>
         </a>
         <button class="btn btn-outline-rose modal-action-done-btn" style="margin-top: 10px; width: 100%;" data-i18n="btn_close">Zavřít</button>
@@ -1385,10 +1391,10 @@
     </div>
   </div>
 
-  <script src="../script.js"></script>
+  <script src="../script.js" defer></script>
   <!-- Floating Quick Contact Dock -->
   <aside class="floating-contact-dock" aria-label="Rychlý kontakt">
-    <a href="https://t.me/burdovitsyna" target="_blank" rel="noopener noreferrer" class="floating-action-btn telegram-float" aria-label="Napsat na Telegram" title="Telegram">
+    <a href="https://t.me/candy_bird" target="_blank" rel="noopener noreferrer" class="floating-action-btn telegram-float" aria-label="Napsat na Telegram" title="Telegram">
       <i class="fa-brands fa-telegram"></i>
     </a>
     <a href="https://wa.me/420720217117?text=Ahoj%2C%20%C5%BDe%C5%88o!%20Chci%20se%20zeptat%20na%20tr%C3%A9ninky" target="_blank" rel="noopener noreferrer" class="floating-action-btn whatsapp-float" aria-label="Napsat na WhatsApp" title="WhatsApp">

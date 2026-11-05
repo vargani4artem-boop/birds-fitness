@@ -1120,7 +1120,7 @@ document.addEventListener('DOMContentLoaded', () => {
 📍 *Локація:* ${city}` : '') + (message ? `
 💬 *Повідомлення:* ${message}` : '');
 
-      const tgUrl = `https://t.me/burdovitsyna?text=${encodeURIComponent(leadMsg)}`;
+      const tgUrl = `https://t.me/candy_bird?text=${encodeURIComponent(leadMsg)}`;
       const waUrl = `https://wa.me/420720217117?text=${encodeURIComponent(leadMsg)}`;
 
       const tgLink = document.getElementById('telegramBookingLink');
@@ -1174,7 +1174,7 @@ document.addEventListener('DOMContentLoaded', () => {
 📞 *Контакт:* ${contact}
 🎯 *Ціль:* ${goal}`;
 
-      const tgUrl = `https://t.me/burdovitsyna?text=${encodeURIComponent(nutrMsg)}`;
+      const tgUrl = `https://t.me/candy_bird?text=${encodeURIComponent(nutrMsg)}`;
       const waUrl = `https://wa.me/420720217117?text=${encodeURIComponent(nutrMsg)}`;
 
       const tgLink = document.getElementById('telegramNutritionLink');

@@ -51,10 +51,16 @@
   <!-- Google Fonts: Manrope, Cormorant Garamond, Caveat with display=swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600;1,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Preload Critical LCP Hero Image -->
+  <link rel="preload" as="image" href="assets/images/coach_hero_extrifit.jpg" fetchpriority="high">
+  
+  <!-- Non-render-blocking Font Awesome Icons -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -162,10 +168,10 @@
           <!-- Trust Social Proof -->
           <div class="hero-trust">
             <div class="avatar-group">
-              <img src="assets/images/result_10kg_front.jpg" alt="Клієнтка" class="trust-avatar">
-              <img src="assets/images/result_teen_transform.jpg" alt="Клієнтка" class="trust-avatar">
-              <img src="assets/images/result_split_blocks.jpg" alt="Клієнтка" class="trust-avatar">
-              <img src="assets/images/result_10kg_side.jpg" alt="Клієнтка" class="trust-avatar">
+              <img src="assets/images/result_10kg_front.jpg" alt="Клієнтка" class="trust-avatar" width="48" height="48" loading="lazy" decoding="async">
+              <img src="assets/images/result_teen_transform.jpg" alt="Клієнтка" class="trust-avatar" width="48" height="48" loading="lazy" decoding="async">
+              <img src="assets/images/result_split_blocks.jpg" alt="Клієнтка" class="trust-avatar" width="48" height="48" loading="lazy" decoding="async">
+              <img src="assets/images/result_10kg_side.jpg" alt="Клієнтка" class="trust-avatar" width="48" height="48" loading="lazy" decoding="async">
             </div>
             <div class="trust-text">
               <span class="trust-number" data-i18n="hero_trust_num">4+ роки</span>
@@ -203,7 +209,7 @@
 
           <!-- Photo Card in Hero -->
           <div class="hero-photo-card">
-            <img src="assets/images/coach_hero_extrifit.jpg" alt="Євгенія Бурдовіцина тренер" class="hero-photo-img">
+            <img src="assets/images/coach_hero_extrifit.jpg" alt="Євгенія Бурдовіцина тренер" class="hero-photo-img" width="540" height="680" fetchpriority="high" decoding="async">
             <div class="hero-photo-glow"></div>
             <div class="hero-tag-badge">
               <span class="status-dot"></span>
@@ -223,7 +229,7 @@
           <!-- Left: Big Portrait -->
           <div class="about-main-photo-col">
             <div class="about-photo-wrapper">
-              <img src="assets/images/coach_gym_gloves.jpg" alt="Євгенія Бурдовіцина" class="about-main-img" loading='lazy' decoding='async'>
+              <img src="assets/images/coach_gym_gloves.jpg" alt="Євгенія Бурдовіцина" class="about-main-img" width="540" height="680" loading="lazy" decoding="async">
               <div class="about-badge-floating">
                 <span class="badge-accent">birds.cz</span>
                 <span>Євгенія Бурдовіцина</span>
@@ -317,7 +323,7 @@
             <!-- Direction 1 -->
             <div class="service-card">
               <div class="service-card-media video-player-facade" data-youtube-id="UxmEhd5iXyw" title="Натисніть для перегляду відео тренування" style="position: relative; cursor: pointer; background: #000;">
-                <img src="https://img.youtube.com/vi/UxmEhd5iXyw/hqdefault.jpg" alt="Силові тренування та фігура" class="service-img" style="object-position: center;" loading="lazy">
+                <img src="https://img.youtube.com/vi/UxmEhd5iXyw/hqdefault.jpg" alt="Силові тренування та фігура" class="service-img" width="480" height="360" style="object-position: center;" loading="lazy" decoding="async">
                 <div class="video-play-btn mini" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 56px; height: 56px; background: rgba(210, 90, 108, 0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; box-shadow: 0 4px 18px rgba(0,0,0,0.5); pointer-events: none;">
                   <i class="fa-solid fa-play" style="margin-left: 3px;"></i>
                 </div>
@@ -343,7 +349,7 @@
             <!-- Direction 2: Video in pink clothes (cZpfZXoD7u4) -->
             <div class="service-card">
               <div class="service-card-media video-player-facade" data-youtube-id="cZpfZXoD7u4" title="Натисніть для перегляду відео тренування" style="position: relative; cursor: pointer; background: #000;">
-                <img src="https://img.youtube.com/vi/cZpfZXoD7u4/hqdefault.jpg" alt="Здоровий рух і постава" class="service-img" style="object-position: center;" loading="lazy">
+                <img src="https://img.youtube.com/vi/cZpfZXoD7u4/hqdefault.jpg" alt="Здоровий рух і постава" class="service-img" width="480" height="360" style="object-position: center;" loading="lazy" decoding="async">
                 <div class="video-play-btn mini" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 56px; height: 56px; background: rgba(210, 90, 108, 0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; box-shadow: 0 4px 18px rgba(0,0,0,0.5); pointer-events: none;">
                   <i class="fa-solid fa-play" style="margin-left: 3px;"></i>
                 </div>
@@ -369,7 +375,7 @@
             <!-- Direction 3: Stretching video in pink clothes (R7lSLrxiYGY) -->
             <div class="service-card">
               <div class="service-card-media video-player-facade" data-youtube-id="R7lSLrxiYGY" title="Натисніть для перегляду відео розтяжки" style="position: relative; cursor: pointer; background: #000;">
-                <img src="https://img.youtube.com/vi/R7lSLrxiYGY/hqdefault.jpg" alt="Розтяжка та гнучкість" class="service-img" style="object-position: center;" loading="lazy">
+                <img src="https://img.youtube.com/vi/R7lSLrxiYGY/hqdefault.jpg" alt="Розтяжка та гнучкість" class="service-img" width="480" height="360" style="object-position: center;" loading="lazy" decoding="async">
                 <div class="video-play-btn mini" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 56px; height: 56px; background: rgba(210, 90, 108, 0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; box-shadow: 0 4px 18px rgba(0,0,0,0.5); pointer-events: none;">
                   <i class="fa-solid fa-play" style="margin-left: 3px;"></i>
                 </div>
@@ -395,7 +401,7 @@
             <!-- Direction 4 -->
             <div class="service-card">
               <div class="service-card-media">
-                <img src="assets/images/result_teen_front.jpg" alt="Для початківців" class="service-img" style="object-position: 50% 12%;" loading='lazy' decoding='async'>
+                <img src="assets/images/result_teen_front.jpg" alt="Для початківців" class="service-img" width="480" height="360" style="object-position: 50% 12%;" loading="lazy" decoding="async">
               </div>
               <div class="service-card-body">
                 <h3 class="service-name" data-i18n="dir_4_name">Для початківців та підлітків</h3>
@@ -583,11 +589,11 @@
             <!-- Real Menu Previews Grid -->
             <div class="menu-preview-stack">
               <div class="menu-sample-card zoomable" data-img="assets/images/menu_plan_day1.jpg" data-caption="Приклад персонального меню: 1200 ккал / 90 г білка (котлети, яблучний пиріг, тости з лососем)">
-                <img src="assets/images/menu_plan_day1.jpg" alt="Зразок меню 1" class="menu-preview-img" loading='lazy' decoding='async'>
+                <img src="assets/images/menu_plan_day1.jpg" alt="Зразок меню 1" class="menu-preview-img" width="400" height="260" loading="lazy" decoding="async">
                 <div class="menu-preview-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> День 1 • 1200 ккал</div>
               </div>
               <div class="menu-sample-card zoomable" data-img="assets/images/menu_plan_day2.jpg" data-caption="Приклад персонального меню: Індичка, гречка, творог з ягодами, протеїновий коктейль">
-                <img src="assets/images/menu_plan_day2.jpg" alt="Зразок меню 2" class="menu-preview-img" loading='lazy' decoding='async'>
+                <img src="assets/images/menu_plan_day2.jpg" alt="Зразок меню 2" class="menu-preview-img" width="400" height="260" loading="lazy" decoding="async">
                 <div class="menu-preview-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> День 3 • 1190 ккал</div>
               </div>
             </div>
@@ -882,7 +888,7 @@
             </blockquote>
             <div class="quote-line"></div>
             <div class="quote-author-row">
-              <img src="assets/images/coach_portrait_speaker.jpg" alt="Євгенія" class="quote-avatar" loading='lazy' decoding='async'>
+              <img src="assets/images/coach_portrait_speaker.jpg" alt="Євгенія" class="quote-avatar" width="48" height="48" loading="lazy" decoding="async">
               <div>
                 <strong class="quote-name">Євгенія Бурдовіцина</strong>
                 <span class="quote-role" data-i18n="coach_role_quote">Персональний тренер & нутриціолог</span>
@@ -1295,7 +1301,7 @@
               <a href="https://wa.me/420720217117?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82%2C%20%D0%96%D0%B5%D0%BD%D1%8F!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B4%D1%96%D0%B7%D0%BD%D0%B0%D1%82%D0%B8%D1%81%D1%8F%20%D0%BF%D1%80%D0%BE%20%D1%82%D1%80%D0%B5%D0%BD%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F%20(birds.cz)" target="_blank" rel="noopener" class="messenger-btn whatsapp-btn" aria-label="WhatsApp">
                 <i class="fa-brands fa-whatsapp"></i>
               </a>
-              <a href="https://t.me/burdovitsyna?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82%2C%20%D0%96%D0%B5%D0%BD%D1%8F!%20%D0%9F%D0%B8%D1%88%D1%83%20%D0%B7%20%D1%81%D0%B0%D0%B9%D1%82%D1%83%20birds.cz" target="_blank" rel="noopener" class="messenger-btn telegram-btn" aria-label="Telegram">
+              <a href="https://t.me/candy_bird?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82%2C%20%D0%96%D0%B5%D0%BD%D1%8F!%20%D0%9F%D0%B8%D1%88%D1%83%20%D0%B7%20%D1%81%D0%B0%D0%B9%D1%82%D1%83%20birds.cz" target="_blank" rel="noopener" class="messenger-btn telegram-btn" aria-label="Telegram">
                 <i class="fa-brands fa-telegram"></i>
               </a>
               <a href="https://www.instagram.com/birds.cz/" target="_blank" rel="noopener" class="messenger-btn instagram-btn" aria-label="Instagram">
@@ -1426,7 +1432,7 @@
         <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
         <h4 data-i18n="form_success_title">Дякую за запис!</h4>
         <p data-i18n="form_success_desc">Я зв'яжуся з вами найближчим часом для узгодження зручного часу.</p>
-        <a id="telegramBookingLink" href="https://t.me/burdovitsyna" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 18px; width: 100%; display: inline-flex; justify-content: center; gap: 8px;">
+        <a id="telegramBookingLink" href="https://t.me/candy_bird" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 18px; width: 100%; display: inline-flex; justify-content: center; gap: 8px;">
           <i class="fa-brands fa-telegram"></i> <span>Написати Євгенії в Telegram &rarr;</span>
         </a>
         <button class="btn btn-outline-rose modal-action-done-btn" style="margin-top: 10px; width: 100%;" data-i18n="btn_close">Закрити</button>
@@ -1468,7 +1474,7 @@
         <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
         <h4 data-i18n="form_success_title">Заявку прийнято!</h4>
         <p data-i18n="nutr_success_sub">Я напишу вам у месенджер з інструкцією до 1-го етапу (щоденник спостереження).</p>
-        <a id="telegramNutritionLink" href="https://t.me/burdovitsyna" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 18px; width: 100%; display: inline-flex; justify-content: center; gap: 8px;">
+        <a id="telegramNutritionLink" href="https://t.me/candy_bird" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 18px; width: 100%; display: inline-flex; justify-content: center; gap: 8px;">
           <i class="fa-brands fa-telegram"></i> <span>Написати Євгенії в Telegram &rarr;</span>
         </a>
         <button class="btn btn-outline-rose modal-action-done-btn" style="margin-top: 10px; width: 100%;" data-i18n="btn_close">Закрити</button>
@@ -1485,10 +1491,10 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
   <!-- Floating Quick Contact Dock -->
   <aside class="floating-contact-dock" aria-label="Швидкий зв'язок">
-    <a href="https://t.me/burdovitsyna" target="_blank" rel="noopener noreferrer" class="floating-action-btn telegram-float" aria-label="Написати у Telegram" title="Telegram">
+    <a href="https://t.me/candy_bird" target="_blank" rel="noopener noreferrer" class="floating-action-btn telegram-float" aria-label="Написати у Telegram" title="Telegram">
       <i class="fa-brands fa-telegram"></i>
     </a>
     <a href="https://wa.me/420720217117?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82%2C%20%D0%96%D0%B5%D0%BD%D1%8F!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B4%D1%96%D0%B7%D0%BD%D0%B0%D1%82%D0%B8%D1%81%D1%8F%20%D0%BF%D1%80%D0%BE%20%D1%82%D1%80%D0%B5%D0%BD%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F" target="_blank" rel="noopener noreferrer" class="floating-action-btn whatsapp-float" aria-label="Написати у WhatsApp" title="WhatsApp">
