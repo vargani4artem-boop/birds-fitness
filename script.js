@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       loc_eyebrow: "ДЕ МИ МОЖЕМО ТРЕНУВАТИСЯ",
       loc_title: "Формати та вартість тренувань",
-      loc_sub: "Обирайте комфортний формат: класичний тренажерний зал, повністю приватний зал без сторонніх очей або зручний онлайн-формат удома.",
+      loc_sub: "Обирайте комфортний формат: тренування у тренажерному залі або зручні онлайн-заняття з відеоконтролем удома.",
       loc_gym_title: "Тренажерний зал",
       loc_gym_desc: "Співпраця з провідними тренажерними залами міст. Час і конкретний зал узгоджуємо індивідуально.",
       loc_gym_period: "/ 60 хв",
@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
       shorts_header_title: "YouTube Shorts • Мотивація та спортзал",
       sh1_tag: "Спортзал & Естетика",
       sh1_title: "Атмосфера залу & Мотивація",
-      sh2_tag: "Hradec • Pardubice • Chrudim",
+      sh2_tag: "Hradec • Pardubice • Online",
       sh2_title: "Тренування офлайн у залах та Онлайн",
       sh3_tag: "🔥 Трансформація & Сила",
       sh3_title: "Я зміню твоє тіло! 🔥 Почни свої зміни сьогодні",
@@ -242,9 +242,9 @@ document.addEventListener('DOMContentLoaded', () => {
       rev1_text: "«Почала займатися з Женею 4 місяці тому. Дуже боялася суворих дієт, але Женя підібрала мені комфортний раціон з улюбленими стравами й регулярні тренування. Результат — мінус 10 кг, з'явилася талія і неймовірна легкість у тілі!»",
       rev1_name: "Катерина",
       rev1_meta: "Градець-Кралове • -10 кг за 4 місяці",
-      rev2_text: "«Приватний зал у Хрудимі — це кохання з першого погляду! Жодних сторонніх людей, вхід за персональним кодом. Приходимо тренуватися удвох із подругою, ділимо вартість навпіл. Дуже затишно, музика, душ і супер-уважний тренер!»",
+      rev2_text: "«Тренуємося удвох із подругою в залі у Жені. Це подвійна мотивація та підтримка, а Женя ставить ідеальну техніку для кожної з нас. Займаємося з задоволенням і бачимо класний результат щотижня!»",
       rev2_name: "Олена та Анна",
-      rev2_meta: "Хрудим • Приватний зал на двох",
+      rev2_meta: "Пардубіце • Парне тренування",
       rev3_text: "«Займаємося онлайн через Telegram. Мені здавалося, що через екран тренер не побачить помилок, але Женя помічає кожну деталь у поставі! Спина перестала нити після робочого дня, а розтяжка покращилася без болю.»",
       rev3_name: "Марина",
       rev3_meta: "Онлайн-тренування (Telegram)",
@@ -493,7 +493,7 @@ document.addEventListener('DOMContentLoaded', () => {
       shorts_header_title: "YouTube Shorts • Motivace a tréninky",
       sh1_tag: "Fitness & Estetika",
       sh1_title: "Atmosféra posilovny & Motivace",
-      sh2_tag: "Hradec • Pardubice • Chrudim",
+      sh2_tag: "Hradec • Pardubice • Online",
       sh2_title: "Tréninky osobně v posilovnách i Online",
       sh3_tag: "🔥 Transformace & Síla",
       sh3_title: "Změním tvé tělo! 🔥 Začni svou proměnu dnes",
@@ -504,9 +504,9 @@ document.addEventListener('DOMContentLoaded', () => {
       rev1_text: "«Začala jsem trénovat s Žeňou před 4 měsíci. Bála jsem se drastických diet, ale Žeňa mi sestavila skvělý jídelníček bez hladovění a tréninky na míru. Výsledek: -10 kg, štíhlejší pas a obrovské sebevědomí!»",
       rev1_name: "Kateřina",
       rev1_meta: "Hradec Králové • -10 kg za 4 měsíce",
-      rev2_text: "«Privátní sál v Chrudimi je pro mě naprostá pecka! Žádné cizí pohledy, trénujeme společně s kamarádkou a dělíme se o náklady. Cvičení má skvělou atmosféru a výsledky vidím každý týden v zrcadle!»",
+      rev2_text: "«Trénujeme s kamarádkou společně v posilovně pod vedením Ženi. Je to skvělá motivace, navzájem se podporujeme a Žeňa hlídá techniku pro každou z nás. Cvičení nás baví a výsledky vidíme každý týden!»",
       rev2_name: "Alena a Anna",
-      rev2_meta: "Chrudim • Privátní sál pro dvě",
+      rev2_meta: "Pardubice • Trénink ve dvojici",
       rev3_text: "«Cvičíme online přes video. Žeňa precizně hlídá techniku i na dálku. Bolesti zad z práce u počítače jsou pryč a flexibilita se zlepšila neuvěřitelně rychle!»",
       rev3_name: "Martina",
       rev3_meta: "Online tréninky (Telegram)",
@@ -573,7 +573,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lang === 'cz') {
       document.title = "Jevgenija Burdovicyna — birds.cz | Osobní trenérka & Nutriční poradkyně";
       const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.content = "Osobní fitness tréninky, zdravý pohyb, flexibilita a vyvážený jídelníček na míru v Hradci Králové, Pardubicích, Chrudimi a online.";
+      if (metaDesc) metaDesc.content = "Osobní fitness tréninky, zdravý pohyb, flexibilita a vyvážený jídelníček na míru v Hradci Králové, Pardubicích a online.";
     } else {
       document.title = "Євгенія Бурдовіцина — birds.cz | Персональний тренер & Нутриціолог";
       const metaDesc = document.querySelector('meta[name="description"]');
@@ -1078,6 +1078,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Helper to dispatch backup notification to Telegram Bot
+  function sendTelegramBotLead(leadData) {
+    try {
+      const botToken = '8865140984:AAGqzyBjytwB8ytuaQLtsmm0fRHWshSgsmk';
+      const chatId = 408397367;
+      let text = '';
+      if (leadData.type === 'booking') {
+        text = `🔔 <b>Нова заявка на тренування (birds.cz)!</b>\n\n` +
+          `👤 <b>Ім'я:</b> ${leadData.name}\n` +
+          `📞 <b>Контакт:</b> <code>${leadData.contact}</code>\n` +
+          `🎯 <b>Формат:</b> ${leadData.service}\n` +
+          (leadData.city ? `📍 <b>Місто:</b> ${leadData.city}\n` : '') +
+          (leadData.message ? `💬 <b>Повідомлення:</b> ${leadData.message}\n` : '') +
+          `🕒 <b>Час:</b> ${new Date().toLocaleString()}`;
+      } else {
+        text = `🥗 <b>Замовлення раціону харчування (birds.cz)!</b>\n\n` +
+          `👤 <b>Ім'я:</b> ${leadData.name}\n` +
+          `📞 <b>Контакт:</b> <code>${leadData.contact}</code>\n` +
+          `🎯 <b>Ціль:</b> ${leadData.goal}\n` +
+          `🕒 <b>Час:</b> ${new Date().toLocaleString()}`;
+      }
+      fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: chatId, text: text, parse_mode: 'HTML' })
+      }).catch(() => {});
+    } catch (err) {}
+  }
+
   // Booking Form Submission
   const bookingForm = document.getElementById('bookingForm');
   const bookingSuccess = document.getElementById('bookingSuccess');
@@ -1088,6 +1117,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const name = document.getElementById('bookName') ? document.getElementById('bookName').value.trim() : '';
       const contact = document.getElementById('bookContact') ? document.getElementById('bookContact').value.trim() : '';
       const service = document.getElementById('bookService') ? document.getElementById('bookService').value.trim() : '';
+      const city = document.getElementById('bookCity') ? document.getElementById('bookCity').value.trim() : '';
       const message = document.getElementById('bookNotes') ? document.getElementById('bookNotes').value.trim() : '';
       
       const lead = {
@@ -1095,18 +1125,43 @@ document.addEventListener('DOMContentLoaded', () => {
         name: name,
         contact: contact,
         service: service,
+        city: city,
         message: message,
         date: new Date().toISOString()
       };
       saveLeadLocally(lead);
+      sendTelegramBotLead(lead);
 
-      // Populate direct Telegram link with pre-filled message
+      const isCz = document.documentElement.lang === 'cs' || window.location.pathname.includes('/cz');
+      const leadMsg = isCz ? 
+        `🏋️‍♀️ *Nová rezervace z webu birds.cz*
+
+👤 *Jméno:* ${name}
+📞 *Kontakt:* ${contact}
+🎯 *Služba:* ${service}` + (city ? `
+📍 *Místo:* ${city}` : '') + (message ? `
+💬 *Poznámka:* ${message}` : '') :
+        `🏋️‍♀️ *Новий запис із сайту birds.cz*
+
+👤 *Ім'я:* ${name}
+📞 *Контакт:* ${contact}
+🎯 *Формат:* ${service}` + (city ? `
+📍 *Локація:* ${city}` : '') + (message ? `
+💬 *Повідомлення:* ${message}` : '');
+
+      const tgUrl = `https://t.me/burdovitsyna?text=${encodeURIComponent(leadMsg)}`;
+      const waUrl = `https://wa.me/420720217117?text=${encodeURIComponent(leadMsg)}`;
+
       const tgLink = document.getElementById('telegramBookingLink');
-      if (tgLink) {
-        const text = encodeURIComponent(`Привіт, Женя! Мене звати ${name}. Хочу записатися на тренування (${service}). Мій контакт: ${contact}` + (message ? `
-Коментар: ${message}` : ''));
-        tgLink.href = `https://t.me/burdovitsyna?text=${text}`;
-      }
+      if (tgLink) tgLink.href = tgUrl;
+
+      const waLink = document.getElementById('whatsappBookingLink');
+      if (waLink) waLink.href = waUrl;
+
+      // Automatically open Telegram so the user can send to Zhenya in 1 click
+      try {
+        window.open(tgUrl, '_blank');
+      } catch(err) {}
 
       const header = bookingForm.closest('.modal-card').querySelector('.modal-header');
       if (header) header.style.display = 'none';
@@ -1134,13 +1189,34 @@ document.addEventListener('DOMContentLoaded', () => {
         date: new Date().toISOString()
       };
       saveLeadLocally(lead);
+      sendTelegramBotLead(lead);
 
-      // Populate direct Telegram link with pre-filled message
+      const isCz = document.documentElement.lang === 'cs' || window.location.pathname.includes('/cz');
+      const nutrMsg = isCz ?
+        `🥗 *Objednávka jídelníčku na 30 dní (birds.cz)*
+
+👤 *Jméno:* ${name}
+📞 *Kontakt:* ${contact}
+🎯 *Cíl:* ${goal}` :
+        `🥗 *Замовлення меню на 30 днів (birds.cz)*
+
+👤 *Ім'я:* ${name}
+📞 *Контакт:* ${contact}
+🎯 *Ціль:* ${goal}`;
+
+      const tgUrl = `https://t.me/burdovitsyna?text=${encodeURIComponent(nutrMsg)}`;
+      const waUrl = `https://wa.me/420720217117?text=${encodeURIComponent(nutrMsg)}`;
+
       const tgLink = document.getElementById('telegramNutritionLink');
-      if (tgLink) {
-        const text = encodeURIComponent(`Привіт, Женя! Мене звати ${name}. Хочу замовити персональне меню на 30 днів (${goal}). Мій контакт: ${contact}`);
-        tgLink.href = `https://t.me/burdovitsyna?text=${text}`;
-      }
+      if (tgLink) tgLink.href = tgUrl;
+
+      const waLink = document.getElementById('whatsappNutritionLink');
+      if (waLink) waLink.href = waUrl;
+
+      // Automatically open Telegram so the user can send to Zhenya in 1 click
+      try {
+        window.open(tgUrl, '_blank');
+      } catch(err) {}
 
       const header = nutritionForm.closest('.modal-card').querySelector('.modal-header');
       if (header) header.style.display = 'none';

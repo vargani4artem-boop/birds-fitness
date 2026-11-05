@@ -916,9 +916,10 @@ a {
 
 .locations-cards-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr 1fr;
-  gap: 24px;
-  margin-top: 36px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 920px;
+  margin: 36px auto 0;
   align-items: stretch;
 }
 
@@ -3013,5 +3014,64 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     gap: 14px;
+  }
+}
+
+/* ==================== FLOATING CONTACT ACTION & DIRECT PHONE ==================== */
+.direct-phone-link:hover {
+  background: rgba(210, 90, 108, 0.15) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(210, 90, 108, 0.2);
+}
+
+.floating-contact-dock {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 998;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.floating-action-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 24px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.floating-action-btn.telegram-float {
+  background: linear-gradient(135deg, #2AABEE, #229ED9);
+}
+
+.floating-action-btn.whatsapp-float {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+.floating-action-btn:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.32);
+  color: #FFFFFF;
+}
+
+@media (max-width: 576px) {
+  .floating-contact-dock {
+    bottom: 18px;
+    right: 16px;
+    gap: 10px;
+  }
+  .floating-action-btn {
+    width: 46px;
+    height: 46px;
+    font-size: 21px;
   }
 }
