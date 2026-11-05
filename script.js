@@ -6,6 +6,32 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // Global interactive states
+  let isAutoPlay = true;
+  let activeCompareKey = 'front';
+  let compareAutoAnimId = null;
+  const imgPrefix = window.location.pathname.includes('/cz') ? '../' : '';
+  const comparePresets = {
+    front: {
+      before: imgPrefix + 'assets/images/compare_10kg_before.jpg',
+      after: imgPrefix + 'assets/images/compare_10kg_after.jpg',
+      badgeUA: 'ПІСЛЯ (-10 КГ)',
+      badgeCZ: 'PO (-10 KG)'
+    },
+    side: {
+      before: imgPrefix + 'assets/images/compare_side_before.jpg',
+      after: imgPrefix + 'assets/images/compare_side_after.jpg',
+      badgeUA: 'ПІСЛЯ (-10 КГ)',
+      badgeCZ: 'PO (-10 KG)'
+    },
+    teen: {
+      before: imgPrefix + 'assets/images/compare_teen_before.jpg',
+      after: imgPrefix + 'assets/images/compare_teen_after.jpg',
+      badgeUA: 'ПІСЛЯ (-5 КГ)',
+      badgeCZ: 'PO (-5 KG)'
+    }
+  };
+
   // ==================== I18N DICTIONARY ====================
   const translations = {
     ua: {
@@ -567,21 +593,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update dynamic carousel & compare state buttons
     const autoPlayBtnText = document.getElementById('autoPlayBtnText');
-    if (autoPlayBtnText && typeof isAutoPlay !== 'undefined') {
+    if (autoPlayBtnText) {
       autoPlayBtnText.textContent = isAutoPlay ? (translations[lang].autoplay_active || 'Автоперемикання: УВІМКНЕНО (4с)') : (translations[lang].autoplay_paused || 'Автоперемикання: ПАУЗА');
     }
 
     const compareAutoText = document.getElementById('compareAutoText');
-    if (compareAutoText && typeof compareAutoAnimId !== 'undefined') {
+    if (compareAutoText) {
       compareAutoText.textContent = compareAutoAnimId ? (translations[lang].compare_auto_stop || 'Зупинити') : (translations[lang].compare_auto_text || 'Авто-показ');
     }
 
     const afterFlag = document.querySelector('.compare-badge-flag.after-flag');
-    if (afterFlag && typeof comparePresets !== 'undefined' && typeof activeCompareKey !== 'undefined') {
+    if (afterFlag && comparePresets && activeCompareKey && comparePresets[activeCompareKey]) {
       const preset = comparePresets[activeCompareKey];
-      if (preset) {
-        afterFlag.textContent = (lang === 'cz') ? preset.badgeCZ : preset.badgeUA;
-      }
+      afterFlag.textContent = (lang === 'cz') ? preset.badgeCZ : preset.badgeUA;
     }
 
     try {
@@ -657,7 +681,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const filterBtns = document.querySelectorAll('.res-filter-btn');
 
   let currentSlide = 0;
-  let isAutoPlay = true;
+  isAutoPlay = true;
   const SLIDE_DURATION = 4000;
   const PROGRESS_TICK = 40;
   let progressElapsed = 0;
@@ -869,31 +893,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const compareAutoIcon = document.getElementById('compareAutoIcon');
   const afterFlag = document.querySelector('.compare-badge-flag.after-flag');
 
-  const imgPrefix = window.location.pathname.includes('/cz') ? '../' : '';
-
-  const comparePresets = {
-    front: {
-      before: imgPrefix + 'assets/images/compare_10kg_before.jpg',
-      after: imgPrefix + 'assets/images/compare_10kg_after.jpg',
-      badgeUA: 'ПІСЛЯ (-10 КГ)',
-      badgeCZ: 'PO (-10 KG)'
-    },
-    side: {
-      before: imgPrefix + 'assets/images/compare_side_before.jpg',
-      after: imgPrefix + 'assets/images/compare_side_after.jpg',
-      badgeUA: 'ПІСЛЯ (-10 КГ)',
-      badgeCZ: 'PO (-10 KG)'
-    },
-    teen: {
-      before: imgPrefix + 'assets/images/compare_teen_before.jpg',
-      after: imgPrefix + 'assets/images/compare_teen_after.jpg',
-      badgeUA: 'ПІСЛЯ (-5 КГ)',
-      badgeCZ: 'PO (-5 KG)'
-    }
-  };
-
-  let activeCompareKey = 'front';
-  let compareAutoAnimId = null;
+  // Compare presets are already defined at top of scope
+  activeCompareKey = 'front';
+  compareAutoAnimId = null;
   let autoAnimAngle = 0;
 
   function setSliderPosition(x) {
