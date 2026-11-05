@@ -207,8 +207,8 @@ document.addEventListener('DOMContentLoaded', () => {
       sh1_title: "Атмосфера залу & Мотивація",
       sh2_tag: "Hradec • Pardubice • Chrudim",
       sh2_title: "Тренування офлайн у залах та Онлайн",
-      sh3_tag: "Сила & Тонус",
-      sh3_title: "Я допоможу змінити твоє тіло",
+      sh3_tag: "🔥 Трансформація & Сила",
+      sh3_title: "Я зміню твоє тіло! 🔥 Почни свої зміни сьогодні",
 
       reviews_eyebrow: "ВІДГУКИ КЛІЄНТОК",
       reviews_title: "Історії дівчат, які вже тренуються зі мною",
@@ -468,8 +468,8 @@ document.addEventListener('DOMContentLoaded', () => {
       sh1_title: "Atmosféra posilovny & Motivace",
       sh2_tag: "Hradec • Pardubice • Chrudim",
       sh2_title: "Tréninky osobně v posilovnách i Online",
-      sh3_tag: "Síla & Zpevnění",
-      sh3_title: "Pomohu ti změnit tvé tělo",
+      sh3_tag: "🔥 Transformace & Síla",
+      sh3_title: "Změním tvé tělo! 🔥 Začni svou proměnu dnes",
 
       reviews_eyebrow: "HODNOCENÍ KLIENTEK",
       reviews_title: "Příběhy žen, které se mnou trénují",
