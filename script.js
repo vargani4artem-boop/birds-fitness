@@ -1009,6 +1009,17 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('touchend', () => {
       isDragging = false;
     });
+
+    function syncCompareImgWidth() {
+      if (compareSlider && compareImgBefore) {
+        const w = compareSlider.offsetWidth;
+        if (w > 0) {
+          compareImgBefore.style.width = w + 'px';
+        }
+      }
+    }
+    syncCompareImgWidth();
+    window.addEventListener('resize', syncCompareImgWidth, { passive: true });
   }
 
   // ==================== MODALS LOGIC ====================
