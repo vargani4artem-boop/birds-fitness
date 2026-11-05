@@ -2032,20 +2032,25 @@ a {
   background: #000;
   overflow: hidden;
   cursor: pointer;
+  touch-action: manipulation;
 }
 
-.short-media-img {
+.short-media-img,
+.short-thumb {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
+  display: block;
 }
 
-.short-phone-card:hover .short-media-img {
+.short-phone-card:hover .short-media-img,
+.short-phone-card:hover .short-thumb {
   transform: scale(1.05);
 }
 
-.short-play-btn {
+.short-play-btn,
+.video-play-btn {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -2054,6 +2059,7 @@ a {
   height: 58px;
   background: rgba(210, 90, 108, 0.9);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -2062,32 +2068,65 @@ a {
   font-size: 1.25rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
 }
 
-.short-phone-card:hover .short-play-btn {
+.short-play-btn.mini,
+.video-play-btn.mini {
+  width: 48px;
+  height: 48px;
+  font-size: 1rem;
+}
+
+.short-phone-card:hover .short-play-btn,
+.short-phone-card:hover .video-play-btn,
+.video-player-facade:hover .video-play-btn {
   transform: translate(-50%, -50%) scale(1.15);
   background: var(--color-primary);
 }
 
-.short-tag-badge {
+.short-tag-badge,
+.short-badge-corner {
   position: absolute;
   top: 14px;
-  left: 14px;
+  right: 14px;
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   color: #FFFFFF;
   font-size: 0.74rem;
   font-weight: 700;
   padding: 4px 10px;
   border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 2;
+  pointer-events: none;
 }
 
-.short-info-body {
+.short-badge-corner i {
+  color: #FF0000;
+}
+
+.short-info-body,
+.short-card-info {
   padding: 18px;
   background: #0E0D14;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  flex-grow: 1;
+}
+
+.short-tag {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #f1a9b5;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .short-title {
@@ -2095,15 +2134,26 @@ a {
   font-weight: 700;
   color: #FFFFFF;
   line-height: 1.35;
+  margin: 0;
 }
 
-.short-link-yt {
+.short-link-yt,
+.short-yt-link {
   font-size: 0.8rem;
   color: var(--color-primary);
   font-weight: 700;
   display: inline-flex;
   align-items: center;
   gap: 5px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  margin-top: 4px;
+}
+
+.short-link-yt:hover,
+.short-yt-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
 }
 
 /* ==================== REVIEWS / TESTIMONIALS SECTION ==================== */
@@ -2236,9 +2286,13 @@ a {
 
 /* Video facade responsive iframe container */
 .video-iframe-embed {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border: 0;
+  display: block;
 }
 
 /* ==================== EXPERIENCE SECTION ==================== */

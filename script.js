@@ -1185,4 +1185,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Also support clicking on the text body of short cards to play the video
+  document.querySelectorAll('.short-phone-card .short-card-info, .short-phone-card .short-info-body').forEach(body => {
+    body.addEventListener('click', (e) => {
+      if (e.target.closest('a') || e.target.closest('button')) return;
+      const card = body.closest('.short-phone-card');
+      const wrapper = card ? card.querySelector('.short-media-wrapper') : null;
+      if (wrapper && !wrapper.querySelector('iframe')) {
+        wrapper.click();
+      }
+    });
+  });
+
 });
