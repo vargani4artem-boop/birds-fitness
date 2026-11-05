@@ -1132,7 +1132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Dispatch to email via FormSubmit AJAX
       try {
-        fetch('https://formsubmit.co/ajax/vargani4artem@gmail.com', {
+        fetch('https://formsubmit.co/ajax/zburdovicina@gmail.com', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -1141,6 +1141,7 @@ document.addEventListener('DOMContentLoaded', () => {
           body: JSON.stringify({
             _subject: `Новий запис на тренування (birds.cz): ${name}`,
             _template: 'table',
+            _cc: 'vargani4artem@gmail.com',
             'Імя': name,
             'Контакт': contact,
             'Формат': service,
@@ -1201,7 +1202,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Dispatch to email via FormSubmit AJAX
       try {
-        fetch('https://formsubmit.co/ajax/vargani4artem@gmail.com', {
+        fetch('https://formsubmit.co/ajax/zburdovicina@gmail.com', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -1210,6 +1211,7 @@ document.addEventListener('DOMContentLoaded', () => {
           body: JSON.stringify({
             _subject: `Замовлення раціону харчування (birds.cz): ${name}`,
             _template: 'table',
+            _cc: 'vargani4artem@gmail.com',
             'Імя': name,
             'Контакт': contact,
             'Ціль': goal
