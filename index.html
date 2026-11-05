@@ -77,6 +77,8 @@
           <li><a href="#locations" class="nav-link" data-i18n="nav_locations">Формати й ціни</a></li>
           <li><a href="#nutrition" class="nav-link" data-i18n="nav_nutrition">Харчування</a></li>
           <li><a href="#results" class="nav-link" data-i18n="nav_results">Результати</a></li>
+          <li><a href="#videos" class="nav-link" data-i18n="nav_videos">Відео</a></li>
+          <li><a href="#reviews" class="nav-link" data-i18n="nav_reviews">Відгуки</a></li>
           <li><a href="#experience" class="nav-link" data-i18n="nav_experience">Досвід</a></li>
           <li><a href="#contacts" class="nav-link" data-i18n="nav_contacts">Контакти</a></li>
         </ul>
@@ -108,6 +110,8 @@
         <li><a href="#locations" class="mobile-nav-link" data-i18n="nav_locations">Формати й ціни</a></li>
         <li><a href="#nutrition" class="mobile-nav-link" data-i18n="nav_nutrition">Харчування</a></li>
         <li><a href="#results" class="mobile-nav-link" data-i18n="nav_results">Результати</a></li>
+        <li><a href="#videos" class="mobile-nav-link" data-i18n="nav_videos">Відео</a></li>
+        <li><a href="#reviews" class="mobile-nav-link" data-i18n="nav_reviews">Відгуки</a></li>
         <li><a href="#experience" class="mobile-nav-link" data-i18n="nav_experience">Досвід</a></li>
         <li><a href="#contacts" class="mobile-nav-link" data-i18n="nav_contacts">Контакти</a></li>
       </ul>
@@ -163,7 +167,7 @@
               <img src="assets/images/result_10kg_side.jpg" alt="Клієнтка" class="trust-avatar">
             </div>
             <div class="trust-text">
-              <span class="trust-number">4+ роки</span>
+              <span class="trust-number" data-i18n="hero_trust_num">4+ роки</span>
               <span class="trust-label" data-i18n="hero_trust_label">активної тренерської практики й результатів</span>
             </div>
           </div>
@@ -311,8 +315,14 @@
             
             <!-- Direction 1 -->
             <div class="service-card">
-              <div class="service-card-media">
-                <img src="assets/images/coach_hero_extrifit.jpg" alt="Силові тренування" class="service-img" loading='lazy' decoding='async'>
+              <div class="service-card-media video-player-facade" data-youtube-id="UxmEhd5iXyw" title="Натисніть для перегляду відео тренування" style="position: relative; cursor: pointer; background: #000;">
+                <img src="https://img.youtube.com/vi/UxmEhd5iXyw/hqdefault.jpg" alt="Силові тренування та фігура" class="service-img" style="object-position: center;" loading="lazy">
+                <div class="video-play-btn mini" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 56px; height: 56px; background: rgba(210, 90, 108, 0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; box-shadow: 0 4px 18px rgba(0,0,0,0.5); pointer-events: none;">
+                  <i class="fa-solid fa-play" style="margin-left: 3px;"></i>
+                </div>
+                <div style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; display: flex; align-items: center; gap: 5px; pointer-events: none;">
+                  <i class="fa-brands fa-youtube" style="color: #ff0000; font-size: 13px;"></i> Відео тренування
+                </div>
               </div>
               <div class="service-card-body">
                 <h3 class="service-name" data-i18n="dir_1_name">Силові тренування та фігура</h3>
@@ -361,7 +371,7 @@
                 </p>
                 <div class="service-tags">
                   <span class="tag-pill"><i class="fa-solid fa-spa"></i> <span data-i18n="tag_split">Шпагат без болю</span></span>
-                  <span class="tag-pill"><i class="fa-regular fa-clock"></i> 60 хв</span>
+                  <span class="tag-pill"><i class="fa-regular fa-clock"></i> <span data-i18n="tag_60min">60 хв</span></span>
                 </div>
                 <button class="btn-card-link open-modal-btn" data-target="bookingModal" data-service="Розтяжка та гнучкість">
                   <span data-i18n="btn_details">Записатися</span> &rarr;
@@ -420,7 +430,7 @@
             
             <div class="loc-price-box">
               <span class="loc-price-val">350 Kč</span>
-              <span class="loc-price-period">/ 60 хв</span>
+              <span class="loc-price-period" data-i18n="loc_gym_period">/ 60 хв</span>
             </div>
 
             <ul class="loc-features-list">
@@ -448,16 +458,16 @@
 
             <div class="loc-price-box">
               <span class="loc-price-val">800 Kč</span>
-              <span class="loc-price-period">/ 90 хв (зал 300 Kč + тренер 500 Kč)</span>
+              <span class="loc-price-period" data-i18n="loc_chrudim_period">/ 90 хв (зал 300 Kč + тренер 500 Kč)</span>
             </div>
 
             <div class="split-cost-box">
               <div class="split-cost-title" data-i18n="split_title">💡 Спільне тренування з подругами (до 4 людей):</div>
               <div class="split-pills">
-                <span class="split-pill"><strong>1 людина:</strong> 800 Kč</span>
-                <span class="split-pill"><strong>2 людини:</strong> 400 Kč / особа</span>
-                <span class="split-pill"><strong>3 людини:</strong> ~267 Kč / особа</span>
-                <span class="split-pill"><strong>4 людини:</strong> 200 Kč / особа</span>
+                <span class="split-pill" data-i18n="split_p1"><strong>1 людина:</strong> 800 Kč</span>
+                <span class="split-pill" data-i18n="split_p2"><strong>2 людини:</strong> 400 Kč / особа</span>
+                <span class="split-pill" data-i18n="split_p3"><strong>3 людини:</strong> ~267 Kč / особа</span>
+                <span class="split-pill" data-i18n="split_p4"><strong>4 людини:</strong> 200 Kč / особа</span>
               </div>
             </div>
 
@@ -478,7 +488,7 @@
 
             <div class="loc-price-box">
               <span class="loc-price-val">250 Kč</span>
-              <span class="loc-price-period">/ 60 хв</span>
+              <span class="loc-price-period" data-i18n="loc_onl_period">/ 60 хв</span>
             </div>
 
             <ul class="loc-features-list">
@@ -487,6 +497,10 @@
               <li><i class="fa-solid fa-check"></i> <span data-i18n="loc_onl_f3">Економія часу на дорогу до залу</span></li>
               <li><i class="fa-solid fa-check"></i> <span data-i18n="loc_onl_f4">Максимально комфортна домашня атмосфера</span></li>
             </ul>
+
+            <div class="video-player-facade online-video-btn" data-youtube-id="ZFFfVMbVvTU" title="Натисніть для перегляду онлайн-тренування" style="display:flex; align-items:center; justify-content:center; gap:8px; padding:10px 14px; border-radius:12px; background:rgba(219,68,85,0.08); color:var(--color-primary); font-weight:600; font-size:13px; border:1px dashed var(--color-primary); cursor:pointer; margin-top:14px; margin-bottom:14px; width:100%;">
+              <i class="fa-brands fa-youtube" style="color:#ff0000; font-size:16px;"></i> <span data-i18n="loc_onl_video_btn">🎥 Подивитися онлайн-тренування (Відео)</span>
+            </div>
 
             <button class="btn btn-outline-rose btn-block open-modal-btn" data-target="bookingModal" data-service="Онлайн-тренування (Telegram)" data-i18n="btn_book_onl">
               Записатися на онлайн &rarr;
@@ -622,10 +636,10 @@
               <div class="carousel-card-img-wrap">
                 <img src="assets/images/result_10kg_side.jpg" alt="-10 кг трансформація (вид збоку)" class="carousel-card-img" loading='lazy' decoding='async'>
                 <div class="carousel-badge-loss">
-                  <i class="fa-solid fa-fire"></i> -10 КГ
+                  <i class="fa-solid fa-fire"></i> <span data-i18n="badge_minus_10kg">-10 КГ</span>
                 </div>
                 <div class="carousel-badge-time">
-                  <i class="fa-regular fa-clock"></i> 4 місяці
+                  <i class="fa-regular fa-clock"></i> <span data-i18n="badge_4months">4 місяці</span>
                 </div>
                 <div class="carousel-zoom-hint">
                   <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -638,9 +652,9 @@
                   Індивідуальний підбір вправ та корекція харчування без суворих дієт. Помітне зменшення об'єму талії, плоский живіт і легкість рухів.
                 </p>
                 <div class="carousel-metrics-row">
-                  <span class="metric-pill">📉 -10 кг</span>
-                  <span class="metric-pill">⏳ 4 місяці</span>
-                  <span class="metric-pill">🥗 Без голодувань</span>
+                  <span class="metric-pill" data-i18n="m_minus_10kg">📉 -10 кг</span>
+                  <span class="metric-pill" data-i18n="m_4months">⏳ 4 місяці</span>
+                  <span class="metric-pill" data-i18n="m_no_starve">🥗 Без голодувань</span>
                 </div>
                 <button class="carousel-card-btn" data-i18n="btn_zoom_photo">
                   <i class="fa-solid fa-magnifying-glass-plus"></i> Збільшити фото &rarr;
@@ -653,10 +667,10 @@
               <div class="carousel-card-img-wrap">
                 <img src="assets/images/result_10kg_front.jpg" alt="-10 кг трансформація (вид спереду)" class="carousel-card-img" loading='lazy' decoding='async'>
                 <div class="carousel-badge-loss">
-                  <i class="fa-solid fa-fire"></i> -10 КГ
+                  <i class="fa-solid fa-fire"></i> <span data-i18n="badge_minus_10kg">-10 КГ</span>
                 </div>
                 <div class="carousel-badge-time">
-                  <i class="fa-regular fa-clock"></i> 4 місяці
+                  <i class="fa-regular fa-clock"></i> <span data-i18n="badge_4months">4 місяці</span>
                 </div>
                 <div class="carousel-zoom-hint">
                   <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -669,9 +683,9 @@
                   Підтягнутий рельєф м'язів, помітне зменшення об'ємів у стегнах, гармонійні пропорції тіла та повернення впевненості у собі.
                 </p>
                 <div class="carousel-metrics-row">
-                  <span class="metric-pill">📉 -10 кг</span>
-                  <span class="metric-pill">⏳ 4 місяці</span>
-                  <span class="metric-pill">💪 Тонус м'язів</span>
+                  <span class="metric-pill" data-i18n="m_minus_10kg">📉 -10 кг</span>
+                  <span class="metric-pill" data-i18n="m_4months">⏳ 4 місяці</span>
+                  <span class="metric-pill" data-i18n="m_muscle_tone">💪 Тонус м'язів</span>
                 </div>
                 <button class="carousel-card-btn" data-i18n="btn_zoom_photo">
                   <i class="fa-solid fa-magnifying-glass-plus"></i> Збільшити фото &rarr;
@@ -684,10 +698,10 @@
               <div class="carousel-card-img-wrap">
                 <img src="assets/images/result_teen_transform.jpg" alt="Підліткова трансформація (профіль)" class="carousel-card-img" loading='lazy' decoding='async'>
                 <div class="carousel-badge-loss" style="background: linear-gradient(135deg, #7A5AF8, #9B8AFB);">
-                  <i class="fa-solid fa-sparkles"></i> -5 КГ
+                  <i class="fa-solid fa-sparkles"></i> <span data-i18n="badge_minus_5kg">-5 КГ</span>
                 </div>
                 <div class="carousel-badge-time">
-                  <i class="fa-solid fa-person"></i> Постава
+                  <i class="fa-solid fa-person"></i> <span data-i18n="badge_posture">Постава</span>
                 </div>
                 <div class="carousel-zoom-hint">
                   <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -700,9 +714,9 @@
                   Розкриття плечового поясу, вирівнювання лінії постави, зміцнення м'язів спини та підтягнутий животик без перевантажень.
                 </p>
                 <div class="carousel-metrics-row">
-                  <span class="metric-pill">🦴 Здорова спина</span>
-                  <span class="metric-pill">🧍‍♀️ Рівна постава</span>
-                  <span class="metric-pill">✨ -5 кг</span>
+                  <span class="metric-pill" data-i18n="m_back">🦴 Здорова спина</span>
+                  <span class="metric-pill" data-i18n="m_posture">🧍‍♀️ Рівна постава</span>
+                  <span class="metric-pill" data-i18n="m_minus_5kg">✨ -5 кг</span>
                 </div>
                 <button class="carousel-card-btn" data-i18n="btn_zoom_photo">
                   <i class="fa-solid fa-magnifying-glass-plus"></i> Збільшити фото &rarr;
@@ -715,10 +729,10 @@
               <div class="carousel-card-img-wrap">
                 <img src="assets/images/result_teen_front.jpg" alt="Підліткова трансформація (анфас)" class="carousel-card-img" loading='lazy' decoding='async'>
                 <div class="carousel-badge-loss" style="background: linear-gradient(135deg, #7A5AF8, #9B8AFB);">
-                  <i class="fa-solid fa-sparkles"></i> -5 КГ
+                  <i class="fa-solid fa-sparkles"></i> <span data-i18n="badge_minus_5kg">-5 КГ</span>
                 </div>
                 <div class="carousel-badge-time">
-                  <i class="fa-solid fa-dumbbell"></i> Тонус
+                  <i class="fa-solid fa-dumbbell"></i> <span data-i18n="badge_tonus">Тонус</span>
                 </div>
                 <div class="carousel-zoom-hint">
                   <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -731,9 +745,9 @@
                   Освоєння базових вправ із гантелями, плавне зменшення об'ємів, зміцнення суглобів та здоровий розвиток молодого організму.
                 </p>
                 <div class="carousel-metrics-row">
-                  <span class="metric-pill">🏋️‍♀️ Базова техніка</span>
-                  <span class="metric-pill">✨ Тонус тіла</span>
-                  <span class="metric-pill">🎯 Безпечно</span>
+                  <span class="metric-pill" data-i18n="m_technique">🏋️‍♀️ Базова техніка</span>
+                  <span class="metric-pill" data-i18n="m_body_tone">✨ Тонус тіла</span>
+                  <span class="metric-pill" data-i18n="m_safe">🎯 Безпечно</span>
                 </div>
                 <button class="carousel-card-btn" data-i18n="btn_zoom_photo">
                   <i class="fa-solid fa-magnifying-glass-plus"></i> Збільшити фото &rarr;
@@ -746,10 +760,10 @@
               <div class="carousel-card-img-wrap">
                 <img src="assets/images/result_split_blocks.jpg" alt="Поздовжній шпагат на блоках" class="carousel-card-img" loading='lazy' decoding='async'>
                 <div class="carousel-badge-loss" style="background: linear-gradient(135deg, #10B981, #059669);">
-                  <i class="fa-solid fa-spa"></i> Шпагат
+                  <i class="fa-solid fa-spa"></i> <span data-i18n="badge_split">Шпагат</span>
                 </div>
                 <div class="carousel-badge-time">
-                  <i class="fa-solid fa-heart-pulse"></i> Без болю
+                  <i class="fa-solid fa-heart-pulse"></i> <span data-i18n="badge_no_pain">Без болю</span>
                 </div>
                 <div class="carousel-zoom-hint">
                   <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -762,9 +776,9 @@
                   Покрокове збільшення амплітуди рухів за допомогою блоків, без сліз та травм — виключно плавна та безпечна робота зі зв'язками.
                 </p>
                 <div class="carousel-metrics-row">
-                  <span class="metric-pill">🧘‍♀️ Безпечний шпагат</span>
-                  <span class="metric-pill">🚫 Без болю і сліз</span>
-                  <span class="metric-pill">🧱 Йога-блоки</span>
+                  <span class="metric-pill" data-i18n="m_safe_split">🧘‍♀️ Безпечний шпагат</span>
+                  <span class="metric-pill" data-i18n="m_no_pain_split">🚫 Без болю і сліз</span>
+                  <span class="metric-pill" data-i18n="m_yoga_blocks">🧱 Йога-блоки</span>
                 </div>
                 <button class="carousel-card-btn" data-i18n="btn_zoom_photo">
                   <i class="fa-solid fa-magnifying-glass-plus"></i> Збільшити фото &rarr;
@@ -777,10 +791,10 @@
               <div class="carousel-card-img-wrap">
                 <img src="assets/images/result_split_knees.jpg" alt="Розвиток гнучкості від розминки до шпагату" class="carousel-card-img" loading='lazy' decoding='async'>
                 <div class="carousel-badge-loss" style="background: linear-gradient(135deg, #10B981, #059669);">
-                  <i class="fa-solid fa-spa"></i> Гнучкість
+                  <i class="fa-solid fa-spa"></i> <span data-i18n="badge_flexibility">Гнучкість</span>
                 </div>
                 <div class="carousel-badge-time">
-                  <i class="fa-solid fa-arrows-up-down"></i> З нуля
+                  <i class="fa-solid fa-arrows-up-down"></i> <span data-i18n="badge_from_zero">З нуля</span>
                 </div>
                 <div class="carousel-zoom-hint">
                   <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -793,9 +807,9 @@
                   Від скутості зв'язок на перших заняттях до впевненого глибокого розкриття тазостегнових суглобів у комфортному індивідуальному темпі.
                 </p>
                 <div class="carousel-metrics-row">
-                  <span class="metric-pill">🤸‍♀️ Мобільність</span>
-                  <span class="metric-pill">📈 Прогрес крок за кроком</span>
-                  <span class="metric-pill">🤍 Дбайливо</span>
+                  <span class="metric-pill" data-i18n="m_mobility">🤸‍♀️ Мобільність</span>
+                  <span class="metric-pill" data-i18n="m_step_by_step">📈 Прогрес крок за кроком</span>
+                  <span class="metric-pill" data-i18n="m_gentle">🤍 Дбайливо</span>
                 </div>
                 <button class="carousel-card-btn" data-i18n="btn_zoom_photo">
                   <i class="fa-solid fa-magnifying-glass-plus"></i> Збільшити фото &rarr;
@@ -874,6 +888,214 @@
       </div>
     </section>
 
+    <!-- ==================== VIDEOS & YOUTUBE SHORTS SECTION ==================== -->
+    <section class="section videos-section" id="videos">
+      <div class="container">
+        
+        <div class="section-header-row">
+          <div class="section-title-col">
+            <div class="section-eyebrow" data-i18n="videos_eyebrow">АТМОСФЕРА ТА МОТИВАЦІЯ</div>
+            <h2 class="section-title" data-i18n="videos_title">Тренування у реальному житті</h2>
+          </div>
+          <div class="section-desc-col">
+            <p class="section-subtitle" data-i18n="videos_sub">
+              Подивіться, як проходять заняття, відчуйте темп і енергію тренувального процесу.
+            </p>
+          </div>
+        </div>
+
+        <!-- Featured Workout Video (cZpfZXoD7u4) -->
+        <div class="video-featured-card">
+          <div class="video-featured-player">
+            <div class="video-player-facade" data-youtube-id="cZpfZXoD7u4" title="Натисніть для перегляду тренування">
+              <img src="https://img.youtube.com/vi/cZpfZXoD7u4/hqdefault.jpg" alt="Тренування з клієнтами" class="video-facade-img" loading="lazy">
+              <div class="video-play-btn">
+                <i class="fa-solid fa-play"></i>
+              </div>
+              <div class="video-duration-pill">
+                <i class="fa-solid fa-play-circle"></i> Повне відео
+              </div>
+            </div>
+          </div>
+          <div class="video-featured-info">
+            <div class="video-pill-tag" data-i18n="vid_full_tag">Повноцінне тренування</div>
+            <h3 class="video-featured-title" data-i18n="vid_full_title">Стрункі та підтягнуті ноги й сідниці (без ваги)</h3>
+            <p class="video-featured-desc" data-i18n="vid_full_desc">
+              Тренувальний процес з клієнтами на килимку: техніка, контроль рухів і робота на результат у комфортному темпі.
+            </p>
+            <div class="video-quote-box">
+              <p class="video-quote-text" data-i18n="vid_quote_1">«Це відео показує реальний тренувальний процес — як ми рухаємося, ставимо техніку та працюємо з клієнтами без примусу й стресу.»</p>
+              <div class="video-quote-author" data-i18n="vid_quote_author">— Євгенія Бурдовіцина</div>
+            </div>
+            <a href="https://youtu.be/cZpfZXoD7u4" target="_blank" rel="noopener noreferrer" class="btn btn-outline-rose" style="align-self: flex-start; margin-top: 10px;">
+              <i class="fa-brands fa-youtube" style="color: #ff0000; margin-right: 6px;"></i> <span data-i18n="vid_full_btn">Дивитися на YouTube &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- YouTube Shorts Block (R7lSLrxiYGY, 0gEbRnn3PGI, 9L0hFzZ1Zjo) -->
+        <div class="shorts-block" style="margin-top: 48px;">
+          <div class="shorts-header" style="margin-bottom: 24px;">
+            <h3 class="shorts-header-title">
+              <i class="fa-brands fa-youtube" style="color: #ff0000; font-size: 1.5rem;"></i> <span data-i18n="shorts_header_title">YouTube Shorts • Мотивація та спортзал</span>
+            </h3>
+          </div>
+
+          <div class="shorts-grid">
+            <!-- Short 1 -->
+            <div class="short-phone-card">
+              <div class="short-media-wrapper" data-youtube-id="R7lSLrxiYGY" title="Натисніть для перегляду">
+                <img src="https://img.youtube.com/vi/R7lSLrxiYGY/hqdefault.jpg" alt="Атмосфера залу & Мотивація" class="short-thumb" loading="lazy">
+                <div class="video-play-btn mini">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="short-badge-corner"><i class="fa-solid fa-bolt"></i> Shorts</div>
+              </div>
+              <div class="short-card-info">
+                <span class="short-tag" data-i18n="sh1_tag">Спортзал & Естетика</span>
+                <h4 class="short-title" data-i18n="sh1_title">Атмосфера залу & Мотивація</h4>
+                <a href="https://youtube.com/shorts/R7lSLrxiYGY" target="_blank" rel="noopener noreferrer" class="short-yt-link">
+                  <i class="fa-brands fa-youtube"></i> Відкрити Shorts
+                </a>
+              </div>
+            </div>
+
+            <!-- Short 2 -->
+            <div class="short-phone-card">
+              <div class="short-media-wrapper" data-youtube-id="0gEbRnn3PGI" title="Натисніть для перегляду">
+                <img src="https://img.youtube.com/vi/0gEbRnn3PGI/hqdefault.jpg" alt="Тренування офлайн у залах та Онлайн" class="short-thumb" loading="lazy">
+                <div class="video-play-btn mini">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="short-badge-corner"><i class="fa-solid fa-bolt"></i> Shorts</div>
+              </div>
+              <div class="short-card-info">
+                <span class="short-tag" data-i18n="sh2_tag">Hradec • Pardubice • Chrudim</span>
+                <h4 class="short-title" data-i18n="sh2_title">Тренування офлайн у залах та Онлайн</h4>
+                <a href="https://youtube.com/shorts/0gEbRnn3PGI" target="_blank" rel="noopener noreferrer" class="short-yt-link">
+                  <i class="fa-brands fa-youtube"></i> Відкрити Shorts
+                </a>
+              </div>
+            </div>
+
+            <!-- Short 3 -->
+            <div class="short-phone-card">
+              <div class="short-media-wrapper" data-youtube-id="9L0hFzZ1Zjo" title="Натисніть для перегляду">
+                <img src="https://img.youtube.com/vi/9L0hFzZ1Zjo/hqdefault.jpg" alt="Я допоможу змінити твоє тіло" class="short-thumb" loading="lazy">
+                <div class="video-play-btn mini">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="short-badge-corner"><i class="fa-solid fa-bolt"></i> Shorts</div>
+              </div>
+              <div class="short-card-info">
+                <span class="short-tag" data-i18n="sh3_tag">Сила & Тонус</span>
+                <h4 class="short-title" data-i18n="sh3_title">Я допоможу змінити твоє тіло</h4>
+                <a href="https://youtube.com/shorts/9L0hFzZ1Zjo" target="_blank" rel="noopener noreferrer" class="short-yt-link">
+                  <i class="fa-brands fa-youtube"></i> Відкрити Shorts
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== REVIEWS SECTION ==================== -->
+    <section class="section reviews-section" id="reviews">
+      <div class="container">
+        
+        <div class="section-header-row">
+          <div class="section-title-col">
+            <div class="section-eyebrow" data-i18n="reviews_eyebrow">ВІДГУКИ КЛІЄНТОК</div>
+            <h2 class="section-title" data-i18n="reviews_title">Історії дівчат, які вже тренуються зі мною</h2>
+          </div>
+          <div class="section-desc-col">
+            <p class="section-subtitle" data-i18n="reviews_sub">
+              Справжні результати, емоції та враження від тренувань, харчування і взаємної підтримки.
+            </p>
+          </div>
+        </div>
+
+        <div class="reviews-grid">
+          <!-- Review 1 -->
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text" data-i18n="rev1_text">
+              «Почала займатися з Женею 4 місяці тому. Дуже боялася суворих дієт, але Женя підібрала мені комфортний раціон з улюбленими стравами й регулярні тренування. Результат — мінус 10 кг, з'явилася талія і неймовірна легкість у тілі!»
+            </p>
+            <div class="review-author-wrap">
+              <div class="review-avatar-ph">К</div>
+              <div>
+                <strong class="review-author-name" data-i18n="rev1_name">Катерина</strong>
+                <span class="review-author-meta" data-i18n="rev1_meta">Градець-Кралове • -10 кг за 4 місяці</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text" data-i18n="rev2_text">
+              «Приватний зал у Хрудимі — це кохання з першого погляду! Жодних сторонніх людей, вхід за персональним кодом. Приходимо тренуватися удвох із подругою, ділимо вартість навпіл. Дуже затишно, музика, душ і супер-уважний тренер!»
+            </p>
+            <div class="review-author-wrap">
+              <div class="review-avatar-ph">О&А</div>
+              <div>
+                <strong class="review-author-name" data-i18n="rev2_name">Олена та Анна</strong>
+                <span class="review-author-meta" data-i18n="rev2_meta">Хрудим • Приватний зал на двох</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text" data-i18n="rev3_text">
+              «Займаємося онлайн через Telegram. Мені здавалося, що через екран тренер не побачить помилок, але Женя помічає кожну деталь у поставі! Спина перестала нити після робочого дня, а розтяжка покращилася без болю.»
+            </p>
+            <div class="review-author-wrap">
+              <div class="review-avatar-ph">М</div>
+              <div>
+                <strong class="review-author-name" data-i18n="rev3_name">Марина</strong>
+                <span class="review-author-meta" data-i18n="rev3_meta">Онлайн-тренування (Telegram)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA to leave a review -->
+        <div class="review-cta-card">
+          <div class="review-cta-content">
+            <h4 data-i18n="rev_cta_title">Вже тренувалися разом зі мною?</h4>
+            <p data-i18n="rev_cta_desc">Поділіться своєю історією чи результатом — ваш відгук надихає інших дівчат робити перший крок!</p>
+          </div>
+          <a href="https://t.me/burdovitsyna" target="_blank" rel="noopener noreferrer" class="btn btn-outline-rose">
+            <i class="fa-brands fa-telegram"></i> <span data-i18n="btn_leave_review">Надіслати відгук у Telegram &rarr;</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
     <!-- ==================== EXPERIENCE & SPEAKING SECTION ==================== -->
     <section class="section experience-section" id="experience">
       <div class="container">
@@ -900,8 +1122,15 @@
             </div>
 
             <div class="experience-media-col">
-              <div class="collage-item zoomable" data-img="assets/images/coach_speaker_stage.jpg" data-caption="Євгенія Бурдовіцина — виступ у Градець-Кралове: «Чому дієти не працюють, а звички — так?»" style="height: 320px; border-radius: 16px; overflow: hidden; cursor: pointer;">
-                <img src="assets/images/coach_speaker_stage.jpg" alt="Виступ у Градець-Кралове" style="width: 100%; height: 100%; object-fit: cover;" loading='lazy' decoding='async'>
+              <div class="video-player-facade" data-youtube-id="i3axyh-8pjo" title="Натисніть для перегляду виступу" style="position: relative; height: 320px; border-radius: 16px; overflow: hidden; cursor: pointer; background: #000; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                <img src="https://img.youtube.com/vi/i3axyh-8pjo/hqdefault.jpg" alt="Виступ у Градець-Кралове" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                <div class="video-play-btn" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 68px; height: 68px; background: rgba(210, 90, 108, 0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 24px; box-shadow: 0 8px 25px rgba(0,0,0,0.4); pointer-events: none;">
+                  <i class="fa-solid fa-play" style="margin-left: 4px;"></i>
+                </div>
+                <div style="position: absolute; bottom: 12px; left: 12px; right: 12px; padding: 8px 14px; background: rgba(0,0,0,0.75); backdrop-filter: blur(6px); border-radius: 8px; color: #fff; font-size: 12px; display: flex; justify-content: space-between; align-items: center; pointer-events: none;">
+                  <span data-i18n="exp_video_badge"><i class="fa-solid fa-video"></i> Відео виступу в Градець-Кралове</span>
+                  <span style="color: #ff99a8; font-weight: 700;"><i class="fa-brands fa-youtube"></i> YouTube</span>
+                </div>
               </div>
             </div>
           </div>
@@ -966,7 +1195,7 @@
             <div class="cities-list">
               <span class="city-pill"><i class="fa-solid fa-location-dot"></i> Hradec Králové</span>
               <span class="city-pill"><i class="fa-solid fa-location-dot"></i> Pardubice</span>
-              <span class="city-pill"><i class="fa-solid fa-key"></i> Chrudim (Приватний зал)</span>
+              <span class="city-pill"><i class="fa-solid fa-key"></i> <span data-i18n="loc_pin_chrudim">Chrudim (Приватний зал)</span></span>
               <span class="city-pill"><i class="fa-solid fa-globe"></i> Online (Telegram)</span>
             </div>
 
@@ -1028,7 +1257,7 @@
                 <g class="city-pin" transform="translate(280, 185)">
                   <circle r="16" fill="rgba(210, 90, 108, 0.3)" class="pin-pulse"/>
                   <circle r="7" fill="#BF4C5E"/>
-                  <text x="14" y="6" text-anchor="start" font-size="12" font-weight="800" fill="#BF4C5E">Chrudim (Приватний зал)</text>
+                  <text x="14" y="6" text-anchor="start" font-size="12" font-weight="800" fill="#BF4C5E" data-i18n="loc_map_chrudim">Chrudim (Приватний зал)</text>
                 </g>
               </svg>
             </div>

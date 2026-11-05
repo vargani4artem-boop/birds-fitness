@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_locations: "Формати й ціни",
       nav_nutrition: "Харчування",
       nav_results: "Результати",
+      nav_videos: "Відео",
+      nav_reviews: "Відгуки",
       nav_experience: "Досвід",
       nav_contacts: "Контакти",
       btn_book: "Записатися &rarr;",
@@ -27,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hero_tagline: "Ваше тіло. Ваші цілі. Ваш темп.",
       hero_btn_book: "Записатися на тренування &rarr;",
       hero_btn_nutrition: "Персональне меню (30 днів) &rarr;",
+      hero_trust_num: "4+ роки",
       hero_trust_label: "активної тренерської практики й результатів",
       hero_handwritten: "Краща версія тебе ♡",
       hero_feat_power: "Сила та форма фігури",
@@ -60,6 +63,33 @@ document.addEventListener('DOMContentLoaded', () => {
       tag_back: "Здорова спина",
       tag_mobility: "Мобільність",
       tag_split: "Шпагат без болю",
+            tag_60min: "60 хв",
+      badge_minus_10kg: "-10 КГ",
+      badge_4months: "4 місяці",
+      badge_posture: "Постава",
+      badge_tonus: "Тонус",
+      badge_minus_5kg: "-5 КГ",
+      badge_split: "Шпагат",
+      badge_no_pain: "Без болю",
+      badge_flexibility: "Гнучкість",
+      badge_from_zero: "З нуля",
+      
+      m_minus_10kg: "📉 -10 кг",
+      m_4months: "⏳ 4 місяці",
+      m_no_starve: "🥗 Без голодувань",
+      m_muscle_tone: "💪 Тонус м'язів",
+      m_back: "🦴 Здорова спина",
+      m_posture: "🧍‍♀️ Рівна постава",
+      m_minus_5kg: "✨ -5 кг",
+      m_technique: "🏋️‍♀️ Базова техніка",
+      m_body_tone: "✨ Тонус тіла",
+      m_safe: "🎯 Безпечно",
+      m_safe_split: "🧘‍♀️ Безпечний шпагат",
+      m_no_pain_split: "🚫 Без болю і сліз",
+      m_yoga_blocks: "🧱 Йога-блоки",
+      m_mobility: "🤸‍♀️ Мобільність",
+      m_step_by_step: "📈 Прогрес крок за кроком",
+      m_gentle: "🤍 Дбайливо",
       tag_starter: "Плавний старт",
       tag_safety: "Безпека",
       btn_details: "Записатися",
@@ -69,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_sub: "Обирайте комфортний формат: класичний тренажерний зал, повністю приватний зал без сторонніх очей або зручний онлайн-формат удома.",
       loc_gym_title: "Тренажерний зал",
       loc_gym_desc: "Співпраця з провідними тренажерними залами міст. Час і конкретний зал узгоджуємо індивідуально.",
+      loc_gym_period: "/ 60 хв",
       loc_gym_f1: "Постановка точної техніки вправ",
       loc_gym_f2: "Індивідуальний підбір навантаження",
       loc_gym_f3: "Організація всього тренувального процесу",
@@ -78,15 +109,22 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_chrudim_badge: "Ексклюзивний приватний формат",
       loc_chrudim_title: "Приватний зал у Хрудимі",
       loc_chrudim_desc: "<strong>90 хвилин без сторонніх людей!</strong> Доступ за персональним кодом. Тільки ви, тренер, музика, душ і вода/напої без доплати.",
+      loc_chrudim_period: "/ 90 хв (зал 300 Kč + тренер 500 Kč)",
       split_title: "💡 Спільне тренування з подругами (до 4 людей):",
+      split_p1: "<strong>1 людина:</strong> 800 Kč",
+      split_p2: "<strong>2 людини:</strong> 400 Kč / особа",
+      split_p3: "<strong>3 людини:</strong> ~267 Kč / особа",
+      split_p4: "<strong>4 людини:</strong> 200 Kč / особа",
       btn_book_private: "Забронювати приватний зал &rarr;",
 
       loc_online_title: "Онлайн-тренування",
       loc_online_desc: "Тренуйтеся вдома або в будь-якому місці у реальному часі через відеозв’язок у Telegram. Потрібен лише килимок та телефон.",
+      loc_onl_period: "/ 60 хв",
       loc_onl_f1: "Пояснення та відео-контроль техніки",
       loc_onl_f2: "Вправи з власною вагою та підручними речами",
       loc_onl_f3: "Економія часу на дорогу до залу",
       loc_onl_f4: "Максимально комфортна домашня атмосфера",
+      loc_onl_video_btn: "🎥 Подивитися онлайн-тренування (Відео)",
       btn_book_onl: "Записатися на онлайн &rarr;",
 
       nutr_eyebrow: "ПЕРСОНАЛЬНЕ ХАРЧУВАННЯ",
@@ -142,6 +180,39 @@ document.addEventListener('DOMContentLoaded', () => {
       compare_hint: "👈 Рухайте повзунок вліво або вправо, або запустіть авто-показ 👉",
       coach_role_quote: "Персональний тренер & нутриціолог",
 
+      videos_eyebrow: "АТМОСФЕРА ТА МОТИВАЦІЯ",
+      videos_title: "Тренування у реальному житті",
+      videos_sub: "Подивіться, як проходять заняття, відчуйте темп і енергію тренувального процесу.",
+      vid_full_tag: "Повноцінне тренування",
+      vid_full_title: "Стрункі та підтягнуті ноги й сідниці (без ваги)",
+      vid_full_desc: "Тренувальний процес з клієнтами на килимку: техніка, контроль рухів і робота на результат у комфортному темпі.",
+      vid_full_btn: "Дивитися на YouTube &rarr;",
+      vid_quote_1: "«Це відео показує реальний тренувальний процес — як ми рухаємося, ставимо техніку та працюємо з клієнтами без примусу й стресу.»",
+      vid_quote_author: "— Євгенія Бурдовіцина",
+      shorts_header_title: "YouTube Shorts • Мотивація та спортзал",
+      sh1_tag: "Спортзал & Естетика",
+      sh1_title: "Атмосфера залу & Мотивація",
+      sh2_tag: "Hradec • Pardubice • Chrudim",
+      sh2_title: "Тренування офлайн у залах та Онлайн",
+      sh3_tag: "Сила & Тонус",
+      sh3_title: "Я допоможу змінити твоє тіло",
+
+      reviews_eyebrow: "ВІДГУКИ КЛІЄНТОК",
+      reviews_title: "Історії дівчат, які вже тренуються зі мною",
+      reviews_sub: "Справжні результати, емоції та враження від тренувань, харчування і взаємної підтримки.",
+      rev1_text: "«Почала займатися з Женею 4 місяці тому. Дуже боялася суворих дієт, але Женя підібрала мені комфортний раціон з улюбленими стравами й регулярні тренування. Результат — мінус 10 кг, з'явилася талія і неймовірна легкість у тілі!»",
+      rev1_name: "Катерина",
+      rev1_meta: "Градець-Кралове • -10 кг за 4 місяці",
+      rev2_text: "«Приватний зал у Хрудимі — це кохання з першого погляду! Жодних сторонніх людей, вхід за персональним кодом. Приходимо тренуватися удвох із подругою, ділимо вартість навпіл. Дуже затишно, музика, душ і супер-уважний тренер!»",
+      rev2_name: "Олена та Анна",
+      rev2_meta: "Хрудим • Приватний зал на двох",
+      rev3_text: "«Займаємося онлайн через Telegram. Мені здавалося, що через екран тренер не побачить помилок, але Женя помічає кожну деталь у поставі! Спина перестала нити після робочого дня, а розтяжка покращилася без болю.»",
+      rev3_name: "Марина",
+      rev3_meta: "Онлайн-тренування (Telegram)",
+      rev_cta_title: "Вже тренувалися разом зі мною?",
+      rev_cta_desc: "Поділіться своєю історією чи результатом — ваш відгук надихає інших дівчат робити перший крок!",
+      btn_leave_review: "Надіслати відгук у Telegram &rarr;",
+
       exp_eyebrow: "ДОСВІД ТА ЕКСПЕРТНІСТЬ",
       exp_title: "Спорт, спілкування та мотивація",
       exp_text1: "<strong>Робота з групами:</strong> У минулому я успішно проводила групові тренування. Це був безцінний досвід руху, командної енергії та взаємної підтримки. Сьогодні я фокусуюся на персональних заняттях, де можу приділити клієнту 100% уваги.",
@@ -150,6 +221,8 @@ document.addEventListener('DOMContentLoaded', () => {
       exp_b2: "Досвід групових програм",
       exp_b3: "4+ роки активної практики",
       exp_gallery_title: "📸 Фотографії з групових тренувань та залів:",
+      exp_video_badge: "Відео виступу в Градець-Кралове",
+      exp_video_title: "«Чому дієти не працюють, а звички — так?»",
 
       ready_title: "Готові почати?",
       ready_desc: "Не потрібно чекати ідеального моменту, найкращої фізичної форми або понеділка. Почнімо з того, що важливо саме для вас: сили, гнучкості, зміни форми тіла чи організованого харчування.",
@@ -159,6 +232,8 @@ document.addEventListener('DOMContentLoaded', () => {
       contacts_eyebrow: "КОНТАКТИ",
       contacts_title: "Локації для тренувань та зв'язок",
       contacts_lead: "Напишіть мені у зручний месенджер або залиште заявку — ми обговоримо ваші цілі та підберемо ідеальний формат занять.",
+      loc_pin_chrudim: "Chrudim (Приватний зал)",
+      loc_map_chrudim: "Chrudim (Приватний зал)",
       map_label: "Локації в Чехії",
       footer_rights: "Всі права захищено.",
 
@@ -188,6 +263,8 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_locations: "Formáty a ceník",
       nav_nutrition: "Stravování",
       nav_results: "Výsledky",
+      nav_videos: "Videa",
+      nav_reviews: "Hodnocení",
       nav_experience: "Zkušenosti",
       nav_contacts: "Kontakty",
       btn_book: "Objednat se &rarr;",
@@ -200,6 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hero_tagline: "Vaše tělo. Vaše cíle. Vaše tempo.",
       hero_btn_book: "Objednat se na trénink &rarr;",
       hero_btn_nutrition: "Osobní jídelníček (30 dní) &rarr;",
+      hero_trust_num: "4+ roky",
       hero_trust_label: "aktivní trenérské praxe a výsledků",
       hero_handwritten: "Lepší verze tebe ♡",
       hero_feat_power: "Síla a tvarování postavy",
@@ -208,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hero_feat_nutr: "Strava bez hladovění",
 
       about_eyebrow: "O MNĚ",
-      about_title: "Jsem pro individuální přístup, ne cvičení podle šablony",
+      about_title: "Věřím v individuální přístup a trénink na míru vašim potřebám, možnostem a cílům",
       about_bio_1: "Jmenuji se <strong>Jevgenija Burdovicyna</strong>. Jsem osobní trenérka a sport je již mnoho let zásadní součástí mého života. Poslední čtyři roky intenzivně trénuji, prohlubuji své znalosti o svalech, biomechanice pohybu a výživě a aplikuji je v praxi s klienty.",
       about_bio_2: "Nejvíce mě baví hledat přístup ke každému člověku. Za stejným přáním «být fit» stojí různé potřeby: někdo chce zhubnout, někdo zpevnit postavu a někdo touží po flexibilitě nebo úlevě od bolesti zad.",
       about_bio_3: "Vždy beru v úvahu vaši kondici, únavu i to, jak se cítíte daný den. Zátěž přizpůsobujeme na míru, abyste lépe porozuměli svému tělu a cítili se sebevědomě.",
@@ -233,6 +311,33 @@ document.addEventListener('DOMContentLoaded', () => {
       tag_back: "Zdravá záda",
       tag_mobility: "Mobilita",
       tag_split: "Provaz bez bolesti",
+            tag_60min: "60 min",
+      badge_minus_10kg: "-10 KG",
+      badge_4months: "4 měsíce",
+      badge_posture: "Postura",
+      badge_tonus: "Tonus",
+      badge_minus_5kg: "-5 KG",
+      badge_split: "Provaz",
+      badge_no_pain: "Bez bolesti",
+      badge_flexibility: "Flexibilita",
+      badge_from_zero: "Od nuly",
+      
+      m_minus_10kg: "📉 -10 kg",
+      m_4months: "⏳ 4 měsíce",
+      m_no_starve: "🥗 Bez hladovění",
+      m_muscle_tone: "💪 Svalový tonus",
+      m_back: "🦴 Zdravá záda",
+      m_posture: "🧍‍♀️ Rovná postura",
+      m_minus_5kg: "✨ -5 kg",
+      m_technique: "🏋️‍♀️ Správná technika",
+      m_body_tone: "✨ Zpevnění těla",
+      m_safe: "🎯 Bezpečně",
+      m_safe_split: "🧘‍♀️ Bezpečný provaz",
+      m_no_pain_split: "🚫 Bez bolesti a slz",
+      m_yoga_blocks: "🧱 Jóga bloky",
+      m_mobility: "🤸‍♀️ Mobilita",
+      m_step_by_step: "📈 Krok za krokem",
+      m_gentle: "🤍 Šetrně",
       tag_starter: "Pozvolný start",
       tag_safety: "Bezpečnost",
       btn_details: "Objednat se",
@@ -242,6 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_sub: "Vyberte si to, co vám vyhovuje: klasické fitness centrum, zcela privátní tělocvična bez cizích lidí nebo online z domova.",
       loc_gym_title: "Fitness centrum",
       loc_gym_desc: "Spolupráce s prověřenými posilovnami. Konkrétní místo a čas domlouváme individuálně.",
+      loc_gym_period: "/ 60 min",
       loc_gym_f1: "Vedení a kontrola správné techniky",
       loc_gym_f2: "Přesné dávkování zátěže",
       loc_gym_f3: "Organizace celého tréninkového plánu",
@@ -251,15 +357,22 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_chrudim_badge: "Exkluzivní privátní formát",
       loc_chrudim_title: "Privátní tělocvična v Chrudimi",
       loc_chrudim_desc: "<strong>90 minut bez cizích lidí!</strong> Přístup na kód. Pouze vy, trenérka, hudba, sprcha a voda/nápoje bez doplatku.",
+      loc_chrudim_period: "/ 90 min (sál 300 Kč + trenérka 500 Kč)",
       split_title: "💡 Společný trénink s kamarádkami (až 4 osoby):",
+      split_p1: "<strong>1 člověk:</strong> 800 Kč",
+      split_p2: "<strong>2 lidé:</strong> 400 Kč / osoba",
+      split_p3: "<strong>3 lidé:</strong> ~267 Kč / osoba",
+      split_p4: "<strong>4 lidé:</strong> 200 Kč / osoba",
       btn_book_private: "Rezervovat privátní sál &rarr;",
 
       loc_online_title: "Online tréninky",
       loc_online_desc: "Cvičte z domova v reálném čase přes videohovor v Telegramu. Stačí vám podložka a telefon.",
+      loc_onl_period: "/ 60 min",
       loc_onl_f1: "Vysvětlení a video-kontrola techniky",
       loc_onl_f2: "Cviky s vlastní vahou a pomůckami",
       loc_onl_f3: "Úspora času při dojíždění",
       loc_onl_f4: "Maximální komfort domácího prostředí",
+      loc_onl_video_btn: "🎥 Podívejte se na online trénink (Video)",
       btn_book_onl: "Objednat se online &rarr;",
 
       nutr_eyebrow: "OSOBNÍ JÍDELNÍČEK",
@@ -315,6 +428,39 @@ document.addEventListener('DOMContentLoaded', () => {
       compare_hint: "👈 Posouvejte jezdec doleva či doprava, nebo spusťte automatickou ukázku 👉",
       coach_role_quote: "Osobní trenérka & nutriční poradkyně",
 
+      videos_eyebrow: "ATMOSFÉRA A MOTIVACE",
+      videos_title: "Tréninky v reálném životě",
+      videos_sub: "Podívejte se, jak probíhají lekce, a zažijte energii a tempo tréninkového procesu.",
+      vid_full_tag: "Kompletní trénink",
+      vid_full_title: "Štíhlé a pevné nohy a hýždě (bez zátěže)",
+      vid_full_desc: "Reálná ukázka tréninku s klientkou na podložce: správná technika, kontrola pohybu a práce na výsledcích.",
+      vid_full_btn: "Přehrát na YouTube &rarr;",
+      vid_quote_1: "«Toto video zachycuje skutečný tréninkový proces — jak se hýbeme, ladíme techniku a cvičíme bez zbytečného stresu.»",
+      vid_quote_author: "— Jevgenija Burdovicyna",
+      shorts_header_title: "YouTube Shorts • Motivace a tréninky",
+      sh1_tag: "Fitness & Estetika",
+      sh1_title: "Atmosféra posilovny & Motivace",
+      sh2_tag: "Hradec • Pardubice • Chrudim",
+      sh2_title: "Tréninky osobně v posilovnách i Online",
+      sh3_tag: "Síla & Zpevnění",
+      sh3_title: "Pomohu ti změnit tvé tělo",
+
+      reviews_eyebrow: "HODNOCENÍ KLIENTEK",
+      reviews_title: "Příběhy žen, které se mnou trénují",
+      reviews_sub: "Skutečné výsledky, emoce a dojmy ze společných tréninků, jídelníčku a vzájemné podpory.",
+      rev1_text: "«Začala jsem trénovat s Žeňou před 4 měsíci. Bála jsem se drastických diet, ale Žeňa mi sestavila skvělý jídelníček bez hladovění a tréninky na míru. Výsledek: -10 kg, štíhlejší pas a obrovské sebevědomí!»",
+      rev1_name: "Kateřina",
+      rev1_meta: "Hradec Králové • -10 kg za 4 měsíce",
+      rev2_text: "«Privátní sál v Chrudimi je pro mě naprostá pecka! Žádné cizí pohledy, trénujeme společně s kamarádkou a dělíme se o náklady. Cvičení má skvělou atmosféru a výsledky vidím každý týden v zrcadle!»",
+      rev2_name: "Alena a Anna",
+      rev2_meta: "Chrudim • Privátní sál pro dvě",
+      rev3_text: "«Cvičíme online přes video. Žeňa precizně hlídá techniku i na dálku. Bolesti zad z práce u počítače jsou pryč a flexibilita se zlepšila neuvěřitelně rychle!»",
+      rev3_name: "Martina",
+      rev3_meta: "Online tréninky (Telegram)",
+      rev_cta_title: "Trénovala jste se mnou?",
+      rev_cta_desc: "Podělte se o svůj příběh a výsledek — vaše zkušenost inspiruje další ženy udělat první krok!",
+      btn_leave_review: "Napsat hodnocení na Telegram &rarr;",
+
       exp_eyebrow: "ZKUŠENOSTI A EXPERTÍZA",
       exp_title: "Sport, komunikace a motivace",
       exp_text1: "<strong>Skupinové lekce:</strong> V minulosti jsem vedla skupinové tréninky. Byla to skvělá zkušenost plná energie a týmové souhry. Nyní se soustředím na individuální přístup pro maximální efekt.",
@@ -323,6 +469,8 @@ document.addEventListener('DOMContentLoaded', () => {
       exp_b2: "Zkušenosti se skupinami",
       exp_b3: "4+ roky praxe",
       exp_gallery_title: "📸 Fotografie ze skupinových lekcí a posiloven:",
+      exp_video_badge: "Video z přednášky v Hradci Králové",
+      exp_video_title: "«Proč diety nefungují a návyky ano?»",
 
       ready_title: "Jste připraveni začít?",
       ready_desc: "Není třeba čekat na pondělí ani na ideální formu. Začněte tím, co je pro vás důležité: síla, flexibilita, proměna postavy či vyvážená strava.",
@@ -332,6 +480,8 @@ document.addEventListener('DOMContentLoaded', () => {
       contacts_eyebrow: "KONTAKTY",
       contacts_title: "Místa tréninků a spojení",
       contacts_lead: "Napište mi do libovolného chatu nebo odešlete formulář — společně probereme vaše cíle a zvolíme nejvhodnější formát.",
+      loc_pin_chrudim: "Chrudim (Privátní posilovna)",
+      loc_map_chrudim: "Chrudim (Privátní posilovna)",
       map_label: "Lokality v ČR",
       footer_rights: "Všechna práva vyhrazena.",
 
@@ -348,10 +498,10 @@ document.addEventListener('DOMContentLoaded', () => {
       btn_close: "Zavřít",
 
       nutr_modal_title: "Objednat osobní menu na 30 dní",
-      nutr_modal_desc: "7denní stravovací deník + detailní výpočet makroživin + fotomenu na 30 dní. Cena: 3 800 Kč.",
+      nutr_modal_desc: "7 dní jídelníčku + přesný výpočet makroživin + recepty z oblíbených jídel. Cena: 3 800 Kč.",
       nutr_modal_goal: "Hlavní cíl",
       btn_order_menu_sub: "Objednat plán (3 800 Kč) &rarr;",
-      nutr_success_sub: "Ozvu se vám do chatu s instrukcemi k 1. kroku (záznam jídelníčku)."
+      nutr_success_sub: "Napíšu vám do zpráv s instrukcemi k 1. kroku (záznam jídelníčku)."
     }
   };
 
@@ -971,5 +1121,26 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+
+  // ==================== YOUTUBE VIDEO FACADES ====================
+  document.querySelectorAll('.video-player-facade, .short-media-wrapper').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
+      const ytid = card.getAttribute('data-youtube-id');
+      if (!ytid) return;
+      
+      const iframe = document.createElement('iframe');
+      iframe.setAttribute('src', 'https://www.youtube-nocookie.com/embed/' + ytid + '?autoplay=1&rel=0&modestbranding=1');
+      iframe.setAttribute('title', 'YouTube video player');
+      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+      iframe.setAttribute('allowfullscreen', 'true');
+      iframe.className = 'video-iframe-embed';
+      
+      card.innerHTML = '';
+      card.appendChild(iframe);
+      card.style.cursor = 'default';
+    });
+  });
 
 });
