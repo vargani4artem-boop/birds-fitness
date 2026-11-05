@@ -1078,34 +1078,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Helper to dispatch backup notification to Telegram Bot
-  function sendTelegramBotLead(leadData) {
-    try {
-      const botToken = '8865140984:AAGqzyBjytwB8ytuaQLtsmm0fRHWshSgsmk';
-      const chatId = 408397367;
-      let text = '';
-      if (leadData.type === 'booking') {
-        text = `🔔 <b>Нова заявка на тренування (birds.cz)!</b>\n\n` +
-          `👤 <b>Ім'я:</b> ${leadData.name}\n` +
-          `📞 <b>Контакт:</b> <code>${leadData.contact}</code>\n` +
-          `🎯 <b>Формат:</b> ${leadData.service}\n` +
-          (leadData.city ? `📍 <b>Місто:</b> ${leadData.city}\n` : '') +
-          (leadData.message ? `💬 <b>Повідомлення:</b> ${leadData.message}\n` : '') +
-          `🕒 <b>Час:</b> ${new Date().toLocaleString()}`;
-      } else {
-        text = `🥗 <b>Замовлення раціону харчування (birds.cz)!</b>\n\n` +
-          `👤 <b>Ім'я:</b> ${leadData.name}\n` +
-          `📞 <b>Контакт:</b> <code>${leadData.contact}</code>\n` +
-          `🎯 <b>Ціль:</b> ${leadData.goal}\n` +
-          `🕒 <b>Час:</b> ${new Date().toLocaleString()}`;
-      }
-      fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: chatId, text: text, parse_mode: 'HTML' })
-      }).catch(() => {});
-    } catch (err) {}
-  }
 
   // Booking Form Submission
   const bookingForm = document.getElementById('bookingForm');
@@ -1130,7 +1102,6 @@ document.addEventListener('DOMContentLoaded', () => {
         date: new Date().toISOString()
       };
       saveLeadLocally(lead);
-      sendTelegramBotLead(lead);
 
       const isCz = document.documentElement.lang === 'cs' || window.location.pathname.includes('/cz');
       const leadMsg = isCz ? 
@@ -1189,7 +1160,6 @@ document.addEventListener('DOMContentLoaded', () => {
         date: new Date().toISOString()
       };
       saveLeadLocally(lead);
-      sendTelegramBotLead(lead);
 
       const isCz = document.documentElement.lang === 'cs' || window.location.pathname.includes('/cz');
       const nutrMsg = isCz ?
