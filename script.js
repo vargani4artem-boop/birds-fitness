@@ -279,6 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       modal_title_book: "Запис на тренування",
       modal_desc_book: "Заповніть форму, і я зв'яжуся з вами для узгодження залу та зручного часу.",
+      modal_fast_contact: "Або напишіть мені напряму для швидкої відповіді:",
       form_name: "Ваше ім'я *",
       form_contact: "Телефон або Telegram / WhatsApp *",
       form_service: "Формат тренування",
@@ -1129,9 +1130,24 @@ document.addEventListener('DOMContentLoaded', () => {
       const waLink = document.getElementById('whatsappBookingLink');
       if (waLink) waLink.href = waUrl;
 
-      // Automatically open Telegram so the user can send to Zhenya in 1 click
+      // Dispatch to email via FormSubmit AJAX
       try {
-        window.open(tgUrl, '_blank');
+        fetch('https://formsubmit.co/ajax/vargani4artem@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            _subject: `Новий запис на тренування (birds.cz): ${name}`,
+            _template: 'table',
+            'Імя': name,
+            'Контакт': contact,
+            'Формат': service,
+            'Локація': city || 'Не вказано',
+            'Повідомлення': message || 'Без коментаря'
+          })
+        }).catch(function(e) { console.log('Email delivery underway', e); });
       } catch(err) {}
 
       const header = bookingForm.closest('.modal-card').querySelector('.modal-header');
@@ -1183,9 +1199,22 @@ document.addEventListener('DOMContentLoaded', () => {
       const waLink = document.getElementById('whatsappNutritionLink');
       if (waLink) waLink.href = waUrl;
 
-      // Automatically open Telegram so the user can send to Zhenya in 1 click
+      // Dispatch to email via FormSubmit AJAX
       try {
-        window.open(tgUrl, '_blank');
+        fetch('https://formsubmit.co/ajax/vargani4artem@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            _subject: `Замовлення раціону харчування (birds.cz): ${name}`,
+            _template: 'table',
+            'Імя': name,
+            'Контакт': contact,
+            'Ціль': goal
+          })
+        }).catch(function(e) { console.log('Email delivery underway', e); });
       } catch(err) {}
 
       const header = nutritionForm.closest('.modal-card').querySelector('.modal-header');
