@@ -125,6 +125,19 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_onl_f3: "Економія часу на дорогу до залу",
       loc_onl_f4: "Максимально комфортна домашня атмосфера",
       loc_onl_video_btn: "🎥 Подивитися онлайн-тренування (Відео)",
+      loc_online_vids_title: "Приклади онлайн-тренувань (Відео):",
+      onl_vid_1_label: "🔥 На все тіло",
+      onl_vid_2_label: "⚡ Жара вдома",
+      stage_sh1_title: "Виступ на сцені",
+      stage_sh2_title: "Мотивація для жінок",
+      sh_r7_tag: "Спорт & Краса",
+      sh_r7_title: "Спорт — краса, сила та впевненість",
+      sh_gdi_tag: "Клієнти & Тренінг",
+      sh_gdi_title: "Розтяжка та результат",
+      sh_9yc_tag: "Зал & Атмосфера",
+      sh_9yc_title: "Атмосфера залу й енергія",
+      sh_b2n_tag: "Гнучкість & Шпагат",
+      sh_b2n_title: "Гнучкість і легкість рухів",
       btn_book_onl: "Записатися на онлайн &rarr;",
 
       nutr_eyebrow: "ПЕРСОНАЛЬНЕ ХАРЧУВАННЯ",
@@ -373,6 +386,19 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_onl_f3: "Úspora času při dojíždění",
       loc_onl_f4: "Maximální komfort domácího prostředí",
       loc_onl_video_btn: "🎥 Podívejte se na online trénink (Video)",
+      loc_online_vids_title: "Ukázky online tréninků (Video):",
+      onl_vid_1_label: "🔥 Na celé tělo",
+      onl_vid_2_label: "⚡ Makačka doma",
+      stage_sh1_title: "Vystoupení na pódiu",
+      stage_sh2_title: "Motivace pro ženy",
+      sh_r7_tag: "Sport & Krása",
+      sh_r7_title: "Sport — krása, síla a sebedůvěra",
+      sh_gdi_tag: "Klientky & Trénink",
+      sh_gdi_title: "Stretching a výsledky",
+      sh_9yc_tag: "Posilovna & Atmosféra",
+      sh_9yc_title: "Atmosféra posilovny a energie",
+      sh_b2n_tag: "Flexibilita & Provaz",
+      sh_b2n_title: "Pružnost a lehkost pohybu",
       btn_book_onl: "Objednat se online &rarr;",
 
       nutr_eyebrow: "OSOBNÍ JÍDELNÍČEK",
@@ -1100,24 +1126,38 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   if (mobileBtn && mobileDrawer) {
-    mobileBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
+    function toggleMobileMenu(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
       const isOpen = mobileDrawer.classList.toggle('open');
       mobileBtn.classList.toggle('open', isOpen);
-    });
+      if (isOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+    
+    mobileBtn.addEventListener('click', toggleMobileMenu);
 
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    document.querySelectorAll('.mobile-nav-link, .mobile-drawer .open-modal-btn').forEach(link => {
       link.addEventListener('click', () => {
         mobileDrawer.classList.remove('open');
         mobileBtn.classList.remove('open');
+        document.body.style.overflow = '';
       });
     });
 
     // Close on click outside
     document.addEventListener('click', (e) => {
-      if (mobileDrawer.classList.contains('open') && !mobileDrawer.contains(e.target) && !mobileBtn.contains(e.target)) {
-        mobileDrawer.classList.remove('open');
-        mobileBtn.classList.remove('open');
+      if (mobileDrawer.classList.contains('open')) {
+        if (!mobileDrawer.contains(e.target) && !mobileBtn.contains(e.target)) {
+          mobileDrawer.classList.remove('open');
+          mobileBtn.classList.remove('open');
+          document.body.style.overflow = '';
+        }
       }
     });
   }
