@@ -1014,6 +1014,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function openModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
+      // Reset forms inside modal if previously submitted
+      const form = modal.querySelector('form');
+      const success = modal.querySelector('.form-success-message');
+      const header = modal.querySelector('.modal-header');
+      if (form) form.style.display = '';
+      if (success) success.style.display = 'none';
+      if (header) header.style.display = '';
+
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
@@ -1044,7 +1052,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    if (e.target.closest('.modal-close-btn') || e.target.classList.contains('modal-backdrop')) {
+    if (e.target.closest('.modal-close-btn') || e.target.closest('.modal-action-done-btn') || e.target.classList.contains('modal-backdrop')) {
       const activeModal = document.querySelector('.modal-backdrop.active');
       if (activeModal) closeModal(activeModal);
     }
@@ -1059,12 +1067,49 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  function saveLeadLocally(leadData) {
+    try {
+      const existing = JSON.parse(localStorage.getItem('birds_fitness_leads') || '[]');
+      existing.push(leadData);
+      localStorage.setItem('birds_fitness_leads', JSON.stringify(existing));
+      console.log('Lead saved locally:', leadData);
+    } catch(err) {
+      console.warn('Could not save lead to localStorage', err);
+    }
+  }
+
   // Booking Form Submission
   const bookingForm = document.getElementById('bookingForm');
   const bookingSuccess = document.getElementById('bookingSuccess');
   if (bookingForm && bookingSuccess) {
     bookingForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      
+      const name = document.getElementById('bookName') ? document.getElementById('bookName').value.trim() : '';
+      const contact = document.getElementById('bookContact') ? document.getElementById('bookContact').value.trim() : '';
+      const service = document.getElementById('bookService') ? document.getElementById('bookService').value.trim() : '';
+      const message = document.getElementById('bookNotes') ? document.getElementById('bookNotes').value.trim() : '';
+      
+      const lead = {
+        type: 'booking',
+        name: name,
+        contact: contact,
+        service: service,
+        message: message,
+        date: new Date().toISOString()
+      };
+      saveLeadLocally(lead);
+
+      // Populate direct Telegram link with pre-filled message
+      const tgLink = document.getElementById('telegramBookingLink');
+      if (tgLink) {
+        const text = encodeURIComponent(`Привіт, Женя! Мене звати ${name}. Хочу записатися на тренування (${service}). Мій контакт: ${contact}` + (message ? `
+Коментар: ${message}` : ''));
+        tgLink.href = `https://t.me/burdovitsyna?text=${text}`;
+      }
+
+      const header = bookingForm.closest('.modal-card').querySelector('.modal-header');
+      if (header) header.style.display = 'none';
       bookingForm.style.display = 'none';
       bookingSuccess.style.display = 'block';
     });
@@ -1076,6 +1121,29 @@ document.addEventListener('DOMContentLoaded', () => {
   if (nutritionForm && nutritionSuccess) {
     nutritionForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      
+      const name = document.getElementById('nutrName') ? document.getElementById('nutrName').value.trim() : '';
+      const contact = document.getElementById('nutrContact') ? document.getElementById('nutrContact').value.trim() : '';
+      const goal = document.getElementById('nutrGoal') ? document.getElementById('nutrGoal').value.trim() : '';
+      
+      const lead = {
+        type: 'nutrition',
+        name: name,
+        contact: contact,
+        goal: goal,
+        date: new Date().toISOString()
+      };
+      saveLeadLocally(lead);
+
+      // Populate direct Telegram link with pre-filled message
+      const tgLink = document.getElementById('telegramNutritionLink');
+      if (tgLink) {
+        const text = encodeURIComponent(`Привіт, Женя! Мене звати ${name}. Хочу замовити персональне меню на 30 днів (${goal}). Мій контакт: ${contact}`);
+        tgLink.href = `https://t.me/burdovitsyna?text=${text}`;
+      }
+
+      const header = nutritionForm.closest('.modal-card').querySelector('.modal-header');
+      if (header) header.style.display = 'none';
       nutritionForm.style.display = 'none';
       nutritionSuccess.style.display = 'block';
     });

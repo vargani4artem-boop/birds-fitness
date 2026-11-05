@@ -2722,6 +2722,18 @@ a {
   background: #FFFFFF;
 }
 
+.modal-action-done-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  margin-top: 20px;
+}
+
 .form-success-message {
   display: none;
   text-align: center;
