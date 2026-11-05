@@ -236,6 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
       exp_gallery_title: "📸 Фотографії з групових тренувань та залів:",
       exp_video_badge: "Відео виступу в Градець-Кралове",
       exp_video_title: "«Чому дієти не працюють, а звички — так?»",
+      group_vid_label: "Відео заняття",
 
       ready_title: "Готові почати?",
       ready_desc: "Не потрібно чекати ідеального моменту, найкращої фізичної форми або понеділка. Почнімо з того, що важливо саме для вас: сили, гнучкості, зміни форми тіла чи організованого харчування.",
@@ -497,6 +498,7 @@ document.addEventListener('DOMContentLoaded', () => {
       exp_gallery_title: "📸 Fotografie ze skupinových lekcí a posiloven:",
       exp_video_badge: "Video z přednášky v Hradci Králové",
       exp_video_title: "«Proč diety nefungují a návyky ano?»",
+      group_vid_label: "Video z lekce",
 
       ready_title: "Jste připraveni začít?",
       ready_desc: "Není třeba čekat na pondělí ani na ideální formu. Začněte tím, co je pro vás důležité: síla, flexibilita, proměna postavy či vyvážená strava.",
@@ -1171,7 +1173,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!ytid) return;
       
       const iframe = document.createElement('iframe');
-      iframe.setAttribute('src', 'https://www.youtube-nocookie.com/embed/' + ytid + '?autoplay=1&rel=0&modestbranding=1');
+      iframe.setAttribute('src', 'https://www.youtube-nocookie.com/embed/' + ytid + '?autoplay=1&playsinline=1&rel=0&modestbranding=1');
       iframe.setAttribute('title', 'YouTube video player');
       iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
       iframe.setAttribute('allowfullscreen', 'true');

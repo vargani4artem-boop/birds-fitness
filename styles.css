@@ -2270,7 +2270,7 @@ a {
 }
 
 .group-thumb {
-  height: 140px;
+  height: 175px;
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
