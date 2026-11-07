@@ -46,7 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_experience: "Досвід",
       nav_contacts: "Контакти",
       btn_book: "Записатися &rarr;",
-      runaway_main: "ПОНЕДІЛОК",
+      runaway_line_1: "ПОЧНУ З",
+      runaway_line_2: "ПОНЕДІЛКА",
+      runaway_close_title: "Закрити",
       
       hero_coach_name: "Євгенія Бурдовицина • Персональний тренер",
       hero_title_1: "Тренування, які",
@@ -310,7 +312,9 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_experience: "Zkušenosti",
       nav_contacts: "Kontakty",
       btn_book: "Objednat se &rarr;",
-      runaway_main: "PONDĚLÍ",
+      runaway_line_1: "ZAČNU OD",
+      runaway_line_2: "PONDĚLÍ",
+      runaway_close_title: "Zavřít",
       
       hero_coach_name: "Jevgenija Burdovicyna • Osobní trenérka",
       hero_title_1: "Tréninky, které",
@@ -587,6 +591,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const key = el.getAttribute('data-i18n');
       if (translations[lang] && translations[lang][key]) {
         el.innerHTML = translations[lang][key];
+      }
+    });
+
+    document.querySelectorAll('[data-i18n-title]').forEach(el => {
+      const key = el.getAttribute('data-i18n-title');
+      if (translations[lang] && translations[lang][key]) {
+        el.setAttribute('title', translations[lang][key]);
+        el.setAttribute('aria-label', translations[lang][key]);
       }
     });
 
@@ -1357,7 +1369,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-    // ==================== RUNAWAY "START ON MONDAY" 3D STOP SIGN LOGIC ====================
+    // ==================== RUNAWAY "START ON MONDAY" 3D RED EMERGENCY BUTTON LOGIC ====================
   // Remove any previously stored hidden flag so button always appears on fresh page loads
   try {
     sessionStorage.removeItem('birds_runaway_closed');
@@ -1379,7 +1391,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const btnW = runawayBtn.offsetWidth || 140;
       const btnH = runawayBtn.offsetHeight || 140;
       const padding = 16;
-      const minY = 85; // Stay below fixed header
+      const minY = 75; // Stay comfortably below top fixed header
       const maxX = Math.max(10, window.innerWidth - btnW - padding);
       const maxY = Math.max(minY + 20, window.innerHeight - btnH - padding);
 
@@ -1412,21 +1424,25 @@ document.addEventListener('DOMContentLoaded', () => {
       runAway();
     });
 
-    // Touch on mobile phones
-    runawayBtn.addEventListener('touchstart', (e) => {
+    // Touch / Pointer events for mobile phones (iOS Safari & Chrome)
+    function handleMobileTouch(e) {
       if (e.target && (e.target.id === 'runaway-close-btn' || e.target.closest('#runaway-close-btn'))) {
         return;
       }
       e.preventDefault();
       e.stopPropagation();
       runAway();
-    }, { passive: false });
+    }
+
+    runawayBtn.addEventListener('touchstart', handleMobileTouch, { passive: false });
 
     runawayBtn.addEventListener('pointerdown', (e) => {
       if (e.target && (e.target.id === 'runaway-close-btn' || e.target.closest('#runaway-close-btn'))) {
         return;
       }
-      runAway();
+      if (e.pointerType === 'touch' || e.pointerType === 'pen') {
+        handleMobileTouch(e);
+      }
     });
 
     // Close cross interaction (never runs away)
@@ -1459,6 +1475,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }, 180);
       }
-    }, 3800);
+    }, 4000);
   }
 });
+
