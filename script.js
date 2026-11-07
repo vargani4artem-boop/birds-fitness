@@ -1,6 +1,6 @@
 /* ==========================================================================
    birds.cz — Fitness • Movement • Nutrition
-   Coach: Євгенія Бурдовіцина
+   Coach: Євгенія Бурдовицина
    Interactive JavaScript & I18n Engine
    ========================================================================== */
 
@@ -46,8 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_experience: "Досвід",
       nav_contacts: "Контакти",
       btn_book: "Записатися &rarr;",
+      runaway_btn: "Почну з<br>понеділка",
       
-      hero_coach_name: "Євгенія Бурдовіцина • Персональний тренер",
+      hero_coach_name: "Євгенія Бурдовицина • Персональний тренер",
       hero_title_1: "Тренування, які",
       hero_title_2: "підходять саме тобі",
       hero_title_3: "без виснажливих дієт та шаблонів",
@@ -65,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       about_eyebrow: "ПРО МЕНЕ",
       about_title: "Я за індивідуальний підхід, а не тренування за шаблоном",
-      about_bio_1: "Мене звати <strong>Євгенія Бурдовіцина</strong>. Я персональний тренер, і вже багато років спорт є важливою частиною мого життя. Останні чотири роки я особливо активно тренуюся, поглиблюю свої знання про м’язи, рух і харчування та застосовую отриманий досвід у роботі з клієнтами.",
+      about_bio_1: "Мене звати <strong>Євгенія Бурдовицина</strong>. Я персональний тренер, і вже багато років спорт є важливою частиною мого життя. Останні чотири роки я особливо активно тренуюся, поглиблюю свої знання про м’язи, рух і харчування та застосовую отриманий досвід у роботі з клієнтами.",
       about_bio_2: "Найбільше мені подобається знаходити підхід до кожної людини. Адже за однаковим бажанням «бути у формі» стоять зовсім різні потреби: комусь хочеться схуднути, комусь — стати сильнішою та підтягнути тіло, а хтось прагне розвинути гнучкість або позбутися втоми в спині.",
       about_bio_3: "Я враховую ваш рівень підготовки, самопочуття, втому й можливості в конкретний день. Якщо сьогодні вам потрібне інше навантаження — ми адаптуємо заняття. Мені важливо, щоб ви краще розуміли своє тіло і почувалися впевнено.",
       about_pil_1: "Без перевантажень і травм",
@@ -227,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
       vid_full_desc: "Тренувальний процес з клієнтами на килимку: техніка, контроль рухів і робота на результат у комфортному темпі.",
       vid_full_btn: "Дивитися на YouTube &rarr;",
       vid_quote_1: "«Це відео показує реальний тренувальний процес — як ми рухаємося, ставимо техніку та працюємо з клієнтами без примусу й стресу.»",
-      vid_quote_author: "— Євгенія Бурдовіцина",
+      vid_quote_author: "— Євгенія Бурдовицина",
       shorts_header_title: "YouTube Shorts • Мотивація та спортзал",
       sh1_tag: "Спортзал & Естетика",
       sh1_title: "Атмосфера залу & Мотивація",
@@ -576,9 +577,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) metaDesc.content = "Osobní fitness tréninky, zdravý pohyb, flexibilita a vyvážený jídelníček na míru v Hradci Králové, Pardubicích a online.";
     } else {
-      document.title = "Євгенія Бурдовіцина — birds.cz | Персональний тренер & Нутриціолог";
+      document.title = "Євгенія Бурдовицина — birds.cz | Персональний тренер & Нутриціолог";
       const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.content = "Персональні тренування, здоровий рух, гнучкість та персональний раціон харчування в Градець-Кралове, Пардубіце, приватному залі в Хрудимі та Онлайн.";
+      if (metaDesc) metaDesc.content = "Персональні тренування, здоровий рух, гнучкість та індивідуальний раціон харчування в Градець-Кралове, Пардубіце та Онлайн.";
     }
 
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -1354,5 +1355,64 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+
+  // ==================== RUNAWAY "START ON MONDAY" BUTTON LOGIC ====================
+  const runawayBtn = document.getElementById('runaway-btn');
+  if (runawayBtn) {
+    let isRunning = false;
+
+    function runAway() {
+      if (isRunning) return;
+      isRunning = true;
+
+      runawayBtn.classList.add('running');
+
+      const btnW = runawayBtn.offsetWidth || 140;
+      const btnH = runawayBtn.offsetHeight || 140;
+      const padding = 16;
+      const minY = 85; // Keep below fixed site header
+      const maxX = Math.max(10, window.innerWidth - btnW - padding);
+      const maxY = Math.max(minY + 20, window.innerHeight - btnH - padding);
+
+      const newX = Math.floor(Math.random() * (maxX - padding)) + padding;
+      const newY = Math.floor(Math.random() * (maxY - minY)) + minY;
+
+      runawayBtn.style.left = newX + 'px';
+      runawayBtn.style.top = newY + 'px';
+
+      setTimeout(() => {
+        isRunning = false;
+      }, 250);
+    }
+
+    runawayBtn.addEventListener('mouseover', runAway);
+
+    runawayBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      runAway();
+    });
+
+    runawayBtn.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      runAway();
+    }, { passive: false });
+
+    // Idle wiggle to tease visitor
+    setInterval(() => {
+      if (runawayBtn && Math.random() > 0.65) {
+        const baseTransform = runawayBtn.classList.contains('running') ? '' : 'translateX(-50%) ';
+        const rot = Math.floor(Math.random() * 8) - 4;
+        runawayBtn.style.transform = `${baseTransform}scale(1.07) rotate(${rot}deg)`;
+        setTimeout(() => {
+          if (runawayBtn) {
+            runawayBtn.style.transform = `${baseTransform}scale(1) rotate(0deg)`;
+          }
+        }, 180);
+      }
+    }, 3800);
+  }
 
 });

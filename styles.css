@@ -1,6 +1,6 @@
 /* ==========================================================================
    birds.cz — Fitness • Movement • Nutrition
-   Coach: Євгенія Бурдовіцина
+   Coach: Євгенія Бурдовицина
    Custom Stylesheet matching the visual design
    ========================================================================== */
 
@@ -3234,4 +3234,119 @@ a {
   transform: translateY(-4px) scale(1.08);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.32);
   color: #FFFFFF;
+}
+
+/* ==================== RUNAWAY "START ON MONDAY" 3D RED BUTTON ==================== */
+#runaway-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  z-index: 9999;
+}
+
+#runaway-btn {
+  position: fixed;
+  top: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 165px;
+  height: 165px;
+  border-radius: 50%;
+  border: 4px solid #dcdfe5;
+  background: radial-gradient(circle at 36% 30%, #ff5266 0%, #ee1b30 45%, #a80517 80%, #69000c 100%);
+  color: #ffffff;
+  font-family: var(--font-main, system-ui, -apple-system, sans-serif);
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.15;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+  /* 3D Chrome bezel ring & realistic lighting */
+  box-shadow: 
+    0 0 0 3px #727a86,
+    0 0 0 7px #d0d3da,
+    0 0 0 9px #4d535e,
+    0 16px 36px rgba(0, 0, 0, 0.55),
+    inset 0 4px 10px rgba(255, 255, 255, 0.7),
+    inset 0 -6px 14px rgba(0, 0, 0, 0.75);
+  z-index: 9999;
+  transition: transform 0.16s ease, left 0.22s cubic-bezier(0.18, 0.89, 0.32, 1.28), top 0.22s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  animation: runawayBreathe 2.8s ease-in-out infinite;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Glass shine on top curve */
+#runaway-btn::before {
+  content: '';
+  position: absolute;
+  top: 8%;
+  left: 15%;
+  width: 70%;
+  height: 38%;
+  border-radius: 50% 50% 40% 40%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.04) 100%);
+  pointer-events: none;
+}
+
+#runaway-btn span {
+  position: relative;
+  z-index: 2;
+  display: block;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.65), 0 0 2px rgba(0, 0, 0, 0.9);
+  pointer-events: none;
+}
+
+@keyframes runawayBreathe {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+    box-shadow: 
+      0 0 0 3px #727a86,
+      0 0 0 7px #d0d3da,
+      0 0 0 9px #4d535e,
+      0 16px 36px rgba(0, 0, 0, 0.55),
+      inset 0 4px 10px rgba(255, 255, 255, 0.7),
+      inset 0 -6px 14px rgba(0, 0, 0, 0.75);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 
+      0 0 0 3px #8b939f,
+      0 0 0 8px #e2e5ec,
+      0 0 0 11px rgba(238, 27, 48, 0.35),
+      0 20px 42px rgba(238, 27, 48, 0.45),
+      inset 0 4px 10px rgba(255, 255, 255, 0.8),
+      inset 0 -6px 14px rgba(0, 0, 0, 0.75);
+  }
+}
+
+#runaway-btn.running {
+  animation: none;
+  transform: none;
+}
+
+@media (max-width: 768px) {
+  #runaway-btn {
+    top: 86px;
+    width: 125px;
+    height: 125px;
+    font-size: 14px;
+    padding: 10px;
+    border-width: 3px;
+    box-shadow: 
+      0 0 0 2px #727a86,
+      0 0 0 5px #d0d3da,
+      0 0 0 7px #4d535e,
+      0 12px 26px rgba(0, 0, 0, 0.5),
+      inset 0 3px 8px rgba(255, 255, 255, 0.7),
+      inset 0 -5px 10px rgba(0, 0, 0, 0.75);
+  }
 }
