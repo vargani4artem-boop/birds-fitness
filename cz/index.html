@@ -67,13 +67,32 @@
 </head>
 <body>
 
-  <!-- ==================== RUNAWAY "START ON MONDAY" 3D STOP BUTTON ==================== -->
+    <!-- ==================== RUNAWAY "START ON MONDAY" 3D STOP SIGN ==================== -->
   <div id="runaway-wrapper">
-    <div id="runaway-btn" role="button" tabindex="0" aria-label="STOP! Začnu od pondělí">
+    <div id="runaway-btn" role="button" tabindex="0" aria-label="STOP PONDĚLÍ">
+      <svg class="stop-sign-svg" viewBox="0 0 180 180" width="100%" height="100%" aria-hidden="true">
+        <defs>
+          <radialGradient id="stopGradCZ" cx="38%" cy="32%" r="75%">
+            <stop offset="0%" stop-color="#ff4759" />
+            <stop offset="42%" stop-color="#d90429" />
+            <stop offset="85%" stop-color="#9a0012" />
+            <stop offset="100%" stop-color="#67000b" />
+          </radialGradient>
+        </defs>
+        <!-- Outer metallic white border -->
+        <polygon points="52.7,2 127.3,2 178,52.7 178,127.3 127.3,178 52.7,178 2,127.3 2,52.7"
+                 fill="url(#stopGradCZ)" stroke="#ffffff" stroke-width="4.5" stroke-linejoin="round" />
+        <!-- Inner classic white stripe -->
+        <polygon points="56,8 124,8 172,56 172,124 124,172 56,172 8,124 8,56"
+                 fill="none" stroke="#ffffff" stroke-width="3" stroke-linejoin="round" opacity="0.95" />
+      </svg>
+
       <button id="runaway-close-btn" type="button" aria-label="Zavřít" title="Zavřít">&times;</button>
-      <div class="runaway-btn-content">
-        <span class="runaway-stop-title">STOP!</span>
-        <span class="runaway-stop-sub" data-i18n="runaway_btn">Začnu od<br>pondělí</span>
+
+      <div class="runaway-sign-text">
+        <span class="stop-title" data-i18n="runaway_title">STOP</span>
+        <span class="stop-main-text" data-i18n="runaway_main">PONDĚLÍ</span>
+        <span class="stop-joke-sub" data-i18n="runaway_sub">Začnu od pondělí</span>
       </div>
     </div>
   </div>

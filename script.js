@@ -46,7 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_experience: "Досвід",
       nav_contacts: "Контакти",
       btn_book: "Записатися &rarr;",
-      runaway_btn: "Почну з<br>понеділка",
+      runaway_title: "СТОП",
+      runaway_main: "ПОНЕДІЛОК",
+      runaway_sub: "Почну з понеділка",
       
       hero_coach_name: "Євгенія Бурдовицина • Персональний тренер",
       hero_title_1: "Тренування, які",
@@ -310,7 +312,9 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_experience: "Zkušenosti",
       nav_contacts: "Kontakty",
       btn_book: "Objednat se &rarr;",
-      runaway_btn: "Začnu od<br>pondělí",
+      runaway_title: "STOP",
+      runaway_main: "PONDĚLÍ",
+      runaway_sub: "Začnu od pondělí",
       
       hero_coach_name: "Jevgenija Burdovicyna • Osobní trenérka",
       hero_title_1: "Tréninky, které",
