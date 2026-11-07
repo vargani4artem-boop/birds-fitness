@@ -3236,7 +3236,7 @@ a {
   color: #FFFFFF;
 }
 
-/* ==================== RUNAWAY "START ON MONDAY" 3D RED BUTTON ==================== */
+/* ==================== RUNAWAY "START ON MONDAY" 3D STOP BUTTON ==================== */
 #runaway-wrapper {
   position: relative;
   width: 100%;
@@ -3249,34 +3249,30 @@ a {
   top: 96px;
   left: 50%;
   transform: translateX(-50%);
-  width: 165px;
-  height: 165px;
+  width: 175px;
+  height: 175px;
   border-radius: 50%;
-  border: 4px solid #dcdfe5;
-  background: radial-gradient(circle at 36% 30%, #ff5266 0%, #ee1b30 45%, #a80517 80%, #69000c 100%);
+  border: 7px solid #dfe3ea;
+  background: radial-gradient(circle at 35% 28%, #ff4b5e 0%, #ee1b30 42%, #ad0417 80%, #68000b 100%);
   color: #ffffff;
-  font-family: var(--font-main, system-ui, -apple-system, sans-serif);
-  font-size: 18px;
-  font-weight: 900;
-  line-height: 1.15;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  user-select: none;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  padding: 14px;
   box-sizing: border-box;
-  /* 3D Chrome bezel ring & realistic lighting */
+  /* Multi-layered metallic chrome bezel & realistic 3D depth */
   box-shadow: 
-    0 0 0 3px #727a86,
-    0 0 0 7px #d0d3da,
-    0 0 0 9px #4d535e,
-    0 16px 36px rgba(0, 0, 0, 0.55),
-    inset 0 4px 10px rgba(255, 255, 255, 0.7),
-    inset 0 -6px 14px rgba(0, 0, 0, 0.75);
+    0 0 0 3px #6b7280,
+    0 0 0 7px #f1f3f7,
+    0 0 0 11px #9ca3af,
+    0 0 0 13px #4b5563,
+    0 18px 42px rgba(0, 0, 0, 0.55),
+    inset 0 5px 12px rgba(255, 255, 255, 0.8),
+    inset 0 -8px 16px rgba(0, 0, 0, 0.75);
   z-index: 9999;
   transition: transform 0.16s ease, left 0.22s cubic-bezier(0.18, 0.89, 0.32, 1.28), top 0.22s cubic-bezier(0.18, 0.89, 0.32, 1.28);
   animation: runawayBreathe 2.8s ease-in-out infinite;
@@ -3288,43 +3284,102 @@ a {
 #runaway-btn::before {
   content: '';
   position: absolute;
-  top: 8%;
-  left: 15%;
-  width: 70%;
-  height: 38%;
-  border-radius: 50% 50% 40% 40%;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.04) 100%);
+  top: 6%;
+  left: 14%;
+  width: 72%;
+  height: 40%;
+  border-radius: 50% 50% 45% 45%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.08) 100%);
   pointer-events: none;
 }
 
-#runaway-btn span {
+.runaway-btn-content {
   position: relative;
   z-index: 2;
-  display: block;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.65), 0 0 2px rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   pointer-events: none;
+}
+
+.runaway-stop-title {
+  font-family: 'Impact', 'Arial Black', -apple-system, sans-serif;
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  line-height: 1;
+  color: #ffffff;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.55), 0 0 2px rgba(0, 0, 0, 0.9);
+  margin-bottom: 2px;
+}
+
+.runaway-stop-sub {
+  font-family: var(--font-main, sans-serif);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Close "X" Button */
+#runaway-close-btn {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #18151D;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  pointer-events: auto;
+  touch-action: manipulation;
+  padding: 0;
+}
+
+#runaway-close-btn:hover {
+  background: #ee1b30;
+  color: #FFFFFF;
+  transform: scale(1.18);
+  box-shadow: 0 6px 16px rgba(238, 27, 48, 0.5);
 }
 
 @keyframes runawayBreathe {
   0%, 100% {
     transform: translateX(-50%) scale(1);
     box-shadow: 
-      0 0 0 3px #727a86,
-      0 0 0 7px #d0d3da,
-      0 0 0 9px #4d535e,
-      0 16px 36px rgba(0, 0, 0, 0.55),
-      inset 0 4px 10px rgba(255, 255, 255, 0.7),
-      inset 0 -6px 14px rgba(0, 0, 0, 0.75);
+      0 0 0 3px #6b7280,
+      0 0 0 7px #f1f3f7,
+      0 0 0 11px #9ca3af,
+      0 0 0 13px #4b5563,
+      0 18px 42px rgba(0, 0, 0, 0.55),
+      inset 0 5px 12px rgba(255, 255, 255, 0.8),
+      inset 0 -8px 16px rgba(0, 0, 0, 0.75);
   }
   50% {
     transform: translateX(-50%) scale(1.05);
     box-shadow: 
       0 0 0 3px #8b939f,
-      0 0 0 8px #e2e5ec,
-      0 0 0 11px rgba(238, 27, 48, 0.35),
-      0 20px 42px rgba(238, 27, 48, 0.45),
-      inset 0 4px 10px rgba(255, 255, 255, 0.8),
-      inset 0 -6px 14px rgba(0, 0, 0, 0.75);
+      0 0 0 8px #ffffff,
+      0 0 0 12px #9ca3af,
+      0 0 0 14px rgba(238, 27, 48, 0.4),
+      0 22px 48px rgba(238, 27, 48, 0.5),
+      inset 0 5px 12px rgba(255, 255, 255, 0.9),
+      inset 0 -8px 16px rgba(0, 0, 0, 0.75);
   }
 }
 
@@ -3336,17 +3391,33 @@ a {
 @media (max-width: 768px) {
   #runaway-btn {
     top: 86px;
-    width: 125px;
-    height: 125px;
-    font-size: 14px;
+    width: 135px;
+    height: 135px;
     padding: 10px;
-    border-width: 3px;
+    border-width: 5px;
     box-shadow: 
-      0 0 0 2px #727a86,
-      0 0 0 5px #d0d3da,
-      0 0 0 7px #4d535e,
-      0 12px 26px rgba(0, 0, 0, 0.5),
-      inset 0 3px 8px rgba(255, 255, 255, 0.7),
-      inset 0 -5px 10px rgba(0, 0, 0, 0.75);
+      0 0 0 2px #6b7280,
+      0 0 0 5px #f1f3f7,
+      0 0 0 8px #9ca3af,
+      0 0 0 10px #4b5563,
+      0 14px 30px rgba(0, 0, 0, 0.5),
+      inset 0 4px 10px rgba(255, 255, 255, 0.8),
+      inset 0 -6px 12px rgba(0, 0, 0, 0.75);
+  }
+
+  .runaway-stop-title {
+    font-size: 26px;
+  }
+
+  .runaway-stop-sub {
+    font-size: 11px;
+  }
+
+  #runaway-close-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 17px;
+    top: -4px;
+    right: -4px;
   }
 }

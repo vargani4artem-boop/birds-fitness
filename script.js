@@ -310,6 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_experience: "Zkušenosti",
       nav_contacts: "Kontakty",
       btn_book: "Objednat se &rarr;",
+      runaway_btn: "Začnu od<br>pondělí",
       
       hero_coach_name: "Jevgenija Burdovicyna • Osobní trenérka",
       hero_title_1: "Tréninky, které",
@@ -1356,10 +1357,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
-  // ==================== RUNAWAY "START ON MONDAY" BUTTON LOGIC ====================
+  // ==================== RUNAWAY "START ON MONDAY" 3D STOP BUTTON LOGIC ====================
+  const runawayWrapper = document.getElementById('runaway-wrapper');
   const runawayBtn = document.getElementById('runaway-btn');
-  if (runawayBtn) {
+  const runawayCloseBtn = document.getElementById('runaway-close-btn');
+
+  // Check if previously closed in this session
+  try {
+    if (sessionStorage.getItem('birds_runaway_closed') === '1' && runawayWrapper) {
+      runawayWrapper.style.display = 'none';
+    }
+  } catch(e) {}
+
+  if (runawayBtn && runawayWrapper) {
     let isRunning = false;
 
     function runAway() {
@@ -1371,7 +1381,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const btnW = runawayBtn.offsetWidth || 140;
       const btnH = runawayBtn.offsetHeight || 140;
       const padding = 16;
-      const minY = 85; // Keep below fixed site header
+      const minY = 85; // Never jump on top of fixed header
       const maxX = Math.max(10, window.innerWidth - btnW - padding);
       const maxY = Math.max(minY + 20, window.innerHeight - btnH - padding);
 
@@ -1386,19 +1396,51 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 250);
     }
 
-    runawayBtn.addEventListener('mouseover', runAway);
+    // Do NOT run away when interacting with close cross!
+    runawayBtn.addEventListener('mouseover', (e) => {
+      if (e.target && (e.target.id === 'runaway-close-btn' || e.target.closest('#runaway-close-btn'))) {
+        return;
+      }
+      runAway();
+    });
 
     runawayBtn.addEventListener('click', (e) => {
+      if (e.target && (e.target.id === 'runaway-close-btn' || e.target.closest('#runaway-close-btn'))) {
+        return;
+      }
       e.preventDefault();
       e.stopPropagation();
       runAway();
     });
 
     runawayBtn.addEventListener('touchstart', (e) => {
+      if (e.target && (e.target.id === 'runaway-close-btn' || e.target.closest('#runaway-close-btn'))) {
+        return;
+      }
       e.preventDefault();
       e.stopPropagation();
       runAway();
     }, { passive: false });
+
+    // Close cross interaction
+    if (runawayCloseBtn) {
+      runawayCloseBtn.addEventListener('mouseenter', (e) => e.stopPropagation());
+      runawayCloseBtn.addEventListener('mouseover', (e) => e.stopPropagation());
+      runawayCloseBtn.addEventListener('touchstart', (e) => e.stopPropagation(), { passive: true });
+      runawayCloseBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        runawayWrapper.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+        runawayWrapper.style.opacity = '0';
+        runawayWrapper.style.transform = 'scale(0.8)';
+        setTimeout(() => {
+          runawayWrapper.style.display = 'none';
+        }, 250);
+        try {
+          sessionStorage.setItem('birds_runaway_closed', '1');
+        } catch(err) {}
+      });
+    }
 
     // Idle wiggle to tease visitor
     setInterval(() => {

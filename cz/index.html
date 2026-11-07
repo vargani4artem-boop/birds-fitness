@@ -67,11 +67,15 @@
 </head>
 <body>
 
-  <!-- ==================== RUNAWAY "START ON MONDAY" 3D RED BUTTON ==================== -->
+  <!-- ==================== RUNAWAY "START ON MONDAY" 3D STOP BUTTON ==================== -->
   <div id="runaway-wrapper">
-    <button id="runaway-btn" type="button" aria-label="Začnu od pondělí">
-      <span data-i18n="runaway_btn">Začnu od<br>pondělí</span>
-    </button>
+    <div id="runaway-btn" role="button" tabindex="0" aria-label="STOP! Začnu od pondělí">
+      <button id="runaway-close-btn" type="button" aria-label="Zavřít" title="Zavřít">&times;</button>
+      <div class="runaway-btn-content">
+        <span class="runaway-stop-title">STOP!</span>
+        <span class="runaway-stop-sub" data-i18n="runaway_btn">Začnu od<br>pondělí</span>
+      </div>
+    </div>
   </div>
 
   <!-- ==================== HEADER ==================== -->
