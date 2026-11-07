@@ -63,80 +63,32 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
-  <link rel="stylesheet" href="../styles.css?v=4.0">
+  <link rel="stylesheet" href="../styles.css?v=4.1">
 </head>
 <body>
 
-    <!-- ==================== RUNAWAY "START ON MONDAY" 3D RED EMERGENCY BUTTON ==================== -->
+    <!-- ==================== RUNAWAY "START ON MONDAY" 3D STOP SIGN ==================== -->
   <div id="runaway-wrapper">
     <div id="runaway-btn" role="button" tabindex="0" aria-label="ZAČNU OD PONDĚLÍ">
-      <button id="runaway-close-btn" type="button" aria-label="Zavřít" title="Zavřít" data-i18n-title="runaway_close_title">&times;</button>
-
-      <!-- 3D Red Emergency Button Graphic (Chrome Base, Bevel, 3D Dome & Gloss) -->
-      <svg class="emergency-btn-svg" viewBox="0 0 180 180" width="100%" height="100%" aria-hidden="true">
+      <!-- Authentic Octagonal Road Sign (STOP) with White Outer & Inner Stripes -->
+      <svg class="stop-sign-svg" viewBox="0 0 180 180" width="100%" height="100%" aria-hidden="true">
         <defs>
-          <!-- Chrome Metallic Wall / Extrusion Gradient -->
-          <linearGradient id="chromeWallCZ" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#7a8490" />
-            <stop offset="20%" stop-color="#ffffff" />
-            <stop offset="40%" stop-color="#555d67" />
-            <stop offset="65%" stop-color="#ced5dc" />
-            <stop offset="85%" stop-color="#495059" />
-            <stop offset="100%" stop-color="#8b95a0" />
-          </linearGradient>
-
-          <!-- Chrome Bezel Top Face Gradient -->
-          <linearGradient id="chromeTopCZ" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#ffffff" />
-            <stop offset="25%" stop-color="#9da7b3" />
-            <stop offset="50%" stop-color="#ffffff" />
-            <stop offset="75%" stop-color="#646d79" />
-            <stop offset="100%" stop-color="#d6dde4" />
-          </linearGradient>
-
-          <!-- Red Dome Radial Gradient -->
-          <radialGradient id="redDomeCZ" cx="42%" cy="32%" r="68%">
-            <stop offset="0%" stop-color="#ff5c6f" />
-            <stop offset="25%" stop-color="#ee162d" />
-            <stop offset="55%" stop-color="#b80016" />
-            <stop offset="85%" stop-color="#7d000e" />
-            <stop offset="100%" stop-color="#450007" />
+          <radialGradient id="stopGradCZ" cx="38%" cy="32%" r="75%">
+            <stop offset="0%" stop-color="#ff4759" />
+            <stop offset="42%" stop-color="#d90429" />
+            <stop offset="85%" stop-color="#9a0012" />
+            <stop offset="100%" stop-color="#67000b" />
           </radialGradient>
-
-          <!-- Red Button Skirt Gradient -->
-          <linearGradient id="redSkirtCZ" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#c40019" />
-            <stop offset="100%" stop-color="#54000a" />
-          </linearGradient>
-
-          <!-- Specular High-Gloss Reflection Gradient -->
-          <linearGradient id="glossCZ" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8" />
-            <stop offset="45%" stop-color="#ffffff" stop-opacity="0.2" />
-            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
-          </linearGradient>
         </defs>
-
-        <!-- Chrome Base 3D Extrusion Wall -->
-        <path d="M 6 92 A 84 68 0 0 0 174 92 L 174 106 A 84 68 0 0 1 6 106 Z" fill="url(#chromeWallCZ)" />
-
-        <!-- Chrome Base Top Ring Surface -->
-        <ellipse cx="90" cy="92" rx="84" ry="68" fill="url(#chromeTopCZ)" stroke="#414750" stroke-width="1.2" />
-
-        <!-- Inner Recessed Housing Groove -->
-        <ellipse cx="90" cy="90" rx="74" ry="60" fill="#15171b" stroke="#85909c" stroke-width="1.5" />
-        <ellipse cx="90" cy="90" rx="71" ry="57" fill="#090a0c" />
-
-        <!-- Red Push-Button 3D Cylinder Skirt -->
-        <path d="M 22 84 A 68 54 0 0 0 158 84 L 158 94 A 68 54 0 0 1 22 94 Z" fill="url(#redSkirtCZ)" />
-
-        <!-- Red Button Domed Face -->
-        <ellipse cx="90" cy="84" rx="68" ry="54" fill="url(#redDomeCZ)" stroke="#80000d" stroke-width="1.2" />
-
-        <!-- Specular Highlight Arc and Oval -->
-        <path d="M 40 70 C 50 42, 130 42, 140 70 C 124 54, 56 54, 40 70 Z" fill="url(#glossCZ)" />
-        <ellipse cx="90" cy="52" rx="38" ry="14" fill="url(#glossCZ)" opacity="0.6" />
+        <!-- Outer metallic white border -->
+        <polygon points="52.7,2 127.3,2 178,52.7 178,127.3 127.3,178 52.7,178 2,127.3 2,52.7"
+                 fill="url(#stopGradCZ)" stroke="#ffffff" stroke-width="4.5" stroke-linejoin="round" />
+        <!-- Inner classic white stripe -->
+        <polygon points="56,8 124,8 172,56 172,124 124,172 56,172 8,124 8,56"
+                 fill="none" stroke="#ffffff" stroke-width="3" stroke-linejoin="round" opacity="0.95" />
       </svg>
+
+      <button id="runaway-close-btn" type="button" aria-label="Zavřít" title="Zavřít" data-i18n-title="runaway_close_title">&times;</button>
 
       <div class="runaway-sign-text">
         <span class="stop-line-1" data-i18n="runaway_line_1">ZAČNU OD</span>
@@ -1489,7 +1441,7 @@
     </div>
   </div>
 
-  <script src="../script.js?v=4.0" defer></script>
+  <script src="../script.js?v=4.1" defer></script>
   <!-- Floating Quick Contact Dock -->
   <aside class="floating-contact-dock" aria-label="Rychlý kontakt">
     <a href="https://t.me/candy_bird" target="_blank" rel="noopener noreferrer" class="floating-action-btn telegram-float" aria-label="Napsat na Telegram" title="Telegram">
