@@ -3315,32 +3315,44 @@ a {
   position: absolute;
   top: 2px;
   right: 6px;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: #18151D;
   color: #FFFFFF;
   border: 2px solid #FFFFFF;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 700;
   line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 20;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.55);
-  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  z-index: 50;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.65);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
   pointer-events: auto;
   touch-action: manipulation;
   padding: 0;
 }
 
+/* Invisible generous hit target (56px x 56px) around the cross for easy tapping/clicking */
+#runaway-close-btn::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 #runaway-close-btn:hover {
   background: #ee1b30;
   color: #FFFFFF;
-  transform: scale(1.18);
-  box-shadow: 0 6px 16px rgba(238, 27, 48, 0.6);
+  transform: scale(1.22);
+  box-shadow: 0 6px 18px rgba(238, 27, 48, 0.7);
 }
 
 @keyframes runawayBreathe {
@@ -3377,11 +3389,18 @@ a {
   }
 
   #runaway-close-btn {
-    width: 26px;
-    height: 26px;
-    font-size: 16px;
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
     top: 0;
     right: 4px;
+  }
+
+  #runaway-close-btn::before {
+    top: -14px;
+    left: -14px;
+    right: -14px;
+    bottom: -14px;
   }
 }
 

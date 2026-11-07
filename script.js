@@ -1369,7 +1369,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-    // ==================== RUNAWAY "START ON MONDAY" 3D RED EMERGENCY BUTTON LOGIC ====================
+    // ==================== RUNAWAY "START ON MONDAY" 3D STOP SIGN LOGIC ====================
   // Remove any previously stored hidden flag so button always appears on fresh page loads
   try {
     sessionStorage.removeItem('birds_runaway_closed');
@@ -1381,6 +1381,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (runawayBtn && runawayWrapper) {
     let isRunning = false;
+    let lastPointerX = null;
+    let lastPointerY = null;
+
+    // Track mouse position globally so jumps never land right under the cursor
+    document.addEventListener('mousemove', (e) => {
+      lastPointerX = e.clientX;
+      lastPointerY = e.clientY;
+    }, { passive: true });
+
+    // Helper: Is the user aiming for or interacting with the close button?
+    // Provides a generous 65px protected safe zone around the cross so it never runs away!
+    function isCloseSafeZone(e) {
+      if (!runawayCloseBtn) return false;
+      if (e.target && (e.target.id === 'runaway-close-btn' || e.target.closest('#runaway-close-btn'))) {
+        return true;
+      }
+      const clientX = e.clientX != null ? e.clientX : (e.touches && e.touches[0] ? e.touches[0].clientX : null);
+      const clientY = e.clientY != null ? e.clientY : (e.touches && e.touches[0] ? e.touches[0].clientY : null);
+      if (clientX != null && clientY != null) {
+        const rect = runawayCloseBtn.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        const dist = Math.hypot(clientX - cx, clientY - cy);
+        if (dist <= 65) return true;
+      }
+      return false;
+    }
+
+    function closeWidget(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      runawayWrapper.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+      runawayWrapper.style.opacity = '0';
+      runawayWrapper.style.transform = 'scale(0.8)';
+      setTimeout(() => {
+        runawayWrapper.style.display = 'none';
+      }, 250);
+    }
 
     function runAway() {
       if (isRunning) return;
@@ -1391,32 +1431,44 @@ document.addEventListener('DOMContentLoaded', () => {
       const btnW = runawayBtn.offsetWidth || 140;
       const btnH = runawayBtn.offsetHeight || 140;
       const padding = 16;
-      const minY = 75; // Stay comfortably below top fixed header
+      const minY = 85; // Stay comfortably below top fixed header
       const maxX = Math.max(10, window.innerWidth - btnW - padding);
       const maxY = Math.max(minY + 20, window.innerHeight - btnH - padding);
 
-      const newX = Math.floor(Math.random() * (maxX - padding)) + padding;
-      const newY = Math.floor(Math.random() * (maxY - minY)) + minY;
+      let newX = Math.floor(Math.random() * (maxX - padding)) + padding;
+      let newY = Math.floor(Math.random() * (maxY - minY)) + minY;
+
+      // Pick a spot away from current mouse/finger position so it doesn't land under cursor
+      for (let i = 0; i < 10; i++) {
+        const candX = Math.floor(Math.random() * (maxX - padding)) + padding;
+        const candY = Math.floor(Math.random() * (maxY - minY)) + minY;
+        if (lastPointerX == null || Math.hypot(candX + btnW / 2 - lastPointerX, candY + btnH / 2 - lastPointerY) > 160) {
+          newX = candX;
+          newY = candY;
+          break;
+        }
+      }
 
       runawayBtn.style.left = newX + 'px';
       runawayBtn.style.top = newY + 'px';
 
       setTimeout(() => {
         isRunning = false;
-      }, 250);
+      }, 400); // 400ms cooldown so it doesn't jump uncontrollably
     }
 
-    // Mouse hover
+    // Mouse hover: if approaching close button safe zone, DO NOT run away!
     runawayBtn.addEventListener('mouseover', (e) => {
-      if (e.target && (e.target.id === 'runaway-close-btn' || e.target.closest('#runaway-close-btn'))) {
+      if (isCloseSafeZone(e)) {
         return;
       }
       runAway();
     });
 
-    // Mouse click
+    // Mouse click: if clicked in close safe zone, close it; otherwise run away
     runawayBtn.addEventListener('click', (e) => {
-      if (e.target && (e.target.id === 'runaway-close-btn' || e.target.closest('#runaway-close-btn'))) {
+      if (isCloseSafeZone(e)) {
+        closeWidget(e);
         return;
       }
       e.preventDefault();
@@ -1424,43 +1476,42 @@ document.addEventListener('DOMContentLoaded', () => {
       runAway();
     });
 
-    // Touch / Pointer events for mobile phones (iOS Safari & Chrome)
-    function handleMobileTouch(e) {
-      if (e.target && (e.target.id === 'runaway-close-btn' || e.target.closest('#runaway-close-btn'))) {
+    // Mobile touch events: if tapped near/on close button, close it; otherwise run away
+    runawayBtn.addEventListener('touchstart', (e) => {
+      if (isCloseSafeZone(e)) {
+        closeWidget(e);
         return;
       }
       e.preventDefault();
       e.stopPropagation();
       runAway();
-    }
-
-    runawayBtn.addEventListener('touchstart', handleMobileTouch, { passive: false });
+    }, { passive: false });
 
     runawayBtn.addEventListener('pointerdown', (e) => {
-      if (e.target && (e.target.id === 'runaway-close-btn' || e.target.closest('#runaway-close-btn'))) {
+      if (isCloseSafeZone(e)) {
+        closeWidget(e);
         return;
       }
       if (e.pointerType === 'touch' || e.pointerType === 'pen') {
-        handleMobileTouch(e);
+        e.preventDefault();
+        e.stopPropagation();
+        runAway();
       }
     });
 
-    // Close cross interaction (never runs away)
+    // Dedicated listeners on the close button itself
     if (runawayCloseBtn) {
       runawayCloseBtn.addEventListener('mouseenter', (e) => e.stopPropagation());
       runawayCloseBtn.addEventListener('mouseover', (e) => e.stopPropagation());
-      runawayCloseBtn.addEventListener('touchstart', (e) => e.stopPropagation(), { passive: true });
-      runawayCloseBtn.addEventListener('pointerdown', (e) => e.stopPropagation());
-      runawayCloseBtn.addEventListener('click', (e) => {
-        e.preventDefault();
+      runawayCloseBtn.addEventListener('pointerdown', (e) => {
         e.stopPropagation();
-        runawayWrapper.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
-        runawayWrapper.style.opacity = '0';
-        runawayWrapper.style.transform = 'scale(0.8)';
-        setTimeout(() => {
-          runawayWrapper.style.display = 'none';
-        }, 250);
+        closeWidget(e);
       });
+      runawayCloseBtn.addEventListener('touchstart', (e) => {
+        e.stopPropagation();
+        closeWidget(e);
+      }, { passive: false });
+      runawayCloseBtn.addEventListener('click', closeWidget);
     }
 
     // Idle wiggle to tease visitor
