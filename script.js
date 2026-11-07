@@ -46,9 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_experience: "Досвід",
       nav_contacts: "Контакти",
       btn_book: "Записатися &rarr;",
-      runaway_title: "СТОП",
       runaway_main: "ПОНЕДІЛОК",
-      runaway_sub: "Почну з понеділка",
       
       hero_coach_name: "Євгенія Бурдовицина • Персональний тренер",
       hero_title_1: "Тренування, які",
@@ -312,9 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_experience: "Zkušenosti",
       nav_contacts: "Kontakty",
       btn_book: "Objednat se &rarr;",
-      runaway_title: "STOP",
       runaway_main: "PONDĚLÍ",
-      runaway_sub: "Začnu od pondělí",
       
       hero_coach_name: "Jevgenija Burdovicyna • Osobní trenérka",
       hero_title_1: "Tréninky, které",
@@ -1361,17 +1357,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ==================== RUNAWAY "START ON MONDAY" 3D STOP BUTTON LOGIC ====================
+    // ==================== RUNAWAY "START ON MONDAY" 3D STOP SIGN LOGIC ====================
+  // Remove any previously stored hidden flag so button always appears on fresh page loads
+  try {
+    sessionStorage.removeItem('birds_runaway_closed');
+  } catch(e) {}
+
   const runawayWrapper = document.getElementById('runaway-wrapper');
   const runawayBtn = document.getElementById('runaway-btn');
   const runawayCloseBtn = document.getElementById('runaway-close-btn');
-
-  // Check if previously closed in this session
-  try {
-    if (sessionStorage.getItem('birds_runaway_closed') === '1' && runawayWrapper) {
-      runawayWrapper.style.display = 'none';
-    }
-  } catch(e) {}
 
   if (runawayBtn && runawayWrapper) {
     let isRunning = false;
@@ -1385,7 +1379,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const btnW = runawayBtn.offsetWidth || 140;
       const btnH = runawayBtn.offsetHeight || 140;
       const padding = 16;
-      const minY = 85; // Never jump on top of fixed header
+      const minY = 85; // Stay below fixed header
       const maxX = Math.max(10, window.innerWidth - btnW - padding);
       const maxY = Math.max(minY + 20, window.innerHeight - btnH - padding);
 
@@ -1400,7 +1394,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 250);
     }
 
-    // Do NOT run away when interacting with close cross!
+    // Mouse hover
     runawayBtn.addEventListener('mouseover', (e) => {
       if (e.target && (e.target.id === 'runaway-close-btn' || e.target.closest('#runaway-close-btn'))) {
         return;
@@ -1408,6 +1402,7 @@ document.addEventListener('DOMContentLoaded', () => {
       runAway();
     });
 
+    // Mouse click
     runawayBtn.addEventListener('click', (e) => {
       if (e.target && (e.target.id === 'runaway-close-btn' || e.target.closest('#runaway-close-btn'))) {
         return;
@@ -1417,6 +1412,7 @@ document.addEventListener('DOMContentLoaded', () => {
       runAway();
     });
 
+    // Touch on mobile phones
     runawayBtn.addEventListener('touchstart', (e) => {
       if (e.target && (e.target.id === 'runaway-close-btn' || e.target.closest('#runaway-close-btn'))) {
         return;
@@ -1426,11 +1422,19 @@ document.addEventListener('DOMContentLoaded', () => {
       runAway();
     }, { passive: false });
 
-    // Close cross interaction
+    runawayBtn.addEventListener('pointerdown', (e) => {
+      if (e.target && (e.target.id === 'runaway-close-btn' || e.target.closest('#runaway-close-btn'))) {
+        return;
+      }
+      runAway();
+    });
+
+    // Close cross interaction (never runs away)
     if (runawayCloseBtn) {
       runawayCloseBtn.addEventListener('mouseenter', (e) => e.stopPropagation());
       runawayCloseBtn.addEventListener('mouseover', (e) => e.stopPropagation());
       runawayCloseBtn.addEventListener('touchstart', (e) => e.stopPropagation(), { passive: true });
+      runawayCloseBtn.addEventListener('pointerdown', (e) => e.stopPropagation());
       runawayCloseBtn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -1440,9 +1444,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           runawayWrapper.style.display = 'none';
         }, 250);
-        try {
-          sessionStorage.setItem('birds_runaway_closed', '1');
-        } catch(err) {}
       });
     }
 
@@ -1460,5 +1461,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, 3800);
   }
-
 });
