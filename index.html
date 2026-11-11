@@ -63,36 +63,61 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
-  <link rel="stylesheet" href="styles.css?v=4.2">
+  <link rel="stylesheet" href="styles.css?v=5.0">
 </head>
 <body>
 
-    <!-- ==================== RUNAWAY "START ON MONDAY" 3D STOP SIGN ==================== -->
+    <!-- ==================== RUNAWAY "START ON MONDAY" CANDY RED BUTTON ==================== -->
   <div id="runaway-wrapper">
-    <div id="runaway-btn" role="button" tabindex="0" aria-label="ПОЧНУ З ПОНЕДІЛКА">
-      <!-- Authentic Octagonal Road Sign (STOP) with White Outer & Inner Stripes -->
-      <svg class="stop-sign-svg" viewBox="0 0 180 180" width="100%" height="100%" aria-hidden="true">
+    <div id="runaway-btn" role="button" tabindex="0" aria-label="почну з понеділка">
+      <svg class="candy-btn-svg" viewBox="0 0 180 180" width="100%" height="100%" aria-hidden="true">
         <defs>
-          <radialGradient id="stopGradUA" cx="38%" cy="32%" r="75%">
-            <stop offset="0%" stop-color="#ff4759" />
-            <stop offset="42%" stop-color="#d90429" />
-            <stop offset="85%" stop-color="#9a0012" />
-            <stop offset="100%" stop-color="#67000b" />
+          <!-- Chrome Outer Bezel -->
+          <linearGradient id="candyChromeUA" x1="15%" y1="10%" x2="85%" y2="90%">
+            <stop offset="0%" stop-color="#ffffff" />
+            <stop offset="18%" stop-color="#c8d1dc" />
+            <stop offset="35%" stop-color="#7a8594" />
+            <stop offset="55%" stop-color="#ffffff" />
+            <stop offset="75%" stop-color="#555d69" />
+            <stop offset="90%" stop-color="#a4b0be" />
+            <stop offset="100%" stop-color="#ffffff" />
+          </linearGradient>
+
+          <!-- Candy Red Dome Radial Gradient -->
+          <radialGradient id="candyRedGradUA" cx="36%" cy="30%" r="72%">
+            <stop offset="0%" stop-color="#ff4557" />
+            <stop offset="25%" stop-color="#ee0e24" />
+            <stop offset="60%" stop-color="#c20016" />
+            <stop offset="88%" stop-color="#80000e" />
+            <stop offset="100%" stop-color="#4d0007" />
           </radialGradient>
+
+          <!-- Specular Curved Glare -->
+          <linearGradient id="candyGlossUA" x1="20%" y1="0%" x2="40%" y2="80%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+            <stop offset="35%" stop-color="#ffffff" stop-opacity="0.3" />
+            <stop offset="70%" stop-color="#ffffff" stop-opacity="0" />
+          </linearGradient>
         </defs>
-        <!-- Outer metallic white border -->
-        <polygon points="52.7,2 127.3,2 178,52.7 178,127.3 127.3,178 52.7,178 2,127.3 2,52.7"
-                 fill="url(#stopGradUA)" stroke="#ffffff" stroke-width="4.5" stroke-linejoin="round" />
-        <!-- Inner classic white stripe -->
-        <polygon points="56,8 124,8 172,56 172,124 124,172 56,172 8,124 8,56"
-                 fill="none" stroke="#ffffff" stroke-width="3" stroke-linejoin="round" opacity="0.95" />
+
+        <!-- Chrome Bezel Collar Base -->
+        <circle cx="90" cy="90" r="88" fill="url(#candyChromeUA)" stroke="#4b525d" stroke-width="1.2" />
+        <circle cx="90" cy="90" r="80" fill="#181a1f" stroke="#8c97a5" stroke-width="1.5" />
+        <circle cx="90" cy="90" r="76" fill="#0d0e11" />
+
+        <!-- 3D Red Button Dome -->
+        <circle cx="90" cy="90" r="74" fill="url(#candyRedGradUA)" />
+
+        <!-- Specular Crescent Glare -->
+        <path d="M 38 68 C 42 42, 138 42, 142 68 C 126 52, 54 52, 38 68 Z" fill="url(#candyGlossUA)" />
+        <ellipse cx="68" cy="46" rx="26" ry="12" fill="#ffffff" opacity="0.45" transform="rotate(-15 68 46)" />
       </svg>
 
       <button id="runaway-close-btn" type="button" aria-label="Закрити" title="Закрити" data-i18n-title="runaway_close_title">&times;</button>
 
-      <div class="runaway-sign-text">
-        <span class="stop-line-1" data-i18n="runaway_line_1">ПОЧНУ З</span>
-        <span class="stop-line-2" data-i18n="runaway_line_2">ПОНЕДІЛКА</span>
+      <div class="runaway-candy-text">
+        <span class="candy-line-1" data-i18n="runaway_line_1">почну з</span>
+        <span class="candy-line-2" data-i18n="runaway_line_2">понеділка</span>
       </div>
     </div>
   </div>
@@ -182,6 +207,18 @@
           <p class="hero-subtitle" data-i18n="hero_desc">
             Індивідуальний підхід до сили, здорового руху, гнучкості та харчування. Ми не працюємо за шаблонами — кожне тренування адаптується під ваші цілі, можливості та самопочуття.
           </p>
+
+          <!-- Hero Workout Video Preview Card (Prompted by Coach Zhenya) -->
+          <div class="hero-video-card video-player-facade" data-youtube-id="UxmEhd5iXyw" title="Натисніть для перегляду тренування">
+            <img src="https://img.youtube.com/vi/UxmEhd5iXyw/hqdefault.jpg" alt="Відео тренування Євгенії Бурдовициної" class="hero-video-thumb" width="480" height="360" loading="eager" decoding="async">
+            <div class="hero-video-play-btn">
+              <i class="fa-solid fa-play"></i>
+            </div>
+            <div class="hero-video-badge">
+              <span class="live-dot"></span>
+              <span data-i18n="hero_video_badge">Відео: тренування в залі</span>
+            </div>
+          </div>
 
           <div class="hero-tagline-quote">
             <span data-i18n="hero_tagline">Ваше тіло. Ваші цілі. Ваш темп.</span>
@@ -1332,10 +1369,10 @@
               </a>
             </div>
             <div class="messenger-buttons-row">
-              <a href="https://wa.me/420720217117?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82%2C%20%D0%96%D0%B5%D0%BD%D1%8F!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B4%D1%96%D0%B7%D0%BD%D0%B0%D1%82%D0%B8%D1%81%D1%8F%20%D0%BF%D1%80%D0%BE%20%D1%82%D1%80%D0%B5%D0%BD%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F%20(birds.cz)" target="_blank" rel="noopener" class="messenger-btn whatsapp-btn" aria-label="WhatsApp">
+              <a href="https://wa.me/420720217117?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82%2C%20%D0%96%D0%B5%D0%BD%D1%8F!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B4%D1%96%D0%B7%D0%BD%D0%B0%D1%82%D0%B8%D1%81%D1%8F%20%D0%BF%D1%80%D0%BE%20%D1%82%D1%80%D0%B5%D0%BD%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F%20(Birds%20Fitness)" target="_blank" rel="noopener" class="messenger-btn whatsapp-btn" aria-label="WhatsApp">
                 <i class="fa-brands fa-whatsapp"></i>
               </a>
-              <a href="https://t.me/candy_bird?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82%2C%20%D0%96%D0%B5%D0%BD%D1%8F!%20%D0%9F%D0%B8%D1%88%D1%83%20%D0%B7%20%D1%81%D0%B0%D0%B9%D1%82%D1%83%20birds.cz" target="_blank" rel="noopener" class="messenger-btn telegram-btn" aria-label="Telegram">
+              <a href="https://t.me/candy_bird?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82%2C%20%D0%96%D0%B5%D0%BD%D1%8F!%20%D0%9F%D0%B8%D1%88%D1%83%20%D0%B7%20%D1%81%D0%B0%D0%B9%D1%82%D1%83%20Birds%20Fitness" target="_blank" rel="noopener" class="messenger-btn telegram-btn" aria-label="Telegram">
                 <i class="fa-brands fa-telegram"></i>
               </a>
               <a href="https://www.instagram.com/birds.cz/" target="_blank" rel="noopener" class="messenger-btn instagram-btn" aria-label="Instagram">
@@ -1541,7 +1578,7 @@
     </div>
   </div>
 
-  <script src="script.js?v=4.2" defer></script>
+  <script src="script.js?v=5.0" defer></script>
   <!-- Floating Quick Contact Dock -->
   <aside class="floating-contact-dock" aria-label="Швидкий зв'язок">
     <a href="https://t.me/candy_bird" target="_blank" rel="noopener noreferrer" class="floating-action-btn telegram-float" aria-label="Написати у Telegram" title="Telegram">

@@ -46,8 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_experience: "Досвід",
       nav_contacts: "Контакти",
       btn_book: "Записатися &rarr;",
-      runaway_line_1: "ПОЧНУ З",
-      runaway_line_2: "ПОНЕДІЛКА",
+      runaway_line_1: "почну з",
+      runaway_line_2: "понеділка",
+      hero_video_badge: "Відео: тренування в залі",
       runaway_close_title: "Закрити",
       
       hero_coach_name: "Євгенія Бурдовицина • Персональний тренер",
@@ -312,8 +313,9 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_experience: "Zkušenosti",
       nav_contacts: "Kontakty",
       btn_book: "Objednat se &rarr;",
-      runaway_line_1: "ZAČNU OD",
-      runaway_line_2: "PONDĚLÍ",
+      runaway_line_1: "začnu od",
+      runaway_line_2: "pondělí",
+      hero_video_badge: "Video: trénink v posilovně",
       runaway_close_title: "Zavřít",
       
       hero_coach_name: "Jevgenija Burdovicyna • Osobní trenérka",
@@ -1131,20 +1133,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const isCz = document.documentElement.lang === 'cs' || window.location.pathname.includes('/cz');
       const leadMsg = isCz ? 
-        `🏋️‍♀️ *Nová rezervace z webu birds.cz*
+        `🏋️‍♀️ *Nová rezervace tréninku (Birds Fitness)*
 
 👤 *Jméno:* ${name}
 📞 *Kontakt:* ${contact}
 🎯 *Služba:* ${service}` + (city ? `
 📍 *Místo:* ${city}` : '') + (message ? `
 💬 *Poznámka:* ${message}` : '') :
-        `🏋️‍♀️ *Новий запис із сайту birds.cz*
+        `🏋️‍♀️ *Новий запис на тренування (Birds Fitness)*
 
 👤 *Ім'я:* ${name}
 📞 *Контакт:* ${contact}
 🎯 *Формат:* ${service}` + (city ? `
 📍 *Локація:* ${city}` : '') + (message ? `
-💬 *Повідомлення:* ${message}` : '');
+💬 *Повідомлення:* ${message}` : '') + `\n\n🌐 *Сайт:* https://vargani4artem-boop.github.io/birds-fitness/`;
 
       const tgUrl = `https://t.me/candy_bird?text=${encodeURIComponent(leadMsg)}`;
       const waUrl = `https://wa.me/420720217117?text=${encodeURIComponent(leadMsg)}`;
@@ -1205,12 +1207,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const isCz = document.documentElement.lang === 'cs' || window.location.pathname.includes('/cz');
       const nutrMsg = isCz ?
-        `🥗 *Objednávka jídelníčku na 30 dní (birds.cz)*
+        `🥗 *Objednávka jídelníčku na 30 dní (Birds Fitness)*
 
 👤 *Jméno:* ${name}
 📞 *Kontakt:* ${contact}
-🎯 *Cíl:* ${goal}` :
-        `🥗 *Замовлення меню на 30 днів (birds.cz)*
+🎯 *Cíl:* ${goal}` + `\n\n🌐 *Web:* https://vargani4artem-boop.github.io/birds-fitness/cz/` :
+        `🥗 *Замовлення меню на 30 днів (Birds Fitness)*
 
 👤 *Ім'я:* ${name}
 📞 *Контакт:* ${contact}
@@ -1342,6 +1344,14 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('click', (e) => {
       if (e.target.closest('a')) return;
       const ytid = card.getAttribute('data-youtube-id');
+      if (!ytid) return;
+
+      // Pause/stop any other video iframes currently playing
+      document.querySelectorAll('.video-iframe-embed').forEach(otherIframe => {
+        try {
+          otherIframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+        } catch(err) {}
+      });
       if (!ytid) return;
       
       const iframe = document.createElement('iframe');
